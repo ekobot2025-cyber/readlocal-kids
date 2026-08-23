@@ -7,7 +7,9 @@ export const API = `${BACKEND_URL}/api`;
 export const api = axios.create({ baseURL: API });
 
 // Check if we are running in standalone mode (no backend connection)
-let isStandalone = false;
+const isLocal = typeof window !== "undefined" && 
+  (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+let isStandalone = !isLocal && !import.meta.env.VITE_BACKEND_URL;
 
 // Custom request interceptor to dynamically handle API fallback
 api.interceptors.request.use(async (config) => {
