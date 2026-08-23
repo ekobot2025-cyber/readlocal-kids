@@ -183,7 +183,7 @@ export default function Landing() {
       <footer className="border-t border-slate-100 py-8 text-center text-sm text-slate-400">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-5">
           <Logo size={32} />
-          <p>ReadLocal Kids · Read English, Discover Local Culture</p>
+          <p>©2026 by Mam Yulini & Miss Bunga</p>
         </div>
       </footer>
     </div>
