@@ -1,25 +1,31 @@
 import axios from "axios";
-import { STORIES, CULTURE } from "./mockData"; // We will create this helper file
+import { STORIES, CULTURE } from "./mockData";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
 export const API = `${BACKEND_URL}/api`;
 
-export const api = axios.create({ baseURL: API });
-
-// Check if we are running in standalone mode (no backend connection)
 const isLocal = typeof window !== "undefined" && 
   (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
 let isStandalone = !isLocal && !import.meta.env.VITE_BACKEND_URL;
 
-// Custom request interceptor to dynamically handle API fallback
+// Get default axios adapter
+const defaultAdapter = axios.defaults.adapter;
+
+export const api = axios.create({ 
+  baseURL: API,
+  adapter: (config) => {
+    if (isStandalone) {
+      return handleLocalRequest(config);
+    }
+    const adapter = Array.isArray(defaultAdapter) ? defaultAdapter[0] : defaultAdapter;
+    return adapter(config);
+  }
+});
+
+// Custom request interceptor to dynamically add token
 api.interceptors.request.use(async (config) => {
   const token = localStorage.getItem("rlk_token");
   if (token) config.headers.Authorization = `Bearer ${token}`;
-
-  // If already marked as standalone, intercept immediately
-  if (isStandalone) {
-    throw new axios.Cancel("SW_FALLBACK");
-  }
   return config;
 });
 
@@ -27,18 +33,13 @@ api.interceptors.request.use(async (config) => {
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
-    // If request was canceled by us for fallback
-    if (error.message === "SW_FALLBACK") {
-      return handleLocalRequest(error.config);
-    }
-
     // If backend connection fails (Network Error / Timeout / 503)
-    if (!error.response || error.code === "ERR_NETWORK") {
+    if (!error.response || error.code === "ERR_NETWORK" || error.message === "Network Error") {
       if (!isStandalone) {
         console.warn("FastAPI backend is unreachable. Switching to Standalone Browser Mode (LocalStorage DB).");
         isStandalone = true;
       }
-      return handleLocalRequest(error.config);
+      return api(error.config);
     }
     return Promise.reject(error);
   }
