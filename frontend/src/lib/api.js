@@ -8,24 +8,17 @@ const isLocal = typeof window !== "undefined" &&
   (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
 let isStandalone = !isLocal && !import.meta.env.VITE_BACKEND_URL;
 
-// Get default axios adapter
-const defaultAdapter = axios.defaults.adapter;
+export const api = axios.create({ baseURL: API });
 
-export const api = axios.create({ 
-  baseURL: API,
-  adapter: (config) => {
-    if (isStandalone) {
-      return handleLocalRequest(config);
-    }
-    const adapter = Array.isArray(defaultAdapter) ? defaultAdapter[0] : defaultAdapter;
-    return adapter(config);
-  }
-});
-
-// Custom request interceptor to dynamically add token
+// Custom request interceptor to dynamically add token and handle standalone adapter
 api.interceptors.request.use(async (config) => {
   const token = localStorage.getItem("rlk_token");
   if (token) config.headers.Authorization = `Bearer ${token}`;
+
+  // If in standalone mode, assign the mock adapter dynamically
+  if (isStandalone) {
+    config.adapter = handleLocalRequest;
+  }
   return config;
 });
 
