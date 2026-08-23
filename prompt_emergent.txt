@@ -1,0 +1,1044 @@
+BUILD APPLICATION: READLOCAL KIDS
+
+Buatkan sebuah aplikasi web responsif/mobile-first bernama ReadLocal Kids dengan tagline:
+
+“Read English, Discover Local Culture.”
+
+Aplikasi ini merupakan media pembelajaran Bahasa Inggris tingkat Sekolah Dasar yang berfokus pada metode Reading Aloud dan mengintegrasikan budaya lokal Papua ke dalam materi pembelajaran.
+
+Aplikasi harus memiliki tampilan yang ramah anak, menarik, sederhana, mudah digunakan guru dan siswa, serta dapat berjalan baik pada desktop, tablet, dan smartphone.
+
+1. TUJUAN APLIKASI
+
+ReadLocal Kids bertujuan membantu guru melaksanakan pembelajaran Reading Aloud Bahasa Inggris di tingkat SD melalui cerita pendek berbasis budaya lokal.
+
+Aplikasi harus mendukung peningkatan:
+
+Reading Fluency
+Pronunciation
+Vocabulary
+Reading Comprehension
+Reading Confidence
+Listening Ability
+
+Aplikasi bukan sekadar perpustakaan digital, tetapi sebuah interactive reading learning platform.
+
+2. TARGET PENGGUNA
+
+Terdapat 2 role utama:
+
+A. Teacher / Guru
+
+Guru dapat:
+
+Login
+Melihat dashboard kelas
+Mengakses seluruh materi Reading Aloud
+Memilih cerita untuk siswa
+Membuka mode pembelajaran di kelas
+Mendengarkan audio model pronunciation
+Melihat hasil latihan siswa
+Melihat skor quiz
+Melihat progress membaca siswa
+Mendengarkan hasil rekaman membaca siswa
+Memberikan catatan sederhana terhadap latihan siswa
+B. Student / Siswa
+
+Siswa dapat:
+
+Login sederhana
+Memilih cerita yang tersedia
+Mendengarkan contoh bacaan
+Membaca teks
+Merekam suara saat membaca
+Memutar ulang rekaman
+Mempelajari vocabulary
+Mengerjakan quiz
+Bermain mini learning games
+Melihat skor dan achievement
+
+Untuk versi MVP/demo, sistem login boleh menggunakan data dummy/local storage.
+
+3. STRUKTUR NAVIGASI UTAMA
+
+Gunakan bottom navigation pada mobile dan sidebar/navigation pada desktop.
+
+Menu siswa:
+
+Home
+Stories
+Practice
+Games
+Progress
+
+Tambahkan profile/avatar di bagian kanan atas.
+
+Untuk guru sediakan menu:
+
+Dashboard
+Story Library
+Students
+Reading Results
+Quiz Results
+Progress
+Settings
+4. LANDING PAGE
+
+Buat landing page modern, colorful, child-friendly tetapi tidak terlalu ramai.
+
+Hero section:
+
+ReadLocal Kids
+
+Read English, Discover Local Culture
+
+Subheading:
+
+“An interactive Reading Aloud learning platform that helps children learn English through stories inspired by Papua’s local culture.”
+
+CTA:
+
+Start Learning
+
+dan
+
+Teacher Dashboard
+
+Visual utama dapat berupa ilustrasi anak-anak Papua sedang membaca buku bersama guru dengan elemen budaya lokal secara subtle.
+
+Tambahkan section:
+
+Learn Through Local Stories
+
+Penjelasan bahwa siswa belajar Bahasa Inggris melalui cerita yang dekat dengan lingkungan dan budaya mereka.
+
+Listen, Read, and Practice
+
+Gunakan tiga cards:
+
+Listen
+Read Aloud
+Practice
+Explore Papua Through English
+
+Tampilkan cards budaya lokal seperti:
+
+Honai
+Noken
+Papeda
+Bird of Paradise
+Sentani Lake
+Tifa
+5. STUDENT HOME DASHBOARD
+
+Dashboard siswa harus menunjukkan:
+
+Sapaan:
+
+Hello, Maria! 👋
+
+Subheading:
+
+Ready to read today?
+
+Card progress:
+
+Stories Completed
+Reading Practice
+Quiz Score
+Reading Streak
+
+Section:
+
+Continue Reading
+
+Tampilkan cerita terakhir.
+
+Section:
+
+Recommended Stories
+
+Tampilkan card cerita dengan:
+
+Cover image
+Story title
+Level
+Duration
+Topic
+Start Reading button
+
+Tambahkan badge:
+
+Beginner
+Intermediate
+Advanced
+
+Untuk anak SD lebih baik prioritaskan Beginner dan Intermediate.
+
+6. STORY LIBRARY
+
+Buat halaman Story Library.
+
+Sediakan category filter:
+
+All Stories
+Nature
+Food
+Traditional House
+Arts & Music
+Daily Life
+Animals
+
+Sediakan juga filter:
+
+Grade 1–2
+Grade 3–4
+Grade 5–6
+
+Setiap story card memiliki:
+
+Illustration
+Story Title
+Topic
+Reading Level
+Estimated Duration
+Vocabulary count
+Start Reading
+7. DATA CERITA AWAL
+
+Buat minimal 8 sample stories.
+
+Story 1
+
+My Honai
+
+Category: Traditional House
+
+Level: Beginner
+
+Text:
+
+“This is a Honai.
+A Honai is a traditional house in Papua.
+It is small and round.
+The roof is made of grass.
+Families stay warm inside the Honai.”
+
+Vocabulary:
+
+Honai
+House
+Roof
+Grass
+Family
+Story 2
+
+Papeda Day
+
+Text:
+
+“Today, my family eats Papeda.
+Papeda is made from sago.
+It is soft and sticky.
+We eat Papeda with fish and yellow soup.
+Papeda is one of our favorite foods.”
+
+Vocabulary:
+
+Papeda
+Sago
+Fish
+Soup
+Sticky
+Story 3
+
+The Bird of Paradise
+
+Text:
+
+“The Bird of Paradise lives in Papua.
+It has beautiful feathers.
+The bird lives in the forest.
+It can fly high in the sky.
+People in Papua are proud of this beautiful bird.”
+
+Story 4
+
+My Noken
+
+Story 5
+
+A Day at Sentani Lake
+
+Story 6
+
+Playing the Tifa
+
+Story 7
+
+Yospan Dance
+
+Story 8
+
+My Village in Papua
+
+Untuk Story 4–8, buat sendiri teks pendek dengan Bahasa Inggris sederhana sekitar 70–120 kata.
+
+Pastikan konten bersifat edukatif dan menghormati budaya lokal.
+
+8. READING MODE
+
+Reading Mode merupakan fitur paling penting.
+
+Layout:
+
+Cover / ilustrasi kecil di atas.
+
+Judul:
+
+My Honai
+
+Kemudian teks dibagi per kalimat atau paragraf pendek.
+
+Sediakan tombol:
+
+🔊 Listen
+
+🎤 Start Reading
+
+⏸ Pause
+
+⏹ Stop
+
+▶ Play My Recording
+
+🔁 Try Again
+
+Ketika tombol Listen ditekan, gunakan browser Text-to-Speech jika tersedia.
+
+Gunakan English voice.
+
+Saat audio dibacakan, highlight kalimat yang sedang dibaca.
+
+Jika word-level highlight sulit diterapkan, gunakan sentence-level highlighting.
+
+Sediakan slider:
+
+Reading Speed
+
+Slow
+Normal
+Fast
+9. READING ALOUD RECORDING
+
+Gunakan browser MediaRecorder API jika memungkinkan.
+
+Ketika siswa menekan:
+
+Start Reading
+
+aplikasi meminta izin microphone.
+
+Tampilkan visual recording:
+
+🎤 Recording...
+
+Timer:
+
+00:15
+
+Setelah selesai, tampilkan:
+
+Great job!
+
+Pilihan:
+
+▶ Listen to My Reading
+
+🔁 Record Again
+
+💾 Save Practice
+
+Simpan metadata latihan:
+
+Student
+Story
+Date
+Duration
+Attempt
+
+Untuk prototype dapat menggunakan localStorage.
+
+10. AI-STYLE READING FEEDBACK
+
+Buat fitur feedback prototype.
+
+Setelah siswa menyelesaikan membaca, tampilkan:
+
+Your Reading Feedback
+
+Cards:
+
+Fluency
+85%
+
+Pronunciation
+80%
+
+Confidence
+90%
+
+Completion
+100%
+
+Tambahkan pesan:
+
+Great Reading! 🌟
+
+“You read clearly and completed the story. Keep practicing difficult words.”
+
+Untuk versi demo, skor boleh disimulasikan secara otomatis.
+
+Namun struktur kode harus dibuat agar nantinya mudah dihubungkan dengan Speech Recognition atau AI API.
+
+Tambahkan label kecil:
+
+AI Reading Feedback – Prototype
+
+11. VOCABULARY MODE
+
+Setelah atau sebelum membaca, siswa dapat membuka:
+
+Learn Words
+
+Gunakan flashcard.
+
+Contoh:
+
+HONAI
+
+[Image]
+
+Honai
+
+🔊 Listen
+
+Meaning:
+
+“A traditional house from Papua.”
+
+Example:
+
+“This is my Honai.”
+
+Tombol:
+
+Previous
+
+Next
+
+Tambahkan progress:
+
+3 / 5 Words
+
+12. PRONUNCIATION PRACTICE
+
+Buat halaman:
+
+Say the Word
+
+Contoh:
+
+Paradise
+
+🔊 Listen
+
+🎤 Speak
+
+Setelah siswa berbicara tampilkan prototype:
+
+Good pronunciation! ⭐⭐⭐⭐
+
+atau:
+
+Try Again
+
+Kata-kata yang digunakan berasal dari vocabulary setiap cerita.
+
+13. READING COMPREHENSION QUIZ
+
+Setiap cerita memiliki quiz minimal 3 pertanyaan.
+
+Contoh untuk My Honai:
+
+Question:
+
+What is a Honai?
+
+Options:
+
+A. A traditional house
+B. A traditional food
+C. A bird
+
+Correct:
+
+A
+
+Pertanyaan kedua:
+
+What is the roof made of?
+
+A. Glass
+B. Grass
+C. Metal
+
+Question ketiga:
+
+Who stays inside the Honai?
+
+A. Families
+B. Fish
+C. Birds
+
+Setelah selesai tampilkan:
+
+Quiz Completed 🎉
+
+Score:
+
+3 / 3
+
+⭐⭐⭐
+
+CTA:
+
+Read Another Story
+
+14. MINI GAMES
+
+Tambahkan minimal 3 permainan pembelajaran sederhana.
+
+Game 1: Match the Picture
+
+Siswa mencocokkan gambar dengan vocabulary.
+
+Game 2: Arrange the Sentence
+
+Contoh kata:
+
+Bird / Papua / lives / in / The
+
+Jawaban:
+
+The Bird lives in Papua.
+
+Gunakan drag and drop jika memungkinkan.
+
+Game 3: Missing Word
+
+“The bird lives in ______.”
+
+Pilihan:
+
+Papua
+
+Bali
+
+Jakarta
+
+15. ACHIEVEMENT SYSTEM
+
+Tambahkan gamification sederhana.
+
+Badges:
+
+🥉 Beginner Reader
+
+🥈 Active Reader
+
+🥇 Great Reader
+
+🏆 Reading Champion
+
+🌟 Vocabulary Star
+
+🎤 Pronunciation Star
+
+Siswa memperoleh badges berdasarkan jumlah cerita atau latihan yang diselesaikan.
+
+16. STUDENT PROGRESS
+
+Halaman:
+
+My Reading Progress
+
+Tampilkan:
+
+Stories Completed:
+
+6
+
+Reading Practices:
+
+12
+
+Average Quiz:
+
+88%
+
+Reading Time:
+
+45 minutes
+
+Tambahkan chart sederhana untuk:
+
+Weekly Reading Activity
+
+Tambahkan list:
+
+Recent Activity
+
+My Honai
+Completed
+Score 90%
+
+Papeda Day
+Completed
+Score 85%
+
+17. TEACHER DASHBOARD
+
+Teacher Dashboard harus terlihat lebih profesional tetapi tetap menggunakan branding aplikasi yang sama.
+
+Header:
+
+Teacher Dashboard
+
+Welcome:
+
+Welcome, Mrs. Anna
+
+Cards:
+
+Total Students
+Stories Available
+Reading Practices
+Average Quiz Score
+
+Section:
+
+Class Reading Progress
+
+gunakan chart.
+
+Section:
+
+Recent Student Activities
+
+Table:
+
+Student
+
+Story
+
+Reading Score
+
+Quiz Score
+
+Status
+
+18. STUDENT LIST
+
+Teacher dapat melihat daftar siswa.
+
+Contoh:
+
+Maria
+
+Grade 4
+
+Stories: 8
+
+Avg. Reading: 88%
+
+John
+
+Grade 4
+
+Stories: 6
+
+Avg. Reading: 82%
+
+Setiap siswa dapat diklik untuk melihat:
+
+Student Reading Profile
+Completed stories
+Recorded practices
+Reading score
+Quiz score
+Achievement
+Recent activity
+19. READING ASSESSMENT RUBRIC
+
+Untuk mendukung kebutuhan penelitian, buat halaman khusus guru:
+
+Reading Aloud Assessment
+
+Gunakan komponen penilaian:
+
+Pronunciation
+Fluency
+Intonation
+Accuracy
+Confidence
+
+Setiap komponen memiliki skor 1–5.
+
+Guru dapat memberikan skor manual.
+
+Contoh:
+
+Pronunciation
+
+1 2 3 4 5
+
+Fluency
+
+1 2 3 4 5
+
+Intonation
+
+1 2 3 4 5
+
+Accuracy
+
+1 2 3 4 5
+
+Confidence
+
+1 2 3 4 5
+
+Sistem menghitung:
+
+Total Score
+
+dan
+
+Average Reading Score
+
+Guru dapat menulis:
+
+Teacher Notes
+
+20. CULTURAL EXPLORATION
+
+Buat halaman:
+
+Discover Papua
+
+Tampilkan cards:
+
+🏠 Honai
+
+👜 Noken
+
+🥣 Papeda
+
+🐦 Bird of Paradise
+
+🥁 Tifa
+
+🏞 Sentani Lake
+
+Setiap card dapat diklik dan menampilkan:
+
+Illustration
+English Name
+Short English Explanation
+Indonesian Explanation
+Related Story
+
+Tujuannya agar budaya lokal bukan hanya hiasan tetapi bagian dari pembelajaran.
+
+21. TEACHER GUIDE
+
+Tambahkan halaman:
+
+How to Use ReadLocal Kids
+
+Tahapan pembelajaran:
+
+1. Pre-Reading
+
+Teacher introduces vocabulary and local culture.
+
+2. Listen
+
+Students listen to the model reading.
+
+3. Reading Aloud
+
+Students read the story aloud.
+
+4. Practice
+
+Students record their reading.
+
+5. Vocabulary
+
+Students review important words.
+
+6. Comprehension
+
+Students complete the quiz.
+
+7. Assessment
+
+Teacher assesses pronunciation, fluency, intonation, accuracy, and confidence.
+
+22. UI / UX DESIGN
+
+Gunakan desain:
+
+Modern
+Educational
+Child Friendly
+Clean
+Rounded cards
+Soft shadows
+Large buttons
+Large typography
+Simple navigation
+Friendly illustrations
+
+Gunakan kombinasi warna yang terinspirasi dari Papua tetapi tetap modern.
+
+Primary:
+
+Deep Blue / Ocean Blue
+
+Secondary:
+
+Warm Yellow
+
+Accent:
+
+Green
+
+Background:
+
+Soft cream / very light blue
+
+Gunakan gradient secukupnya.
+
+Jangan membuat tampilan terlalu ramai.
+
+Font:
+
+Gunakan font modern dan ramah anak seperti:
+
+Nunito
+Poppins
+Fredoka
+
+Gunakan ikon dari Lucide Icons atau library modern sejenis.
+
+23. RESPONSIVE DESIGN
+
+Aplikasi wajib optimal untuk:
+
+Android smartphone
+iPhone
+Tablet
+Laptop
+Desktop
+
+Mobile-first.
+
+Pada smartphone gunakan bottom navigation.
+
+Desktop menggunakan sidebar.
+
+24. TECH STACK
+
+Gunakan stack yang kompatibel dengan Emergent.
+
+Prioritas:
+
+React / Next.js
+
+Tailwind CSS
+
+shadcn/ui bila tersedia
+
+Lucide Icons
+
+Browser Web Speech API untuk Text-to-Speech
+
+MediaRecorder API untuk microphone recording
+
+LocalStorage untuk prototype data
+
+Gunakan Recharts untuk analytics jika tersedia.
+
+Buat arsitektur aplikasi modular agar mudah dikembangkan menjadi aplikasi penelitian yang lebih besar.
+
+25. DATA MODEL
+
+Buat struktur data minimal:
+
+Users
+id
+name
+role
+grade
+avatar
+Stories
+id
+title
+category
+level
+grade
+cover
+text
+vocabulary
+quiz
+ReadingPractice
+id
+studentId
+storyId
+date
+duration
+attempt
+recording
+fluencyScore
+pronunciationScore
+QuizResult
+studentId
+storyId
+score
+date
+TeacherAssessment
+studentId
+storyId
+pronunciation
+fluency
+intonation
+accuracy
+confidence
+notes
+26. DEMO ACCOUNT
+
+Buat demo login.
+
+Teacher:
+
+Username:
+
+teacher
+
+Password:
+
+teacher123
+
+Student:
+
+Username:
+
+student
+
+Password:
+
+student123
+
+Jika autentikasi belum diimplementasikan penuh, tetap buat halaman Login dan simulasi login.
+
+27. PWA
+
+Jika memungkinkan, jadikan ReadLocal Kids sebagai Progressive Web App.
+
+Tambahkan:
+
+Manifest
+App icon
+Installable application
+Mobile friendly
+Basic offline caching untuk halaman utama dan materi cerita
+28. BRANDING
+
+Buat logo sederhana untuk:
+
+ReadLocal Kids
+
+Konsep logo:
+
+Open book + sound wave / microphone + subtle Papua cultural element.
+
+Jangan membuat logo terlalu kompleks.
+
+Tagline:
+
+Read English, Discover Local Culture
+
+29. RESEARCH MODE
+
+Karena aplikasi ini akan digunakan sebagai media penelitian, tambahkan halaman guru:
+
+Learning Evaluation
+
+Tampilkan:
+
+Number of Students
+
+Number of Reading Sessions
+
+Average Reading Score
+
+Average Quiz Score
+
+Completion Rate
+
+Buat tabel yang dapat digunakan guru untuk melihat hasil implementasi media pembelajaran.
+
+Tambahkan tombol:
+
+Export Results
+
+Untuk MVP tombol boleh menghasilkan CSV sederhana.
+
+30. FINAL REQUIREMENT
+
+Prioritaskan agar versi pertama yang dibangun benar-benar dapat digunakan sebagai interactive prototype.
+
+Fitur yang harus benar-benar bekerja:
+
+Navigation
+Story Library
+Story Detail
+Text-to-Speech / Listen
+Start/Stop microphone recording
+Play recorded audio
+Vocabulary flashcards
+Quiz
+Quiz scoring
+Student progress
+Teacher dashboard
+Teacher assessment rubric
+LocalStorage data persistence
+Responsive mobile UI
+Demo login
+
+Jangan hanya membuat landing page atau static mockup.
+
+Bangun seluruh alur penggunaan:
+
+Login → Dashboard → Choose Story → Learn Vocabulary → Listen → Reading Aloud → Record Voice → Reading Feedback → Quiz → Score → Progress
+
+dan untuk guru:
+
+Login → Teacher Dashboard → Students → Student Profile → Reading Result → Assessment → Class Progress
+
+Gunakan dummy data berkualitas agar seluruh halaman terlihat realistis dan siap untuk demo penelitian.
+
+Pastikan source code bersih, modular, mudah dibaca, dan mudah dikembangkan untuk integrasi AI/Speech Recognition pada tahap berikutnya.

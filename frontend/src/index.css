@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #FDFBF7;
+}
+
+h1, h2, h3, h4, h5, .font-heading {
+    font-family: "Fredoka", "Nunito", sans-serif;
+}
+
+@layer base {
+    :root {
+        --background: 40 43% 98%;
+        --foreground: 217 33% 17%;
+        --card: 0 0% 100%;
+        --card-foreground: 217 33% 17%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 217 33% 17%;
+        --primary: 199 89% 48%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 43 96% 56%;
+        --secondary-foreground: 217 33% 17%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 142 71% 45%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 214 32% 91%;
+        --input: 214 32% 91%;
+        --ring: 199 89% 48%;
+        --chart-1: 199 89% 48%;
+        --chart-2: 43 96% 56%;
+        --chart-3: 142 71% 45%;
+        --chart-4: 262 83% 65%;
+        --chart-5: 340 82% 62%;
+        --radius: 1rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Reading highlight */
+.reading-active {
+    background: linear-gradient(180deg, transparent 55%, #FDE68A 55%);
+    border-radius: 6px;
+    padding: 0 2px;
+    transition: background 0.2s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+}

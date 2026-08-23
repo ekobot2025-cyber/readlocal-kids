@@ -1,0 +1,27 @@
+# Node dependencies
+node_modules/
+dist/
+build/
+.eslintcache
+
+# Python environment
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+instance/
+.pytest_cache/
+
+# Local database and envs
+backend/db.json
+.env
+backend/.env
+.DS_Store
+*.log
+Thumbs.db
+.gemini/
+.system_generated/

@@ -1,0 +1,24 @@
+{
+  "short_name": "ReadLocal Kids",
+  "name": "ReadLocal Kids — Read English, Discover Local Culture",
+  "description": "An interactive Reading Aloud learning platform for children, inspired by Papua's local culture.",
+  "icons": [
+    {
+      "src": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/a1456cbc70b477cd9ec61286751959a934c39a08347fcd785272d6e61f7b5c79.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/a1456cbc70b477cd9ec61286751959a934c39a08347fcd785272d6e61f7b5c79.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0EA5E9",
+  "background_color": "#FDFBF7",
+  "orientation": "portrait"
+}

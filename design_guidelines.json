@@ -1,0 +1,128 @@
+{
+  "theme": "light",
+  "typography": {
+    "fonts": {
+      "heading": "Fredoka, sans-serif",
+      "body": "Nunito, sans-serif"
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight",
+      "h3": "text-2xl sm:text-3xl font-semibold",
+      "h4": "text-xl sm:text-2xl font-medium",
+      "body_large": "text-lg sm:text-xl",
+      "body": "text-base",
+      "small": "text-sm",
+      "tiny": "text-xs font-bold tracking-wider uppercase"
+    },
+    "instructions": "Use Fredoka for all headings to provide a playful and modern feel. Use Nunito for body text for optimal readability for children. Ensure letter spacing is tight for large headings."
+  },
+  "colors": {
+    "background": {
+      "primary": "#FDFBF7",
+      "secondary": "#F0F8FF",
+      "card": "#FFFFFF",
+      "highlight": "#FEF3C7"
+    },
+    "brand": {
+      "primary": "#0EA5E9",
+      "primary_hover": "#0284C7",
+      "secondary": "#FBBF24",
+      "secondary_hover": "#F59E0B",
+      "accent_green": "#22C55E",
+      "accent_red": "#EF4444"
+    },
+    "text": {
+      "primary": "#1E293B",
+      "secondary": "#475569",
+      "muted": "#94A3B8",
+      "inverse": "#FFFFFF"
+    },
+    "instructions": "Use Primary (Ocean Blue) for main actions and branding. Secondary (Warm Yellow) for playful accents, achievements, and highlights. Accent Green for success and progress indicators. Keep backgrounds soft cream or very light blue to reduce eye strain."
+  },
+  "visual_enhancers": {
+    "shadows": {
+      "card": "shadow-[0_4px_20px_rgba(0,0,0,0.05)]",
+      "button": "shadow-[0_4px_14px_rgba(14,165,233,0.2)]"
+    },
+    "borders": {
+      "radius": {
+        "card": "rounded-3xl",
+        "button": "rounded-full",
+        "input": "rounded-2xl",
+        "tag": "rounded-full"
+      },
+      "width": {
+        "default": "border-2",
+        "thin": "border"
+      },
+      "color": "border-slate-100"
+    },
+    "instructions": "Use soft, large rounded corners (rounded-2xl to rounded-3xl) to create a child-friendly aesthetic. Avoid sharp edges. Use gentle, diffuse shadows instead of harsh drop shadows. You may use a 2px border on cards with a very light color (e.g., border-slate-100) to give a subtle structural feel."
+  },
+  "layouts": {
+    "student_app": "Mobile-first approach. Use a bottom fixed navigation bar for mobile/tablet screens. On desktop, shift to a left sidebar navigation. Main content area should have generous padding (p-4 to p-8).",
+    "teacher_dashboard": "Standard sidebar layout (desktop) or hamburger menu (mobile) to maximize data view area.",
+    "reading_mode": "Distraction-free layout. Full screen or large modal approach. Large text centered or left-aligned with generous line-height (leading-loose). Fixed bottom bar for playback/recording controls.",
+    "spacing_scale": "Use generous spacing. Prefer p-6 or p-8 inside cards, gap-6 or gap-8 between grid items."
+  },
+  "components": {
+    "buttons": "Must be pill-shaped (rounded-full). Large tap targets (min-h-[48px]). Use bright colors and include an icon alongside text whenever possible.",
+    "cards": "High border-radius (rounded-3xl). Include a soft shadow and a subtle hover lift effect (-translate-y-1).",
+    "inputs": "Shadcn UI inputs customized with rounded-2xl, thick borders, and soft focus rings.",
+    "progress_bars": "Thick (h-4 or h-6) with fully rounded edges and vibrant fill colors.",
+    "icons": "Use 'lucide-react'. Size them relatively large for kids (e.g., w-6 h-6 to w-8 h-8).",
+    "instructions_to_main_agent": [
+      "Prioritize using pre-existing components from src/components/ui.",
+      "Use Shadcn UI components but heavily customize them via Tailwind to match the playful, soft aesthetic.",
+      "Use framer-motion for smooth entrance animations on cards and interactive elements.",
+      "Do NOT use raw HTML <select> or <input type='date'>. Use Shadcn Dropdown/Select and Calendar."
+    ]
+  },
+  "motion": {
+    "page_transitions": "Fade in with a slight upward slide (e.g., y: 10, opacity: 0 to y: 0, opacity: 1).",
+    "hover_states": "Buttons and cards should scale up slightly (scale-105) and increase shadow depth.",
+    "micro_interactions": "Add playful bounces to achievements, badges, and correct quiz answers.",
+    "instructions": "Ensure animations are smooth and engaging but not overwhelming. Respect prefers-reduced-motion."
+  },
+  "accessibility": {
+    "contrast": "Ensure all text meets minimum 4.5:1 contrast ratio against backgrounds.",
+    "focus": "All interactive elements must have a highly visible focus ring (focus:ring-4 focus:ring-primary/50).",
+    "testing": "All interactive and key informational elements MUST include a 'data-testid' attribute (e.g., data-testid='start-reading-btn')."
+  },
+  "media": {
+    "image_urls": {
+      "kids_reading": [
+        "https://images.pexels.com/photos/6157222/pexels-photo-6157222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/6157218/pexels-photo-6157218.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      ],
+      "papua_culture": [
+        "https://images.pexels.com/photos/34976772/pexels-photo-34976772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/18201360/pexels-photo-18201360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/8868882/pexels-photo-8868882.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/37810095/pexels-photo-37810095.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      ]
+    },
+    "instructions": "Use kids_reading images for the hero section or student dashboard. Use papua_culture images for the 'Discover Papua' culture cards and story covers."
+  },
+  "libraries": {
+    "icons": "lucide-react",
+    "charts": "recharts (for Teacher Dashboard and Student Progress)",
+    "animations": "framer-motion",
+    "notifications": "sonner"
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Make creative, distinctive frontends that surprise and delight.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters where appropriate.",
+    "You MUST NOT apply universal transition (e.g., transition: all). Add transitions for specific interactive elements.",
+    "You MUST NOT center align the app container. Do not add '.App { text-align: center; }'.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons. Use Lucide icons.",
+    "Every interaction needs micro-animations - hover states, transitions, and entrance animations.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "NEVER use placeholder URLs (via.placeholder.com, etc.). Use the provided image URLs.",
+    "Ensure all components follow the soft, child-friendly design language for this specific app."
+  ]
+}
