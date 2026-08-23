@@ -58,7 +58,14 @@ const initLocalDb = () => {
 initLocalDb();
 
 async function handleLocalRequest(config) {
-  const url = config.url.replace(/^\/?api\/?/, "");
+  let path = config.url;
+  if (path.startsWith("http")) {
+    try {
+      const urlObj = new URL(path);
+      path = urlObj.pathname;
+    } catch (e) {}
+  }
+  const url = path.replace(/^\/?api\/?/, "").replace(/^\//, "");
   const method = config.method.toLowerCase();
   const body = config.data ? JSON.parse(config.data) : null;
   const token = localStorage.getItem("rlk_token");
