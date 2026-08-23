@@ -1,11 +1,28 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const TabsContext = createContext(null);
 
-export function Tabs({ children, value, onValueChange, className, ...props }) {
+export function Tabs({ children, value: controlledValue, defaultValue, onValueChange, className, ...props }) {
+  const [localValue, setLocalValue] = useState(controlledValue || defaultValue);
+
+  useEffect(() => {
+    if (controlledValue !== undefined) {
+      setLocalValue(controlledValue);
+    }
+  }, [controlledValue]);
+
+  const handleValueChange = (newValue) => {
+    if (controlledValue === undefined) {
+      setLocalValue(newValue);
+    }
+    if (onValueChange) {
+      onValueChange(newValue);
+    }
+  };
+
   return (
-    <TabsContext.Provider value={{ value, onValueChange }}>
+    <TabsContext.Provider value={{ value: localValue, onValueChange: handleValueChange }}>
       <div className={cn("w-full", className)} {...props}>
         {children}
       </div>
