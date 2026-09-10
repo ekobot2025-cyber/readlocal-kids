@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { api } from "@/lib/api";
 import { useSpeech } from "@/hooks/useSpeech";
+import { useAudioPlayer } from "@/hooks/useAudioPlayer";
 import { useRecorder } from "@/hooks/useRecorder";
 import { LevelBadge } from "@/components/LevelBadge";
 import { ScoreStars } from "@/components/ScoreStars";
@@ -266,7 +267,8 @@ function ReadingFeedback({ scores, onQuiz }) {
 
 /* ---------------- Vocabulary Mode ---------------- */
 function VocabularyMode({ story }) {
-  const speech = useSpeech();
+  const audio = useAudioPlayer();
+  const [playingAccent, setPlayingAccent] = useState(null);
   const [i, setI] = useState(0);
   const vocab = story.vocabulary || [];
   const card = vocab[i];
@@ -289,13 +291,42 @@ function VocabularyMode({ story }) {
             <BookText className="h-12 w-12 text-sky-500" />
           </div>
           <h3 className="mt-4 font-heading text-3xl font-bold uppercase tracking-wide text-slate-800">{card.word}</h3>
-          <div className="mt-4 flex items-center justify-center gap-2">
-            <Button onClick={() => speech.speak(card.word, 0.9, "UK")} variant="outline" data-testid="vocab-listen-uk-btn" className="rounded-full border-2 border-amber-200 bg-amber-50 font-bold text-amber-800 hover:bg-amber-100">
-              <Volume2 className="mr-1.5 h-4 w-4 text-amber-600" /> 🇬🇧 UK Accent
+          <div className="mt-4 flex items-center justify-center gap-2 flex-wrap">
+            <Button
+              onClick={() => {
+                setPlayingAccent("UK");
+                audio.playWord(card.word, "UK", () => setPlayingAccent(null));
+              }}
+              disabled={playingAccent !== null}
+              variant="outline"
+              data-testid="vocab-listen-uk-btn"
+              className="rounded-full border-2 border-amber-200 bg-amber-50 font-bold text-amber-800 hover:bg-amber-100 disabled:opacity-60"
+            >
+              <Volume2 className={`mr-1.5 h-4 w-4 text-amber-600 ${playingAccent === "UK" ? "animate-pulse" : ""}`} />
+              🇬🇧 UK Accent {playingAccent === "UK" && <span className="ml-1 text-xs">(Playing...)</span>}
             </Button>
-            <Button onClick={() => speech.speak(card.word, 0.9, "US")} variant="outline" data-testid="vocab-listen-us-btn" className="rounded-full border-2 border-sky-200 bg-sky-50 font-bold text-sky-800 hover:bg-sky-100">
-              <Volume2 className="mr-1.5 h-4 w-4 text-sky-600" /> 🇺🇸 US Accent
+            <Button
+              onClick={() => {
+                setPlayingAccent("US");
+                audio.playWord(card.word, "US", () => setPlayingAccent(null));
+              }}
+              disabled={playingAccent !== null}
+              variant="outline"
+              data-testid="vocab-listen-us-btn"
+              className="rounded-full border-2 border-sky-200 bg-sky-50 font-bold text-sky-800 hover:bg-sky-100 disabled:opacity-60"
+            >
+              <Volume2 className={`mr-1.5 h-4 w-4 text-sky-600 ${playingAccent === "US" ? "animate-pulse" : ""}`} />
+              🇺🇸 US Accent {playingAccent === "US" && <span className="ml-1 text-xs">(Playing...)</span>}
             </Button>
+            {playingAccent && (
+              <Button
+                onClick={() => { audio.stop(); setPlayingAccent(null); }}
+                variant="outline"
+                className="rounded-full border-2 border-rose-200 bg-rose-50 font-bold text-rose-700 hover:bg-rose-100"
+              >
+                <Square className="mr-1.5 h-4 w-4" /> Stop
+              </Button>
+            )}
           </div>
           <div className="mt-5 space-y-3 text-left">
             <div className="rounded-2xl bg-slate-50 p-4">

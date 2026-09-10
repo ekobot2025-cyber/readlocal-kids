@@ -1,113 +1,113 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
+import { useAudioPlayer } from "./useAudioPlayer";
 
-// Text-to-Speech using the browser Web Speech API with dual UK & US accent support
+// Story sequence TTS using Web Speech API with proper stop handling
 export function useSpeech(defaultAccent = "UK") {
   const [speaking, setSpeaking] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
-  const [accent, setAccent] = useState(defaultAccent); // "UK" or "US"
-  const voiceUkRef = useRef(null);
-  const voiceUsRef = useRef(null);
-  const supported = typeof window !== "undefined" && "speechSynthesis" in window;
+  const [accent, setAccent] = useState(defaultAccent);
 
-  useEffect(() => {
-    if (!supported) return;
-    const pickVoices = () => {
-      const voices = window.speechSynthesis.getVoices();
-      
-      // Pick UK Voice (British English)
-      voiceUkRef.current =
-        voices.find((v) => (v.lang === "en-GB" || v.lang === "en_GB") && /female|google|hazel|george|serena|kate|daniel|oliver/i.test(v.name)) ||
-        voices.find((v) => v.lang === "en-GB" || v.lang === "en_GB") ||
-        voices.find((v) => v.lang.startsWith("en")) ||
-        voices[0] ||
-        null;
+  // Use a ref for accent so callbacks always get fresh value (no stale closure)
+  const accentRef = useRef(defaultAccent);
+  const cancelledRef = useRef(false);
 
-      // Pick US Voice (American English)
-      voiceUsRef.current =
-        voices.find((v) => (v.lang === "en-US" || v.lang === "en_US") && /female|zira|samantha|google|jenny|guy|aria/i.test(v.name)) ||
-        voices.find((v) => v.lang === "en-US" || v.lang === "en_US") ||
-        voices.find((v) => v.lang.startsWith("en")) ||
-        voices[0] ||
-        null;
-    };
+  const { stop: stopAudio, speakText } = useAudioPlayer();
 
-    pickVoices();
-    window.speechSynthesis.onvoiceschanged = pickVoices;
-    return () => {
-      window.speechSynthesis.cancel();
-    };
-  }, [supported]);
+  const supported =
+    typeof window !== "undefined" && "speechSynthesis" in window;
 
+  // Stop all audio immediately
   const stop = useCallback(() => {
-    if (!supported) return;
-    window.speechSynthesis.cancel();
+    cancelledRef.current = true;
+    stopAudio();
     setSpeaking(false);
     setActiveIndex(-1);
-  }, [supported]);
+    // Give browser a tick to cancel, then reset flag
+    setTimeout(() => { cancelledRef.current = false; }, 100);
+  }, [stopAudio]);
 
-  // Speak a single text with specified or current accent ("UK" or "US")
+  // Update accent ref whenever state changes
+  const handleSetAccent = useCallback((newAccent) => {
+    accentRef.current = newAccent;
+    setAccent(newAccent);
+  }, []);
+
+  // Speak a single text (used for story listen button)
   const speak = useCallback(
     (text, rate = 1, targetAccent = null) => {
-      if (!supported) return;
-      window.speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(text);
-      const chosenAccent = targetAccent || accent;
-      
-      if (chosenAccent === "UK") {
-        u.lang = "en-GB";
-        if (voiceUkRef.current) u.voice = voiceUkRef.current;
-      } else {
-        u.lang = "en-US";
-        if (voiceUsRef.current) u.voice = voiceUsRef.current;
-      }
-
-      u.rate = rate;
-      u.onstart = () => setSpeaking(true);
-      u.onend = () => setSpeaking(false);
-      window.speechSynthesis.speak(u);
+      const chosenAccent = targetAccent || accentRef.current;
+      speakText(text, chosenAccent, rate);
+      setSpeaking(true);
     },
-    [supported, accent]
+    [speakText]
   );
 
-  // Speak sequence with specified or current accent
+  // Speak a sequence of sentences one by one with active line highlighting
   const speakSequence = useCallback(
     (sentences, rate = 1, onDone, targetAccent = null) => {
       if (!supported) return;
+      const chosenAccent = targetAccent || accentRef.current;
+
+      // Cancel any running speech
       window.speechSynthesis.cancel();
+      cancelledRef.current = false;
       setSpeaking(true);
-      const chosenAccent = targetAccent || accent;
+
       let i = 0;
+
       const next = () => {
+        if (cancelledRef.current) {
+          setSpeaking(false);
+          setActiveIndex(-1);
+          return;
+        }
+
         if (i >= sentences.length) {
           setSpeaking(false);
           setActiveIndex(-1);
-          onDone && onDone();
+          if (onDone) onDone();
           return;
         }
+
         setActiveIndex(i);
         const u = new SpeechSynthesisUtterance(sentences[i]);
-        if (chosenAccent === "UK") {
-          u.lang = "en-GB";
-          if (voiceUkRef.current) u.voice = voiceUkRef.current;
-        } else {
-          u.lang = "en-US";
-          if (voiceUsRef.current) u.voice = voiceUsRef.current;
-        }
+        u.lang = chosenAccent === "UK" ? "en-GB" : "en-US";
         u.rate = rate;
+
+        const voices = window.speechSynthesis.getVoices();
+        if (chosenAccent === "UK") {
+          const v =
+            voices.find((v) =>
+              (v.lang === "en-GB" || v.lang === "en_GB") &&
+              /google|hazel|george|daniel|kate|serena/i.test(v.name)
+            ) || voices.find((v) => v.lang === "en-GB" || v.lang === "en_GB");
+          if (v) u.voice = v;
+        } else {
+          const v =
+            voices.find((v) =>
+              (v.lang === "en-US" || v.lang === "en_US") &&
+              /google|zira|samantha|jenny|aria/i.test(v.name)
+            ) || voices.find((v) => v.lang === "en-US" || v.lang === "en_US");
+          if (v) u.voice = v;
+        }
+
         u.onend = () => {
           i += 1;
           next();
         };
+
         u.onerror = () => {
           i += 1;
           next();
         };
+
         window.speechSynthesis.speak(u);
       };
+
       next();
     },
-    [supported, accent]
+    [supported]
   );
 
-  return { supported, speaking, activeIndex, accent, setAccent, speak, speakSequence, stop };
+  return { supported, speaking, activeIndex, accent, setAccent: handleSetAccent, speak, speakSequence, stop };
 }
