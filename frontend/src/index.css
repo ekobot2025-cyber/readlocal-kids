@@ -122,10 +122,10 @@ h1, h2, h3, h4, h5, .font-heading {
         max-width: 297mm !important;
         max-height: 210mm !important;
         margin: 0 !important;
-        padding: 7mm 10mm !important;
+        padding: 0 !important;
         box-sizing: border-box !important;
-        background: #FFFDF8 !important;
-        background-color: #FFFDF8 !important;
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
         z-index: 99999999 !important;
         overflow: hidden !important;
         page-break-after: avoid !important;
