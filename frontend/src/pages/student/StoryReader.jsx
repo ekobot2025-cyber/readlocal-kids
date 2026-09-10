@@ -131,17 +131,43 @@ function ReadingMode({ story, onGoQuiz }) {
         </div>
       </div>
 
-      {/* Reading speed */}
-      <div className="rounded-3xl border-2 border-slate-100 bg-white p-5">
-        <div className="mb-2 flex items-center justify-between">
+      {/* Reading speed & Accent Selector */}
+      <div className="rounded-3xl border-2 border-slate-100 bg-white p-5 space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-slate-700">Reading Speed</span>
-            <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-bold text-amber-800">🇬🇧 UK Accent (British English)</span>
+            <span className="text-sm font-bold text-slate-700">Audio Accent:</span>
+            <div className="flex rounded-full bg-slate-100 p-1 border border-slate-200" data-testid="accent-selector">
+              <button
+                type="button"
+                onClick={() => speech.setAccent("UK")}
+                className={cn(
+                  "flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold transition-all",
+                  speech.accent === "UK" ? "bg-amber-500 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"
+                )}
+              >
+                🇬🇧 UK (British)
+              </button>
+              <button
+                type="button"
+                onClick={() => speech.setAccent("US")}
+                className={cn(
+                  "flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold transition-all",
+                  speech.accent === "US" ? "bg-sky-500 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"
+                )}
+              >
+                🇺🇸 US (American)
+              </button>
+            </div>
           </div>
-          <span className="rounded-full bg-sky-100 px-3 py-0.5 text-sm font-bold text-sky-600">{SPEED[speed].label}</span>
+
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-bold text-slate-700">Speed</span>
+            <span className="rounded-full bg-sky-100 px-3 py-0.5 text-xs font-bold text-sky-600">{SPEED[speed].label}</span>
+          </div>
         </div>
+
         <Slider value={[speed]} onValueChange={(v) => setSpeed(v[0])} min={0} max={2} step={1} data-testid="speed-slider" />
-        <div className="mt-1.5 flex justify-between text-xs font-semibold text-slate-400">
+        <div className="mt-1 flex justify-between text-xs font-semibold text-slate-400">
           <span>Slow</span><span>Normal</span><span>Fast</span>
         </div>
       </div>
@@ -263,9 +289,14 @@ function VocabularyMode({ story }) {
             <BookText className="h-12 w-12 text-sky-500" />
           </div>
           <h3 className="mt-4 font-heading text-3xl font-bold uppercase tracking-wide text-slate-800">{card.word}</h3>
-          <Button onClick={() => speech.speak(card.word, 0.9)} variant="outline" data-testid="vocab-listen-btn" className="mt-3 rounded-full border-2 font-bold text-sky-600">
-            <Volume2 className="mr-1.5 h-4 w-4" /> Listen
-          </Button>
+          <div className="mt-4 flex items-center justify-center gap-2">
+            <Button onClick={() => speech.speak(card.word, 0.9, "UK")} variant="outline" data-testid="vocab-listen-uk-btn" className="rounded-full border-2 border-amber-200 bg-amber-50 font-bold text-amber-800 hover:bg-amber-100">
+              <Volume2 className="mr-1.5 h-4 w-4 text-amber-600" /> 🇬🇧 UK Accent
+            </Button>
+            <Button onClick={() => speech.speak(card.word, 0.9, "US")} variant="outline" data-testid="vocab-listen-us-btn" className="rounded-full border-2 border-sky-200 bg-sky-50 font-bold text-sky-800 hover:bg-sky-100">
+              <Volume2 className="mr-1.5 h-4 w-4 text-sky-600" /> 🇺🇸 US Accent
+            </Button>
+          </div>
           <div className="mt-5 space-y-3 text-left">
             <div className="rounded-2xl bg-slate-50 p-4">
               <div className="text-xs font-bold uppercase text-slate-400">Meaning</div>

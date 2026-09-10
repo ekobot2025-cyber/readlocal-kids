@@ -1,26 +1,38 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 
-// Text-to-Speech using the browser Web Speech API
-export function useSpeech() {
+// Text-to-Speech using the browser Web Speech API with dual UK & US accent support
+export function useSpeech(defaultAccent = "UK") {
   const [speaking, setSpeaking] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
-  const voiceRef = useRef(null);
+  const [accent, setAccent] = useState(defaultAccent); // "UK" or "US"
+  const voiceUkRef = useRef(null);
+  const voiceUsRef = useRef(null);
   const supported = typeof window !== "undefined" && "speechSynthesis" in window;
 
   useEffect(() => {
     if (!supported) return;
-    const pickVoice = () => {
+    const pickVoices = () => {
       const voices = window.speechSynthesis.getVoices();
-      voiceRef.current =
-        // Priority 1: UK English (en-GB) voices like Google UK English, Hazel, George, Serena, Kate, Daniel
+      
+      // Pick UK Voice (British English)
+      voiceUkRef.current =
         voices.find((v) => (v.lang === "en-GB" || v.lang === "en_GB") && /female|google|hazel|george|serena|kate|daniel|oliver/i.test(v.name)) ||
         voices.find((v) => v.lang === "en-GB" || v.lang === "en_GB") ||
         voices.find((v) => v.lang.startsWith("en")) ||
         voices[0] ||
         null;
+
+      // Pick US Voice (American English)
+      voiceUsRef.current =
+        voices.find((v) => (v.lang === "en-US" || v.lang === "en_US") && /female|zira|samantha|google|jenny|guy|aria/i.test(v.name)) ||
+        voices.find((v) => v.lang === "en-US" || v.lang === "en_US") ||
+        voices.find((v) => v.lang.startsWith("en")) ||
+        voices[0] ||
+        null;
     };
-    pickVoice();
-    window.speechSynthesis.onvoiceschanged = pickVoice;
+
+    pickVoices();
+    window.speechSynthesis.onvoiceschanged = pickVoices;
     return () => {
       window.speechSynthesis.cancel();
     };
@@ -33,28 +45,37 @@ export function useSpeech() {
     setActiveIndex(-1);
   }, [supported]);
 
-  // Speak a single text with UK British English accent
+  // Speak a single text with specified or current accent ("UK" or "US")
   const speak = useCallback(
-    (text, rate = 1) => {
+    (text, rate = 1, targetAccent = null) => {
       if (!supported) return;
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(text);
-      u.lang = "en-GB";
+      const chosenAccent = targetAccent || accent;
+      
+      if (chosenAccent === "UK") {
+        u.lang = "en-GB";
+        if (voiceUkRef.current) u.voice = voiceUkRef.current;
+      } else {
+        u.lang = "en-US";
+        if (voiceUsRef.current) u.voice = voiceUsRef.current;
+      }
+
       u.rate = rate;
-      if (voiceRef.current) u.voice = voiceRef.current;
       u.onstart = () => setSpeaking(true);
       u.onend = () => setSpeaking(false);
       window.speechSynthesis.speak(u);
     },
-    [supported]
+    [supported, accent]
   );
 
-  // Speak an array of sentences with UK British English accent
+  // Speak sequence with specified or current accent
   const speakSequence = useCallback(
-    (sentences, rate = 1, onDone) => {
+    (sentences, rate = 1, onDone, targetAccent = null) => {
       if (!supported) return;
       window.speechSynthesis.cancel();
       setSpeaking(true);
+      const chosenAccent = targetAccent || accent;
       let i = 0;
       const next = () => {
         if (i >= sentences.length) {
@@ -65,9 +86,14 @@ export function useSpeech() {
         }
         setActiveIndex(i);
         const u = new SpeechSynthesisUtterance(sentences[i]);
-        u.lang = "en-GB";
+        if (chosenAccent === "UK") {
+          u.lang = "en-GB";
+          if (voiceUkRef.current) u.voice = voiceUkRef.current;
+        } else {
+          u.lang = "en-US";
+          if (voiceUsRef.current) u.voice = voiceUsRef.current;
+        }
         u.rate = rate;
-        if (voiceRef.current) u.voice = voiceRef.current;
         u.onend = () => {
           i += 1;
           next();
@@ -80,8 +106,8 @@ export function useSpeech() {
       };
       next();
     },
-    [supported]
+    [supported, accent]
   );
 
-  return { supported, speaking, activeIndex, speak, speakSequence, stop };
+  return { supported, speaking, activeIndex, accent, setAccent, speak, speakSequence, stop };
 }
