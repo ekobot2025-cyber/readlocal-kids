@@ -1,33 +1,23 @@
-const CACHE = "readlocal-v1";
-const CORE = ["/", "/index.html"];
+// ReadLocal Kids - Self-Destructing Service Worker
+// Automatically purges old 'readlocal-v1' cache and unregisters itself to prevent stale bundle lock-in.
 
-self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).catch(() => {}));
+self.addEventListener("install", () => {
   self.skipWaiting();
 });
 
 self.addEventListener("activate", (e) => {
   e.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
-  );
-  self.clients.claim();
-});
-
-self.addEventListener("fetch", (e) => {
-  const { request } = e;
-  if (request.method !== "GET" || request.url.includes("/api/")) return;
-  e.respondWith(
-    caches.match(request).then((cached) => {
-      const fetched = fetch(request)
-        .then((resp) => {
-          if (resp && resp.status === 200 && request.url.startsWith("http")) {
-            const copy = resp.clone();
-            caches.open(CACHE).then((c) => c.put(request, copy)).catch(() => {});
-          }
-          return resp;
-        })
-        .catch(() => cached);
-      return cached || fetched;
+    caches.keys().then((keys) => {
+      return Promise.all(keys.map((k) => caches.delete(k)));
+    }).then(() => {
+      return self.registration.unregister();
+    }).then(() => {
+      return self.clients.claim();
     })
   );
+});
+
+// Network-only passthrough (never cache index.html or assets)
+self.addEventListener("fetch", () => {
+  // Let the browser handle fetches natively without blocking or caching
 });
