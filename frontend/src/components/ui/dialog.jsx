@@ -25,10 +25,13 @@ export function Dialog({ open, onOpenChange, children }) {
         onClick={() => onOpenChange && onOpenChange(false)}
       />
       {/* Content wrapper */}
-      <div className="relative z-10 w-full max-w-lg transform overflow-hidden rounded-3xl bg-white shadow-2xl transition-all animate-bounce-in">
+      <div className="relative z-10 w-full max-w-2xl transform overflow-hidden rounded-3xl bg-white shadow-2xl transition-all animate-bounce-in">
         <button
+          type="button"
           onClick={() => onOpenChange && onOpenChange(false)}
-          className="absolute right-4 top-4 rounded-full p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+          className="absolute right-4 top-4 z-50 rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors cursor-pointer"
+          aria-label="Close"
+          data-testid="dialog-close-btn"
         >
           <X className="h-5 w-5" />
         </button>

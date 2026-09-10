@@ -125,7 +125,7 @@ export const STORIES = [
       "Edgar holds a wooden tifa drum.",
       "He taps the drum softly with his hands.",
       "Boom, boom, boom! goes the tifa.",
-      "Aldrick listens to the happy music.",
+      "Kyra listens to the happy music.",
       "They smile and dance to the rhythm.",
       "Boom, boom, boom! Everyone feels joyful."
     ],
@@ -156,7 +156,7 @@ export const STORIES = [
       "Edgar hears birds singing in the trees.",
       "\"Good morning, family!\" says Aldrick.",
       "They eat warm breakfast together.",
-      "Now, Edgar and Aldrick walk to school happily."
+      "Now, Edgar, Kyra, and Sylvia walk to school happily."
     ],
     vocabulary: [
       { word: "sunrise", meaning: "The time when the sun comes up", example: "The sunrise lights the sky." },
@@ -183,7 +183,7 @@ export const STORIES = [
       "Today, Edgar's family enjoys papeda for lunch.",
       "Papeda is made from sago starch.",
       "It is soft and sticky.",
-      "Aldrick dips papeda into yellow fish soup.",
+      "Sylvia dips papeda into yellow fish soup.",
       "\"This soup is so delicious!\" says Aldrick.",
       "Eating together makes the family happy."
     ],
@@ -209,7 +209,7 @@ export const STORIES = [
     cover: "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/82d27ef8022c37254a10b23a00948376b6b7a2e9301a9f6357600c2692758c9c.jpeg",
     duration: 2,
     text: [
-      "Aldrick sees a bird high up in a tree.",
+      "Kyra sees a bird high up in a tree.",
       "It is a colorful Bird of Paradise.",
       "The bird has bright yellow and blue feathers.",
       "It spreads its wings gracefully.",
@@ -270,20 +270,20 @@ export const STORIES = [
   },
   {
     id: "story-8",
-    title: "Lani and the Red Fruit",
+    title: "Kyra and the Red Fruit",
     category: "Food",
     level: "Intermediate",
     grade: "Grade 3-4",
     cover: "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/d25d2b8b2cd9666fb76b8eb79c335fa6fd9ac8e0d9907148d2f60e85fb6ede12.jpeg",
     duration: 3,
     text: [
-      "Lani and Edgar walk through the garden with their uncle.",
+      "Kyra and Edgar walk through the garden with their uncle.",
       "They spot a long red fruit hanging from a tall plant.",
       "\"That is Buah Merah, a special fruit from Papua,\" explains Uncle.",
-      "Aldrick comes closer to observe its unique shape.",
+      "Sylvia comes closer to observe its unique shape.",
       "The fruit has a deep red color and bumpy skin.",
       "Their family uses Buah Merah in traditional cooking.",
-      "\"Nature gives us so many wonderful plants,\" says Lani.",
+      "\"Nature gives us so many wonderful plants,\" says Kyra.",
       "Edgar agrees and helps harvest vegetables for dinner."
     ],
     vocabulary: [
@@ -295,10 +295,10 @@ export const STORIES = [
       { word: "traditional", meaning: "Belonging to long-standing customs", example: "They use traditional cooking." }
     ],
     quiz: [
-      { question: "What special fruit do Lani and Edgar see in the garden?", options: ["Buah Merah", "An apple", "A strawberry"], answer: 0 },
+      { question: "What special fruit do Kyra and Edgar see in the garden?", options: ["Buah Merah", "An apple", "A strawberry"], answer: 0 },
       { question: "What color is Buah Merah?", options: ["Bright green", "Deep red", "Dark purple"], answer: 1 },
       { question: "Who explains about Buah Merah?", options: ["A teacher", "A police officer", "Their uncle"], answer: 2 },
-      { question: "What does Lani learn about nature?", options: ["Nature gives many wonderful plants", "Plants do not need water", "Gardens are dark"], answer: 0 }
+      { question: "What does Kyra learn about nature?", options: ["Nature gives many wonderful plants", "Plants do not need water", "Gardens are dark"], answer: 0 }
     ]
   },
   {
@@ -342,14 +342,14 @@ export const STORIES = [
     cover: "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/a0dc5415c426d82d003c40bccf0fbc4db25f90bcb6e2b924eea955d6901f1ffc.jpeg",
     duration: 3,
     text: [
-      "On Saturday morning, Aldrick visits Hamadi Market in Jayapura with his aunt.",
+      "On Saturday morning, Sylvia visits Hamadi Market in Jayapura with her aunt.",
       "The market is busy and full of bright colors.",
       "Friendly sellers display fresh fish, green vegetables, and sweet bananas.",
-      "Aldrick carries a large woven noken bag on his shoulder.",
+      "Sylvia carries a large woven noken bag on her shoulder.",
       "\"Hello, young man! Would you like fresh pineapples?\" asks a smiling seller.",
       "\"Yes, please! We will buy three pineapples,\" replies Aldrick politely.",
-      "His aunt buys sweet potatoes and fresh fish for dinner.",
-      "Aldrick enjoys seeing the community work together at the market."
+      "Her aunt buys sweet potatoes and fresh fish for dinner.",
+      "Sylvia enjoys seeing the community work together at the market."
     ],
     vocabulary: [
       { word: "market", meaning: "A place where goods are bought and sold", example: "Hamadi Market is busy." },
@@ -444,15 +444,15 @@ export const STORIES = [
     cover: "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/a0dc5415c426d82d003c40bccf0fbc4db25f90bcb6e2b924eea955d6901f1ffc.jpeg",
     duration: 4,
     text: [
-      "On a peaceful Sunday afternoon, Aldrick sits with his grandmother outside their Honai.",
+      "On a peaceful Sunday afternoon, Sylvia sits with her grandmother outside their Honai.",
       "Grandmother holds a beautiful woven noken with delicate patterns.",
       "\"Grandmother, how long did it take to weave this noken?\" asks Aldrick curiously.",
       "\"It took many days of patience, my child,\" replies Grandmother with a warm smile.",
       "\"I selected strong bark fibers from the forest and dyed them using natural plant leaves.\"",
-      "She hands the noken to Aldrick, who touches the carefully braided handles.",
+      "She hands the noken to Sylvia, who touches the carefully braided handles.",
       "\"Handmade objects carry our family's hard work, care, and memories,\" Grandmother explains.",
       "Edgar joins them and listens intently to the story behind each woven pattern.",
-      "Aldrick promises to treasure the noken and pass down these valuable stories."
+      "Sylvia promises to treasure the noken and pass down these valuable stories."
     ],
     vocabulary: [
       { word: "delicate", meaning: "Finely detailed and carefully crafted", example: "The noken has delicate patterns." },
