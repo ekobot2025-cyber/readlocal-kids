@@ -623,7 +623,7 @@ STORIES = [
             {"question": "What items do the students view inside the exhibition hall?", "options": ["Space rockets", "Wood carvings, woven nokens, and tifa drums", "Automobiles"], "answer": 1},
             {"question": "What does the museum guide explain about Papua?", "options": ["Papua has no history", "Papua has only one song", "Papua has hundreds of distinct languages and traditions"], "answer": 2},
             {"question": "What does Edgar realize about diversity?", "options": ["Diversity makes their homeland rich and special", "Diversity causes confusion", "Diversity is scary"], "answer": 0},
-            {"question": "What do students record before leaving the museum?", "options": ["Video games", "Audio summaries of their favorite exhibits", "Music singles"], answer: 1}
+            {"question": "What do students record before leaving the museum?", "options": ["Video games", "Audio summaries of their favorite exhibits", "Music singles"], "answer": 1}
         ]
     },
     {
@@ -654,10 +654,10 @@ STORIES = [
         ],
         "quiz": [
             {"question": "What landscapes make Papua a land of wonder?", "options": ["Tall green mountains, clear blue seas, and lakes", "Only dry sand", "Concrete roads only"], "answer": 0},
-            {"question": "Where are Edgar and Aldrick standing at the beginning of the story?", "options": ["On a high hill overlooking Sentani Lake", "Inside a submarine", "In a basement"], answer: 1},
-            {"question": "Why does Edgar say they learn English?", "options": ["To forget their home", "To buy toys", "To share the stories of their home with the world"], answer: 2},
-            {"question": "What benefit does Reading Aloud give according to Aldrick?", "options": ["Helps speak with confidence and joy", "Makes you tired", "Is boring"], answer: 0},
-            {"question": "What is the final message of the story?", "options": ["Leave the forest alone", "Papua is our home: we learn from it, care for it, and share its stories", "Do not read books"], answer: 1}
+            {"question": "Where are Edgar and Aldrick standing at the beginning of the story?", "options": ["On a high hill overlooking Sentani Lake", "Inside a submarine", "In a basement"], "answer": 1},
+            {"question": "Why does Edgar say they learn English?", "options": ["To forget their home", "To buy toys", "To share the stories of their home with the world"], "answer": 2},
+            {"question": "What benefit does Reading Aloud give according to Aldrick?", "options": ["Helps speak with confidence and joy", "Makes you tired", "Is boring"], "answer": 0},
+            {"question": "What is the final message of the story?", "options": ["Leave the forest alone", "Papua is our home: we learn from it, care for it, and share its stories", "Do not read books"], "answer": 1}
         ]
     }
 ]
