@@ -134,7 +134,10 @@ function ReadingMode({ story, onGoQuiz }) {
       {/* Reading speed */}
       <div className="rounded-3xl border-2 border-slate-100 bg-white p-5">
         <div className="mb-2 flex items-center justify-between">
-          <span className="font-bold text-slate-700">Reading Speed</span>
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-slate-700">Reading Speed</span>
+            <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-bold text-amber-800">🇬🇧 UK Accent (British English)</span>
+          </div>
           <span className="rounded-full bg-sky-100 px-3 py-0.5 text-sm font-bold text-sky-600">{SPEED[speed].label}</span>
         </div>
         <Slider value={[speed]} onValueChange={(v) => setSpeed(v[0])} min={0} max={2} step={1} data-testid="speed-slider" />
@@ -146,7 +149,7 @@ function ReadingMode({ story, onGoQuiz }) {
       {/* Controls */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
         <Button onClick={listen} data-testid="listen-btn" className={cn("rounded-full py-6 text-base font-bold text-white", speech.speaking ? "bg-rose-500 hover:bg-rose-600" : "bg-sky-500 hover:bg-sky-600")}>
-          {speech.speaking ? <><Square className="mr-1.5 h-5 w-5" /> Stop</> : <><Volume2 className="mr-1.5 h-5 w-5" /> Listen</>}\
+          {speech.speaking ? <><Square className="mr-1.5 h-5 w-5" /> Stop</> : <><Volume2 className="mr-1.5 h-5 w-5" /> Listen</>}
         </Button>
 
         {!rec.recording ? (

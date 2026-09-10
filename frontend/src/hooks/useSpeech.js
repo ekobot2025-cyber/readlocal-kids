@@ -12,7 +12,9 @@ export function useSpeech() {
     const pickVoice = () => {
       const voices = window.speechSynthesis.getVoices();
       voiceRef.current =
-        voices.find((v) => v.lang === "en-US" && /female|zira|samantha|google/i.test(v.name)) ||
+        // Priority 1: UK English (en-GB) voices like Google UK English, Hazel, George, Serena, Kate, Daniel
+        voices.find((v) => (v.lang === "en-GB" || v.lang === "en_GB") && /female|google|hazel|george|serena|kate|daniel|oliver/i.test(v.name)) ||
+        voices.find((v) => v.lang === "en-GB" || v.lang === "en_GB") ||
         voices.find((v) => v.lang.startsWith("en")) ||
         voices[0] ||
         null;
@@ -31,13 +33,13 @@ export function useSpeech() {
     setActiveIndex(-1);
   }, [supported]);
 
-  // Speak a single text
+  // Speak a single text with UK British English accent
   const speak = useCallback(
     (text, rate = 1) => {
       if (!supported) return;
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(text);
-      u.lang = "en-US";
+      u.lang = "en-GB";
       u.rate = rate;
       if (voiceRef.current) u.voice = voiceRef.current;
       u.onstart = () => setSpeaking(true);
@@ -47,7 +49,7 @@ export function useSpeech() {
     [supported]
   );
 
-  // Speak an array of sentences with sentence-level highlight
+  // Speak an array of sentences with UK British English accent
   const speakSequence = useCallback(
     (sentences, rate = 1, onDone) => {
       if (!supported) return;
@@ -63,7 +65,7 @@ export function useSpeech() {
         }
         setActiveIndex(i);
         const u = new SpeechSynthesisUtterance(sentences[i]);
-        u.lang = "en-US";
+        u.lang = "en-GB";
         u.rate = rate;
         if (voiceRef.current) u.voice = voiceRef.current;
         u.onend = () => {
