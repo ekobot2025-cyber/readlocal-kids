@@ -12,6 +12,7 @@ export default function Practice() {
   const [loading, setLoading] = useState(true);
   const [i, setI] = useState(0);
   const [recording, setRecording] = useState(false);
+  const [playingAccent, setPlayingAccent] = useState(null);
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null); // { stars, heard, success }
 
@@ -105,6 +106,8 @@ export default function Practice() {
   };
 
   const nextWord = () => {
+    audio.stop();
+    setPlayingAccent(null);
     setResult(null);
     setError(null);
     setI((v) => (v + 1) % words.length);
@@ -125,16 +128,49 @@ export default function Practice() {
         <h2 className="mt-2 font-heading text-4xl font-bold text-slate-800 uppercase tracking-wide">{word.word}</h2>
         <p className="mt-2 text-slate-500">{word.meaning}</p>
 
-        <div className="mt-6 flex justify-center gap-3">
-          <Button onClick={() => audio.playWord(word.word, "UK")} variant="outline" data-testid="pron-listen-btn" className="rounded-full border-2 py-6 font-bold text-sky-600">
-            <Volume2 className="mr-1.5 h-5 w-5" /> Listen
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+          <Button
+            onClick={() => {
+              setPlayingAccent("UK");
+              audio.playWord(word.word, "UK", () => setPlayingAccent(null));
+            }}
+            disabled={playingAccent !== null || recording}
+            variant="outline"
+            data-testid="pron-listen-uk-btn"
+            className="rounded-full border-2 border-amber-200 bg-amber-50 font-bold text-amber-800 hover:bg-amber-100 disabled:opacity-60 py-5"
+          >
+            <Volume2 className={`mr-1.5 h-4 w-4 text-amber-600 ${playingAccent === "UK" ? "animate-pulse" : ""}`} />
+            🇬🇧 UK {playingAccent === "UK" && <span className="ml-1 text-xs">(Playing...)</span>}
           </Button>
+          <Button
+            onClick={() => {
+              setPlayingAccent("US");
+              audio.playWord(word.word, "US", () => setPlayingAccent(null));
+            }}
+            disabled={playingAccent !== null || recording}
+            variant="outline"
+            data-testid="pron-listen-us-btn"
+            className="rounded-full border-2 border-sky-200 bg-sky-50 font-bold text-sky-800 hover:bg-sky-100 disabled:opacity-60 py-5"
+          >
+            <Volume2 className={`mr-1.5 h-4 w-4 text-sky-600 ${playingAccent === "US" ? "animate-pulse" : ""}`} />
+            🇺🇸 US {playingAccent === "US" && <span className="ml-1 text-xs">(Playing...)</span>}
+          </Button>
+          {playingAccent && (
+            <Button
+              onClick={() => { audio.stop(); setPlayingAccent(null); }}
+              variant="outline"
+              className="rounded-full border-2 border-rose-200 bg-rose-50 font-bold text-rose-700 hover:bg-rose-100 py-5"
+            >
+              <Square className="mr-1.5 h-4 w-4" /> Stop
+            </Button>
+          )}
+
           {!recording ? (
-            <Button onClick={startListening} data-testid="pron-speak-btn" className="rounded-full bg-green-500 py-6 font-bold text-white hover:bg-green-600 shadow-[0_4px_14px_rgba(34,197,94,0.3)]">
+            <Button onClick={startListening} data-testid="pron-speak-btn" className="rounded-full bg-green-500 py-5 font-bold text-white hover:bg-green-600 shadow-[0_4px_14px_rgba(34,197,94,0.3)]">
               <Mic className="mr-1.5 h-5 w-5" /> Speak
             </Button>
           ) : (
-            <Button onClick={stopListening} data-testid="pron-stop-btn" className="rounded-full bg-rose-500 py-6 font-bold text-white hover:bg-rose-600">
+            <Button onClick={stopListening} data-testid="pron-stop-btn" className="rounded-full bg-rose-500 py-5 font-bold text-white hover:bg-rose-600">
               <Square className="mr-1.5 h-5 w-5" /> Stop
             </Button>
           )}
