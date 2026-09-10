@@ -588,7 +588,7 @@ STORIES = [
             {"question": "What instrument creates rhythmic beats during the festival?", "options": ["Violin", "Tifa drums", "Flute"], "answer": 1},
             {"question": "What traditional dance do the performers dance?", "options": ["Ballet", "Tap dance", "Yospan dance"], "answer": 2},
             {"question": "What values are celebrated through the festival songs?", "options": ["Friendship, unity, and celebration", "Anger and fighting", "Speed racing"], "answer": 0},
-            {"question": "What main message does the festival teach the boys?", "options": ["Festivals are noisy", "Cultural arts bring people together in harmony", "Dancing is difficult"], answer: 1}
+            {"question": "What main message does the festival teach the boys?", "options": ["Festivals are noisy", "Cultural arts bring people together in harmony", "Dancing is difficult"], "answer": 1}
         ]
     },
     {
