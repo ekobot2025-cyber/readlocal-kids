@@ -74,11 +74,20 @@ export default function StoryReader() {
 /* ---------------- Reading Mode ---------------- */
 function ReadingMode({ story, onGoQuiz }) {
   const storyAudio = useStoryAudio();
+  const wordAudio = useAudioPlayer();
   const rec = useRecorder();
   const speechAss = usePronunciationAssessment();
   const [speed, setSpeed] = useState(1);
   const [feedback, setFeedback] = useState(null);
   const [saving, setSaving] = useState(false);
+
+  const handleWordTap = (wordStr) => {
+    const clean = wordStr.replace(/[^a-zA-Z]/g, "");
+    if (clean) {
+      wordAudio.playWord(clean, storyAudio.accent);
+      toast.info(`🔊 Pronouncing: "${clean}" (${storyAudio.accent})`);
+    }
+  };
 
   const listen = () => {
     if (storyAudio.speaking) return storyAudio.stop();
@@ -140,13 +149,25 @@ function ReadingMode({ story, onGoQuiz }) {
 
   return (
     <div className="space-y-6">
-      {/* Story text with sentence highlighting */}
+      {/* Story text with sentence highlighting and tappable words */}
       <div className="rounded-3xl border-2 border-slate-100 bg-white p-6 md:p-8" data-testid="story-text">
         <div className="space-y-4 text-xl leading-loose text-slate-700 md:text-2xl">
           {story.text.map((line, i) => (
             <p key={i}>
-              <span className={cn("transition-colors", storyAudio.activeIndex === i && "reading-active font-semibold text-slate-900")}>
-                {line}
+              <span className={cn("transition-colors rounded px-1.5 py-0.5", storyAudio.activeIndex === i && "reading-active font-semibold text-slate-900 bg-amber-100")}>
+                {line.split(" ").map((w, wIdx) => (
+                  <span
+                    key={wIdx}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleWordTap(w);
+                    }}
+                    className="hover:text-sky-600 hover:underline cursor-pointer transition-colors inline-block mr-1.5"
+                    title={`Tap to hear pronunciation of "${w.replace(/[^a-zA-Z]/g, "")}"`}
+                  >
+                    {w}
+                  </span>
+                ))}
               </span>
             </p>
           ))}
@@ -310,6 +331,19 @@ function ReadingFeedback({ scores, onQuiz }) {
           </div>
         </div>
       )}
+
+      {/* Kiko Cassowary Mascot Companion Banner */}
+      <div className="flex items-center gap-3.5 rounded-2xl bg-gradient-to-r from-amber-50 to-sky-50 p-4 border border-amber-200/80 shadow-sm">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-400 font-heading text-2xl shadow">
+          🦜
+        </div>
+        <div>
+          <h4 className="font-heading text-base font-bold text-amber-900">Kiko the Cassowary says:</h4>
+          <p className="text-xs font-semibold text-amber-800/90">
+            "Awesome reading! Reading aloud every day helps you master English and share Papuan stories with the world!"
+          </p>
+        </div>
+      </div>
 
       <div className="rounded-2xl bg-amber-50 p-4">
         <p className="flex items-center gap-1.5 font-heading text-lg font-bold text-amber-800"><Sparkles className="h-5 w-5 text-amber-600" /> Outstanding Effort! 🌟</p>

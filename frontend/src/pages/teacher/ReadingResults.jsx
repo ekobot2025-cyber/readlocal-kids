@@ -19,15 +19,44 @@ export default function ReadingResults() {
     });
   }, []);
 
+  const exportCSV = () => {
+    if (!practices || !practices.length) return;
+    const headers = ["Student Name", "Story Title", "Date", "Duration (sec)", "Fluency Score (%)", "Pronunciation Score (%)"];
+    const rows = practices.map((p) => [
+      `"${p.studentName}"`,
+      `"${stories.find((s) => s.id === p.storyId)?.title || 'Story'}"`,
+      `"${new Date(p.date).toLocaleDateString()}"`,
+      p.duration,
+      p.fluencyScore,
+      p.pronunciationScore,
+    ]);
+    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `ReadLocal_Class_Reading_Report_${new Date().toISOString().slice(0,10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   if (!practices) return <div className="space-y-3">{[0, 1, 2].map((i) => <Skeleton key={i} className="h-20 rounded-3xl" />)}</div>;
 
   const storyTitle = (sid) => stories.find((s) => s.id === sid)?.title || "Story";
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="font-heading text-3xl font-bold text-slate-800">Reading Results</h1>
-        <p className="text-slate-500">Listen to student voice recordings and view automated reading feedback.</p>
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h1 className="font-heading text-3xl font-bold text-slate-800">Reading Results</h1>
+          <p className="text-slate-500">Listen to student voice recordings and view automated reading feedback.</p>
+        </div>
+        <Button
+          onClick={exportCSV}
+          className="rounded-full bg-slate-900 font-bold text-white hover:bg-slate-800 shadow-sm"
+        >
+          📥 Export Class Report (CSV)
+        </Button>
       </div>
 
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">

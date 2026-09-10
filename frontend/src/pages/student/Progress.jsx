@@ -98,19 +98,38 @@ export default function StudentProgress() {
         </div>
       </div>
 
-      {/* Recent activity */}
-      <div>
-        <h2 className="mb-4 font-heading text-xl font-bold text-slate-800">Recent Activity</h2>
-        <div className="space-y-2">
-          {data.recent.length ? data.recent.map((r, i) => (
-            <div key={i} className="flex items-center justify-between rounded-2xl border-2 border-slate-100 bg-white px-4 py-3" data-testid={`recent-activity-${i}`}>
-              <div>
-                <div className="font-bold text-slate-800">{r.title}</div>
-                <div className="text-xs font-semibold text-green-600">Completed</div>
+      {/* Recent activity & Certificate */}
+      <div className="grid gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-2 space-y-4">
+          <h2 className="font-heading text-xl font-bold text-slate-800">Recent Activity</h2>
+          <div className="space-y-2">
+            {data.recent.length ? data.recent.map((r, i) => (
+              <div key={i} className="flex items-center justify-between rounded-2xl border-2 border-slate-100 bg-white px-4 py-3" data-testid={`recent-activity-${i}`}>
+                <div>
+                  <div className="font-bold text-slate-800">{r.title}</div>
+                  <div className="text-xs font-semibold text-green-600">Completed</div>
+                </div>
+                <div className="rounded-full bg-sky-50 px-3 py-1 text-sm font-bold text-sky-600">Score {r.score}%</div>
               </div>
-              <div className="rounded-full bg-sky-50 px-3 py-1 text-sm font-bold text-sky-600">Score {r.score}%</div>
-            </div>
-          )) : <p className="text-sm text-slate-400">No activity yet. Start reading a story!</p>}
+            )) : <p className="text-sm text-slate-400">No activity yet. Start reading a story!</p>}
+          </div>
+        </div>
+
+        {/* Certificate Card */}
+        <div className="rounded-3xl border-2 border-amber-200 bg-gradient-to-br from-amber-50 to-orange-50 p-6 flex flex-col justify-between text-center shadow-sm">
+          <div>
+            <span className="text-4xl">📜</span>
+            <h3 className="mt-2 font-heading text-xl font-bold text-amber-900">Certificate of Accomplishment</h3>
+            <p className="mt-2 text-xs font-semibold text-amber-800/80">
+              Celebrate your Papuan Reading Aloud journey with an official certificate!
+            </p>
+          </div>
+          <button
+            onClick={() => window.print()}
+            className="mt-6 w-full rounded-full bg-amber-500 py-3 font-bold text-white hover:bg-amber-600 shadow-md transition-all cursor-pointer"
+          >
+            🎓 Print / Download Certificate
+          </button>
         </div>
       </div>
     </div>
