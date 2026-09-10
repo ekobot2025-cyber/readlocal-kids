@@ -4,39 +4,74 @@ import { STORIES, CULTURE } from "./mockData";
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
 export const API = `${BACKEND_URL}/api`;
 
+const STANDALONE_STORAGE_KEY = "rlk_standalone_mode";
+
 const isLocal = typeof window !== "undefined" && 
   (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
-let isStandalone = !isLocal && !import.meta.env.VITE_BACKEND_URL;
 
-export const api = axios.create({ baseURL: API });
+// Check if user previously activated standalone mode in this browser session
+let isStandalone = 
+  (typeof window !== "undefined" && (
+    sessionStorage.getItem(STANDALONE_STORAGE_KEY) === "true" ||
+    localStorage.getItem(STANDALONE_STORAGE_KEY) === "true"
+  )) ||
+  (!isLocal && !import.meta.env.VITE_BACKEND_URL);
+
+// Fast 1000ms timeout to detect backend reachability without freezing the page
+export const api = axios.create({ 
+  baseURL: API,
+  timeout: 1000 
+});
 
 // Custom request interceptor to dynamically add token and handle standalone adapter
 api.interceptors.request.use(async (config) => {
   const token = localStorage.getItem("rlk_token");
   if (token) config.headers.Authorization = `Bearer ${token}`;
 
-  // If in standalone mode, assign the mock adapter dynamically
+  // If in standalone mode, assign the mock adapter immediately so no network lag occurs
   if (isStandalone) {
     config.adapter = handleLocalRequest;
   }
   return config;
 });
 
-// Response interceptor to catch connection errors and trigger standalone fallback
+// Response interceptor to catch connection errors/timeouts and trigger instant standalone fallback
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
-    // If backend connection fails (Network Error / Timeout / 503)
-    if (!error.response || error.code === "ERR_NETWORK" || error.message === "Network Error") {
+    // If backend connection fails (Network Error / Timeout / ECONNABORTED / 502 / 503 / 504)
+    const isOffline = 
+      !error.response ||
+      error.code === "ERR_NETWORK" ||
+      error.code === "ECONNABORTED" ||
+      error.code === "ETIMEDOUT" ||
+      (error.message && (error.message.includes("Network Error") || error.message.includes("timeout"))) ||
+      (error.response && [502, 503, 504].includes(error.response.status));
+
+    if (isOffline) {
       if (!isStandalone) {
-        console.warn("FastAPI backend is unreachable. Switching to Standalone Browser Mode (LocalStorage DB).");
+        console.warn("Backend is unreachable or timed out. Switching to Standalone Browser Mode (LocalStorage DB).");
         isStandalone = true;
+        try {
+          sessionStorage.setItem(STANDALONE_STORAGE_KEY, "true");
+        } catch (e) {}
       }
-      return api(error.config);
+      // Return direct mock adapter response immediately
+      return handleLocalRequest(error.config);
     }
     return Promise.reject(error);
   }
 );
+
+// Global reset utility to re-test live backend
+if (typeof window !== "undefined") {
+  window.rlkResetBackend = () => {
+    sessionStorage.removeItem(STANDALONE_STORAGE_KEY);
+    localStorage.removeItem(STANDALONE_STORAGE_KEY);
+    isStandalone = false;
+    window.location.reload();
+  };
+}
 
 // ---------------- LOCAL STORAGE DB ENGINE (STANDALONE PREVIEW) ----------------
 const getLocal = (key, def = []) => JSON.parse(localStorage.getItem(key)) || def;

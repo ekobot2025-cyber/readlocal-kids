@@ -73,9 +73,63 @@ h1, h2, h3, h4, h5, .font-heading {
     * { animation: none !important; transition: none !important; }
 }
 
-@media print {
-    .no-print, [data-print-hide="true"], [data-testid="dialog-close-btn"] {
+@media screen {
+    #rlk-print-certificate-target {
         display: none !important;
+    }
+}
+
+@media print {
+    @page {
+        size: A4 landscape !important;
+        margin: 0 !important;
+    }
+
+    html, body {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #FFFDF8 !important;
+        background-color: #FFFDF8 !important;
+        overflow: hidden !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Completely suppress web application UI, modals, overlays, and controls */
+    #root,
+    .rlk-cert-portal,
+    [data-radix-portal],
+    [role="dialog"],
+    [data-state="open"],
+    .no-print,
+    [data-print-hide="true"],
+    [data-testid="dialog-close-btn"] {
+        display: none !important;
+    }
+
+    /* Render ONLY the direct portal certificate on document.body */
+    #rlk-print-certificate-target {
+        display: block !important;
+        position: fixed !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 7mm 10mm !important;
+        box-sizing: border-box !important;
+        background: #FFFDF8 !important;
+        background-color: #FFFDF8 !important;
+        z-index: 99999999 !important;
+        overflow: hidden !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
     }
 }
 
