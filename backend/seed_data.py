@@ -71,7 +71,7 @@ STORIES = [
         "category": "Animals",
         "level": "Beginner",
         "grade": "Grade 1-2",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/82d27ef8022c37254a10b23a00948376b6b7a2e9301a9f6357600c2692758c9c.jpeg",
+        "cover": "/images/stories/story-1.png",
         "duration": 2,
         "text": [
             "Kiko is a little cassowary.",
@@ -102,7 +102,7 @@ STORIES = [
         "category": "Culture",
         "level": "Beginner",
         "grade": "Grade 1-2",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/a0dc5415c426d82d003c40bccf0fbc4db25f90bcb6e2b924eea955d6901f1ffc.jpeg",
+        "cover": "/images/stories/story-2.png",
         "duration": 2,
         "text": [
             "This is Aldrick's noken.",
@@ -133,7 +133,7 @@ STORIES = [
         "category": "Arts & Music",
         "level": "Beginner",
         "grade": "Grade 1-2",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/33a5d55853f5eb34a57f7ae2fc19f9ea7342e2d199f111fd5b686d04efbcd682.jpeg",
+        "cover": "/images/stories/story-3.png",
         "duration": 2,
         "text": [
             "Edgar holds a wooden tifa drum.",
@@ -162,7 +162,7 @@ STORIES = [
         "category": "Daily Life",
         "level": "Beginner",
         "grade": "Grade 1-2",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/7244f78bdd9df1133946d675aad4d1ef81c14625af0681f3e59ba07fe396b0ec.jpeg",
+        "cover": "/images/stories/story-4.png",
         "duration": 2,
         "text": [
             "Good morning from Papua!",
@@ -191,7 +191,7 @@ STORIES = [
         "category": "Food",
         "level": "Beginner",
         "grade": "Grade 1-2",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/d25d2b8b2cd9666fb76b8eb79c335fa6fd9ac8e0d9907148d2f60e85fb6ede12.jpeg",
+        "cover": "/images/stories/story-5.png",
         "duration": 2,
         "text": [
             "Today, Edgar's family enjoys papeda for lunch.",
@@ -220,7 +220,7 @@ STORIES = [
         "category": "Animals",
         "level": "Beginner",
         "grade": "Grade 1-2",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/82d27ef8022c37254a10b23a00948376b6b7a2e9301a9f6357600c2692758c9c.jpeg",
+        "cover": "/images/stories/story-6.png",
         "duration": 2,
         "text": [
             "Kyra sees a bird high up in a tree.",
@@ -252,7 +252,7 @@ STORIES = [
         "category": "Nature",
         "level": "Intermediate",
         "grade": "Grade 3-4",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/bad7a933915ecdc240ce7c09c9334942ca55e2caaaeea9694edbeed8fb3545be.jpeg",
+        "cover": "/images/stories/story-7.png",
         "duration": 3,
         "text": [
             "It is a beautiful morning at Sentani Lake.",
@@ -288,7 +288,7 @@ STORIES = [
         "category": "Food",
         "level": "Intermediate",
         "grade": "Grade 3-4",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/d25d2b8b2cd9666fb76b8eb79c335fa6fd9ac8e0d9907148d2f60e85fb6ede12.jpeg",
+        "cover": "/images/stories/story-8.png",
         "duration": 3,
         "text": [
             "Kyra and Edgar walk through the garden with their uncle.",
@@ -321,7 +321,7 @@ STORIES = [
         "category": "Food",
         "level": "Intermediate",
         "grade": "Grade 3-4",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/d25d2b8b2cd9666fb76b8eb79c335fa6fd9ac8e0d9907148d2f60e85fb6ede12.jpeg",
+        "cover": "/images/stories/story-9.png",
         "duration": 3,
         "text": [
             "Edgar wants to make a warm dish for his grandmother.",
@@ -353,7 +353,7 @@ STORIES = [
         "category": "Daily Life",
         "level": "Intermediate",
         "grade": "Grade 3-4",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/a0dc5415c426d82d003c40bccf0fbc4db25f90bcb6e2b924eea955d6901f1ffc.jpeg",
+        "cover": "/images/stories/story-10.png",
         "duration": 3,
         "text": [
             "On Saturday morning, Sylvia visits Hamadi Market in Jayapura with her aunt.",
@@ -387,7 +387,7 @@ STORIES = [
         "category": "Animals",
         "level": "Intermediate",
         "grade": "Grade 3-4",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/82d27ef8022c37254a10b23a00948376b6b7a2e9301a9f6357600c2692758c9c.jpeg",
+        "cover": "/images/stories/story-11.png",
         "duration": 3,
         "text": [
             "Edgar walks quietly through the tall forest trees.",
@@ -420,7 +420,7 @@ STORIES = [
         "category": "Daily Life",
         "level": "Intermediate",
         "grade": "Grade 3-4",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/7244f78bdd9df1133946d675aad4d1ef81c14625af0681f3e59ba07fe396b0ec.jpeg",
+        "cover": "/images/stories/story-12.png",
         "duration": 3,
         "text": [
             "The afternoon sun shines over the sandy beach.",
@@ -455,7 +455,7 @@ STORIES = [
         "category": "Culture",
         "level": "Advanced",
         "grade": "Grade 5-6",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/a0dc5415c426d82d003c40bccf0fbc4db25f90bcb6e2b924eea955d6901f1ffc.jpeg",
+        "cover": "/images/stories/story-13.png",
         "duration": 4,
         "text": [
             "On a peaceful Sunday afternoon, Sylvia sits with her grandmother outside their Honai.",
@@ -491,7 +491,7 @@ STORIES = [
         "category": "Environment",
         "level": "Advanced",
         "grade": "Grade 5-6",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/bad7a933915ecdc240ce7c09c9334942ca55e2caaaeea9694edbeed8fb3545be.jpeg",
+        "cover": "/images/stories/story-14.png",
         "duration": 4,
         "text": [
             "As dawn breaks over Sentani Lake, golden sunlight illuminates the mist above the calm water.",
@@ -527,7 +527,7 @@ STORIES = [
         "category": "Environment",
         "level": "Advanced",
         "grade": "Grade 5-6",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/82d27ef8022c37254a10b23a00948376b6b7a2e9301a9f6357600c2692758c9c.jpeg",
+        "cover": "/images/stories/story-15.png",
         "duration": 4,
         "text": [
             "The rainforests of Papua are home to thousands of unique plants and wild animals.",
@@ -562,7 +562,7 @@ STORIES = [
         "category": "Culture",
         "level": "Advanced",
         "grade": "Grade 5-6",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/0567927607a95e2180814b8b61525c127a830ad9712240af152efd3c54a327e0.jpeg",
+        "cover": "/images/stories/story-16.png",
         "duration": 4,
         "text": [
             "Every year, the community gathers at Sentani Lake for a vibrant cultural festival.",
@@ -597,7 +597,7 @@ STORIES = [
         "category": "Daily Life",
         "level": "Advanced",
         "grade": "Grade 5-6",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/c1e66f54d4db6f44b1bc376ad105bcce2b5f1d203673dcd6564c78f2adcf5593.jpeg",
+        "cover": "/images/stories/story-17.png",
         "duration": 4,
         "text": [
             "Today, Edgar and Aldrick join a school field trip to the Papua Museum in Jayapura.",
@@ -632,7 +632,7 @@ STORIES = [
         "category": "Nature",
         "level": "Advanced",
         "grade": "Grade 5-6",
-        "cover": "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/7244f78bdd9df1133946d675aad4d1ef81c14625af0681f3e59ba07fe396b0ec.jpeg",
+        "cover": "/images/stories/story-18.png",
         "duration": 4,
         "text": [
             "From tall green mountains to clear blue seas, Papua is a land of wonder and beauty.",
