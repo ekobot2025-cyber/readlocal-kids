@@ -4,14 +4,23 @@ import QRCode from "qrcode";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { CERTIFICATE_BG_BASE64 } from "./certificateBgBase64";
-import { CERTIFICATE_BADGE_BASE64 } from "./badgeBase64";
 import { Printer, Award, ExternalLink, Sparkles } from "lucide-react";
 
 /**
  * Generate a standalone, self-contained HTML string with the custom Papuan illustrated background.
  * Perfectly calibrated for A4 Landscape (297mm x 210mm).
  */
-function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, badgeBase64, bgBase64 }) {
+function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBase64 }) {
+  const logoIconSvg = `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+  </svg>`;
+
+  const badgeIconSvg = `<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+  </svg>`;
+
   return `<!DOCTYPE html>
 <html lang="id">
 <head>
@@ -53,11 +62,66 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, badge
       overflow: hidden;
       box-sizing: border-box;
     }
+    
+    /* Top-Left Official Application Logo */
+    .app-logo-topleft {
+      position: absolute;
+      top: 5%;
+      left: 6%;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 10;
+    }
+    .app-logo-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+      border: 2px solid #BAE6FD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.18);
+    }
+    .app-logo-dot {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background-color: #F59E0B;
+      border: 2.5px solid #FFFFFF;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    }
+    .app-logo-text-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1.1;
+      letter-spacing: -0.3px;
+    }
+    .app-logo-text-title span {
+      color: #0EA5E9;
+    }
+    .app-logo-text-sub {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #D97706;
+      margin-top: 1.5px;
+    }
+
+    /* Main Certificate Content */
     .cert-content {
       position: absolute;
-      top: 30.5%;
-      bottom: 10.5%;
-      left: 28.5%;
+      top: 29.5%;
+      bottom: 9.5%;
+      left: 28%;
       right: 17.5%;
       display: flex;
       flex-direction: column;
@@ -66,25 +130,25 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, badge
     }
     .cert-title {
       font-family: 'Fredoka', sans-serif;
-      font-size: 26px;
+      font-size: 26.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: #0F172A;
-      line-height: 1.1;
       margin: 0;
+      line-height: 1.1;
     }
     .program-tag {
-      font-size: 9.5px;
+      font-size: 10px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1.8px;
+      letter-spacing: 2px;
       color: #B45309;
       margin-top: 1px;
       display: block;
     }
     .award-to {
-      font-size: 11.5px;
+      font-size: 12px;
       font-style: italic;
       font-weight: 600;
       color: #64748B;
@@ -127,7 +191,7 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, badge
     .citation-text {
       max-width: 580px;
       margin: 3px auto 0 auto;
-      font-size: 11px;
+      font-size: 11.2px;
       line-height: 1.45;
       color: #334155;
       font-weight: 500;
@@ -172,6 +236,8 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, badge
       line-height: 1.25;
       margin-top: 1px;
     }
+
+    /* Bottom Validation: NO BOX / ENCLOSING CARD */
     .validation-row {
       display: flex;
       align-items: center;
@@ -179,50 +245,66 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, badge
       margin-top: 4px;
       gap: 12px;
     }
-    .badge-card {
-      flex: 1;
+    
+    /* Left: Official App Icon Badge (Larger, No Box) */
+    .app-badge-section {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
       text-align: left;
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid #FDE68A;
-      border-radius: 10px;
-      padding: 5px 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
-    .badge-img {
-      width: 54px;
-      height: 54px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 6px rgba(217, 119, 6, 0.3));
+    .app-badge-icon-box {
+      width: 66px;
+      height: 66px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+      border: 2.2px solid #BAE6FD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.22);
     }
-    .badge-text-title {
+    .app-badge-icon-dot {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #F59E0B;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+    }
+    .app-badge-text-title {
       font-family: 'Fredoka', sans-serif;
-      font-size: 10.5px;
+      font-size: 13px;
       font-weight: 700;
       color: #B45309;
       text-transform: uppercase;
       line-height: 1.15;
     }
-    .badge-text-sub {
-      font-size: 8px;
-      color: #64748B;
+    .app-badge-text-sub {
+      font-size: 9.2px;
+      color: #475569;
       font-weight: 600;
-      line-height: 1.2;
+      line-height: 1.25;
+      margin-top: 1.5px;
+    }
+    .app-badge-text-certified {
+      font-size: 9.2px;
+      color: #D97706;
+      font-weight: 800;
+      line-height: 1.25;
       margin-top: 1px;
     }
-    .signatory-card {
-      flex: 1;
+
+    /* Right: Signatory + QR Code (No enclosing box) */
+    .signatory-section {
       display: flex;
       align-items: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid #FDE68A;
-      border-radius: 10px;
-      padding: 5px 10px;
+      gap: 12px;
       text-align: left;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
     .qr-box {
       display: flex;
@@ -233,10 +315,11 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, badge
     .qr-img {
       width: 48px;
       height: 48px;
-      border-radius: 4px;
-      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      border: 1.5px solid #CBD5E1;
       background: #FFFFFF;
       padding: 1px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
     }
     .qr-label {
       font-size: 6.5px;
@@ -246,42 +329,44 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, badge
       color: #64748B;
     }
     .sign-content {
-      border-left: 1px solid #E2E8F0;
-      padding-left: 8px;
+      border-left: 1.5px solid #E2E8F0;
+      padding-left: 10px;
     }
     .sign-script {
       font-family: 'Playfair Display', Georgia, cursive;
       font-style: italic;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 700;
       color: #1E293B;
       line-height: 1;
     }
     .sign-line {
-      width: 125px;
+      width: 130px;
       height: 1.5px;
       background: #94A3B8;
       margin: 2px 0 3px 0;
     }
     .sign-name {
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 800;
       color: #0F172A;
       line-height: 1.1;
     }
     .sign-role {
-      font-size: 8px;
+      font-size: 8.5px;
       font-weight: 700;
       color: #B45309;
       line-height: 1.1;
       margin-top: 1px;
     }
     .sign-inst {
-      font-size: 7px;
+      font-size: 7.5px;
       font-weight: 600;
       color: #64748B;
       line-height: 1.1;
     }
+
+    /* Footer Bar */
     .footer-bar {
       display: flex;
       align-items: center;
@@ -299,6 +384,19 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, badge
 </head>
 <body>
   <div class="cert-page">
+    <!-- Top-Left Official Application Logo -->
+    <div class="app-logo-topleft">
+      <div class="app-logo-box">
+        ${logoIconSvg}
+        <div class="app-logo-dot"></div>
+      </div>
+      <div>
+        <div class="app-logo-text-title">ReadLocal <span>Kids</span></div>
+        <div class="app-logo-text-sub">Papua Edition · Read English, Discover Culture</div>
+      </div>
+    </div>
+
+    <!-- Main Certificate Content -->
     <div class="cert-content">
       <div>
         <h1 class="cert-title">Certificate of Accomplishment</h1>
@@ -342,17 +440,23 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, badge
         </div>
       </div>
 
+      <!-- Bottom Validation: NO BOX / ENCLOSING CARD -->
       <div class="validation-row">
-        <div class="badge-card">
-          <img src="${badgeBase64}" alt="Excellence Badge" class="badge-img" />
+        <!-- Left: ReadLocal Kids App Icon Badge (Larger, No Box) -->
+        <div class="app-badge-section">
+          <div class="app-badge-icon-box">
+            ${badgeIconSvg}
+            <div class="app-badge-icon-dot"></div>
+          </div>
           <div>
-            <div class="badge-text-title">Official Excellence Badge</div>
-            <div class="badge-text-sub">Verified Reading Achievement</div>
-            <div class="badge-text-sub" style="color:#D97706;font-weight:700;">ReadLocal Kids Certified</div>
+            <div class="app-badge-text-title">Official ReadLocal Kids Badge</div>
+            <div class="app-badge-text-sub">Verified Reading Aloud Achievement</div>
+            <div class="app-badge-text-certified">ReadLocal Kids Certified Learner</div>
           </div>
         </div>
 
-        <div class="signatory-card">
+        <!-- Right: Signatory + QR Code (No enclosing box) -->
+        <div class="signatory-section">
           <div class="qr-box">
             <img src="${qrCodeDataUrl}" alt="QR Verification" class="qr-img" />
             <span class="qr-label">Scan Verifikasi</span>
@@ -448,7 +552,6 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
         certDate,
         certId,
         qrCodeDataUrl: qr || qrCodeDataUrl,
-        badgeBase64: CERTIFICATE_BADGE_BASE64,
         bgBase64: CERTIFICATE_BG_BASE64,
       })
     );
@@ -513,13 +616,85 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 backgroundRepeat: "no-repeat",
               }}
             >
+              {/* Top-Left Official Application Logo */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "5%",
+                  left: "6%",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "14px",
+                  zIndex: 10,
+                }}
+              >
+                <div
+                  style={{
+                    width: "52px",
+                    height: "52px",
+                    borderRadius: "16px",
+                    background: "linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)",
+                    border: "2px solid #BAE6FD",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    position: "relative",
+                    boxShadow: "0 4px 12px rgba(2, 132, 199, 0.18)",
+                  }}
+                >
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "-3px",
+                      right: "-3px",
+                      width: "13px",
+                      height: "13px",
+                      borderRadius: "50%",
+                      backgroundColor: "#F59E0B",
+                      border: "2.5px solid #FFFFFF",
+                      boxShadow: "0 1px 3px rgba(0, 0, 0, 0.15)",
+                    }}
+                  />
+                </div>
+                <div style={{ textAlign: "left" }}>
+                  <div
+                    style={{
+                      fontFamily: "'Fredoka', sans-serif",
+                      fontSize: "24px",
+                      fontWeight: 800,
+                      color: "#0F172A",
+                      lineHeight: 1.1,
+                      letterSpacing: "-0.3px",
+                    }}
+                  >
+                    ReadLocal <span style={{ color: "#0EA5E9" }}>Kids</span>
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "10px",
+                      fontWeight: 800,
+                      textTransform: "uppercase",
+                      letterSpacing: "1.5px",
+                      color: "#D97706",
+                      marginTop: "1.5px",
+                    }}
+                  >
+                    Papua Edition · Read English, Discover Culture
+                  </div>
+                </div>
+              </div>
+
               {/* Perfectly mapped content container */}
               <div
                 style={{
                   position: "absolute",
-                  top: "30.5%",
-                  bottom: "10.5%",
-                  left: "28.5%",
+                  top: "29.5%",
+                  bottom: "9.5%",
+                  left: "28%",
                   right: "17.5%",
                   display: "flex",
                   flexDirection: "column",
@@ -532,7 +707,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   <h1
                     style={{
                       fontFamily: "'Fredoka', sans-serif",
-                      fontSize: "26px",
+                      fontSize: "26.5px",
                       fontWeight: 800,
                       textTransform: "uppercase",
                       letterSpacing: "1.5px",
@@ -545,10 +720,10 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   </h1>
                   <span
                     style={{
-                      fontSize: "9.5px",
+                      fontSize: "10px",
                       fontWeight: 800,
                       textTransform: "uppercase",
-                      letterSpacing: "1.8px",
+                      letterSpacing: "2px",
                       color: "#B45309",
                       marginTop: "1px",
                       display: "block",
@@ -558,7 +733,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   </span>
                   <p
                     style={{
-                      fontSize: "11.5px",
+                      fontSize: "12px",
                       fontStyle: "italic",
                       fontWeight: 600,
                       color: "#64748B",
@@ -604,7 +779,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   style={{
                     maxWidth: "580px",
                     margin: "3px auto 0 auto",
-                    fontSize: "11px",
+                    fontSize: "11.2px",
                     lineHeight: 1.45,
                     color: "#334155",
                     fontWeight: 500,
@@ -699,7 +874,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   </div>
                 </div>
 
-                {/* 4. Bottom Validation: 3D Ribbon Badge (Left) + Signatory & QR (Right) */}
+                {/* 4. Bottom Validation: Official App Badge (Left, No Box) + Signatory & QR (Right, No Box) */}
                 <div
                   style={{
                     display: "flex",
@@ -709,66 +884,76 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     gap: "12px",
                   }}
                 >
-                  {/* Left: 3D Ribbon Badge */}
+                  {/* Left: Official ReadLocal Kids App Icon Badge (Larger, No enclosing box) */}
                   <div
                     style={{
-                      flex: 1,
                       display: "flex",
                       alignItems: "center",
-                      gap: "10px",
+                      gap: "14px",
                       textAlign: "left",
-                      background: "rgba(255, 255, 255, 0.96)",
-                      border: "1px solid #FDE68A",
-                      borderRadius: "10px",
-                      padding: "5px 10px",
-                      boxShadow: "0 2px 6px rgba(0, 0, 0, 0.05)",
                     }}
                   >
-                    <img
-                      src={CERTIFICATE_BADGE_BASE64}
-                      alt="Excellence Badge"
+                    <div
                       style={{
-                        width: "54px",
-                        height: "54px",
-                        objectFit: "contain",
-                        filter: "drop-shadow(0 2px 6px rgba(217, 119, 6, 0.3))",
+                        width: "66px",
+                        height: "66px",
+                        borderRadius: "18px",
+                        background: "linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)",
+                        border: "2.2px solid #BAE6FD",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        position: "relative",
+                        boxShadow: "0 4px 14px rgba(2, 132, 199, 0.22)",
                       }}
-                    />
+                    >
+                      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                      </svg>
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "-4px",
+                          right: "-4px",
+                          width: "16px",
+                          height: "16px",
+                          borderRadius: "50%",
+                          backgroundColor: "#F59E0B",
+                          border: "3px solid #FFFFFF",
+                          boxShadow: "0 1px 4px rgba(0, 0, 0, 0.18)",
+                        }}
+                      />
+                    </div>
                     <div>
                       <div
                         style={{
                           fontFamily: "'Fredoka', sans-serif",
-                          fontSize: "10.5px",
+                          fontSize: "13px",
                           fontWeight: 700,
                           color: "#B45309",
                           textTransform: "uppercase",
                           lineHeight: 1.15,
                         }}
                       >
-                        Official Excellence Badge
+                        Official ReadLocal Kids Badge
                       </div>
-                      <div style={{ fontSize: "8px", color: "#64748B", fontWeight: 600, lineHeight: 1.2, marginTop: "1px" }}>
-                        Verified Reading Achievement
+                      <div style={{ fontSize: "9.2px", color: "#475569", fontWeight: 600, lineHeight: 1.25, marginTop: "1.5px" }}>
+                        Verified Reading Aloud Achievement
                       </div>
-                      <div style={{ fontSize: "8px", color: "#D97706", fontWeight: 700, lineHeight: 1.2, marginTop: "1px" }}>
-                        ReadLocal Kids Certified
+                      <div style={{ fontSize: "9.2px", color: "#D97706", fontWeight: 800, lineHeight: 1.25, marginTop: "1px" }}>
+                        ReadLocal Kids Certified Learner
                       </div>
                     </div>
                   </div>
 
-                  {/* Right: Single Signatory + QR Code */}
+                  {/* Right: Single Signatory + QR Code (No enclosing box) */}
                   <div
                     style={{
-                      flex: 1,
                       display: "flex",
                       alignItems: "center",
-                      gap: "10px",
-                      background: "rgba(255, 255, 255, 0.96)",
-                      border: "1px solid #FDE68A",
-                      borderRadius: "10px",
-                      padding: "5px 10px",
+                      gap: "12px",
                       textAlign: "left",
-                      boxShadow: "0 2px 6px rgba(0, 0, 0, 0.05)",
                     }}
                   >
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}>
@@ -779,26 +964,27 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                           style={{
                             width: "48px",
                             height: "48px",
-                            borderRadius: "4px",
-                            border: "1px solid #CBD5E1",
+                            borderRadius: "6px",
+                            border: "1.5px solid #CBD5E1",
                             background: "#FFFFFF",
                             padding: "1px",
+                            boxShadow: "0 2px 6px rgba(0, 0, 0, 0.06)",
                           }}
                         />
                       ) : (
-                        <div style={{ width: "48px", height: "48px", background: "#F1F5F9", borderRadius: "4px" }} />
+                        <div style={{ width: "48px", height: "48px", background: "#F1F5F9", borderRadius: "6px" }} />
                       )}
                       <span style={{ fontSize: "6.5px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.5px", color: "#64748B" }}>
                         Scan Verifikasi
                       </span>
                     </div>
 
-                    <div style={{ borderLeft: "1px solid #E2E8F0", paddingLeft: "8px" }}>
+                    <div style={{ borderLeft: "1.5px solid #E2E8F0", paddingLeft: "10px" }}>
                       <div
                         style={{
                           fontFamily: "'Playfair Display', Georgia, cursive",
                           fontStyle: "italic",
-                          fontSize: "15px",
+                          fontSize: "16px",
                           fontWeight: 700,
                           color: "#1E293B",
                           lineHeight: 1,
@@ -806,14 +992,14 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                       >
                         Dr. Yulini Rinantanti
                       </div>
-                      <div style={{ width: "125px", height: "1.5px", background: "#94A3B8", margin: "2px 0 3px 0" }} />
-                      <div style={{ fontSize: "10.5px", fontWeight: 800, color: "#0F172A", lineHeight: 1.1 }}>
+                      <div style={{ width: "130px", height: "1.5px", background: "#94A3B8", margin: "2px 0 3px 0" }} />
+                      <div style={{ fontSize: "11px", fontWeight: 800, color: "#0F172A", lineHeight: 1.1 }}>
                         Dr. Yulini Rinantanti, M. Ed.
                       </div>
-                      <div style={{ fontSize: "8px", fontWeight: 700, color: "#B45309", lineHeight: 1.1, marginTop: "1px" }}>
+                      <div style={{ fontSize: "8.5px", fontWeight: 700, color: "#B45309", lineHeight: 1.1, marginTop: "1px" }}>
                         Research Lead & Author · ReadLocal Kids
                       </div>
-                      <div style={{ fontSize: "7px", fontWeight: 600, color: "#64748B", lineHeight: 1.1 }}>
+                      <div style={{ fontSize: "7.5px", fontWeight: 600, color: "#64748B", lineHeight: 1.1 }}>
                         Universitas Cenderawasih · Program Literasi Papua
                       </div>
                     </div>
@@ -862,12 +1048,85 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
               boxSizing: "border-box",
             }}
           >
+            {/* Top-Left Official Application Logo */}
             <div
               style={{
                 position: "absolute",
-                top: "30.5%",
-                bottom: "10.5%",
-                left: "28.5%",
+                top: "5%",
+                left: "6%",
+                display: "flex",
+                alignItems: "center",
+                gap: "14px",
+                zIndex: 10,
+              }}
+            >
+              <div
+                style={{
+                  width: "52px",
+                  height: "52px",
+                  borderRadius: "16px",
+                  background: "linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)",
+                  border: "2px solid #BAE6FD",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  position: "relative",
+                  boxShadow: "0 4px 12px rgba(2, 132, 199, 0.18)",
+                }}
+              >
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-3px",
+                    right: "-3px",
+                    width: "13px",
+                    height: "13px",
+                    borderRadius: "50%",
+                    backgroundColor: "#F59E0B",
+                    border: "2.5px solid #FFFFFF",
+                    boxShadow: "0 1px 3px rgba(0, 0, 0, 0.15)",
+                  }}
+                />
+              </div>
+              <div style={{ textAlign: "left" }}>
+                <div
+                  style={{
+                    fontFamily: "'Fredoka', sans-serif",
+                    fontSize: "24px",
+                    fontWeight: 800,
+                    color: "#0F172A",
+                    lineHeight: 1.1,
+                    letterSpacing: "-0.3px",
+                  }}
+                >
+                  ReadLocal <span style={{ color: "#0EA5E9" }}>Kids</span>
+                </div>
+                <div
+                  style={{
+                    fontSize: "10px",
+                    fontWeight: 800,
+                    textTransform: "uppercase",
+                    letterSpacing: "1.5px",
+                    color: "#D97706",
+                    marginTop: "1.5px",
+                  }}
+                >
+                  Papua Edition · Read English, Discover Culture
+                </div>
+              </div>
+            </div>
+
+            {/* Main Certificate Content */}
+            <div
+              style={{
+                position: "absolute",
+                top: "29.5%",
+                bottom: "9.5%",
+                left: "28%",
                 right: "17.5%",
                 display: "flex",
                 flexDirection: "column",
@@ -880,7 +1139,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 <h1
                   style={{
                     fontFamily: "'Fredoka', sans-serif",
-                    fontSize: "26px",
+                    fontSize: "26.5px",
                     fontWeight: 800,
                     textTransform: "uppercase",
                     letterSpacing: "1.5px",
@@ -893,10 +1152,10 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 </h1>
                 <span
                   style={{
-                    fontSize: "9.5px",
+                    fontSize: "10px",
                     fontWeight: 800,
                     textTransform: "uppercase",
-                    letterSpacing: "1.8px",
+                    letterSpacing: "2px",
                     color: "#B45309",
                     marginTop: "1px",
                     display: "block",
@@ -906,7 +1165,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 </span>
                 <p
                   style={{
-                    fontSize: "11.5px",
+                    fontSize: "12px",
                     fontStyle: "italic",
                     fontWeight: 600,
                     color: "#64748B",
@@ -952,7 +1211,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 style={{
                   maxWidth: "580px",
                   margin: "3px auto 0 auto",
-                  fontSize: "11px",
+                  fontSize: "11.2px",
                   lineHeight: 1.45,
                   color: "#334155",
                   fontWeight: 500,
@@ -1047,7 +1306,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 </div>
               </div>
 
-              {/* 4. Bottom Validation: 3D Ribbon Badge (Left) + Signatory & QR (Right) */}
+              {/* 4. Bottom Validation: Official App Badge (Left, No Box) + Signatory & QR (Right, No Box) */}
               <div
                 style={{
                   display: "flex",
@@ -1057,66 +1316,76 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   gap: "12px",
                 }}
               >
-                {/* Left: 3D Ribbon Badge */}
+                {/* Left: Official ReadLocal Kids App Icon Badge (Larger, No enclosing box) */}
                 <div
                   style={{
-                    flex: 1,
                     display: "flex",
                     alignItems: "center",
-                    gap: "10px",
+                    gap: "14px",
                     textAlign: "left",
-                    background: "rgba(255, 255, 255, 0.96)",
-                    border: "1px solid #FDE68A",
-                    borderRadius: "10px",
-                    padding: "5px 10px",
-                    boxShadow: "0 2px 6px rgba(0, 0, 0, 0.05)",
                   }}
                 >
-                  <img
-                    src={CERTIFICATE_BADGE_BASE64}
-                    alt="Excellence Badge"
+                  <div
                     style={{
-                      width: "54px",
-                      height: "54px",
-                      objectFit: "contain",
-                      filter: "drop-shadow(0 2px 6px rgba(217, 119, 6, 0.3))",
+                      width: "66px",
+                      height: "66px",
+                      borderRadius: "18px",
+                      background: "linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)",
+                      border: "2.2px solid #BAE6FD",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      position: "relative",
+                      boxShadow: "0 4px 14px rgba(2, 132, 199, 0.22)",
                     }}
-                  />
+                  >
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "-4px",
+                        right: "-4px",
+                        width: "16px",
+                        height: "16px",
+                        borderRadius: "50%",
+                        backgroundColor: "#F59E0B",
+                        border: "3px solid #FFFFFF",
+                        boxShadow: "0 1px 4px rgba(0, 0, 0, 0.18)",
+                      }}
+                    />
+                  </div>
                   <div>
                     <div
                       style={{
                         fontFamily: "'Fredoka', sans-serif",
-                        fontSize: "10.5px",
+                        fontSize: "13px",
                         fontWeight: 700,
                         color: "#B45309",
                         textTransform: "uppercase",
                         lineHeight: 1.15,
                       }}
                     >
-                      Official Excellence Badge
+                      Official ReadLocal Kids Badge
                     </div>
-                    <div style={{ fontSize: "8px", color: "#64748B", fontWeight: 600, lineHeight: 1.2, marginTop: "1px" }}>
-                      Verified Reading Achievement
+                    <div style={{ fontSize: "9.2px", color: "#475569", fontWeight: 600, lineHeight: 1.25, marginTop: "1.5px" }}>
+                      Verified Reading Aloud Achievement
                     </div>
-                    <div style={{ fontSize: "8px", color: "#D97706", fontWeight: 700, lineHeight: 1.2, marginTop: "1px" }}>
-                      ReadLocal Kids Certified
+                    <div style={{ fontSize: "9.2px", color: "#D97706", fontWeight: 800, lineHeight: 1.25, marginTop: "1px" }}>
+                      ReadLocal Kids Certified Learner
                     </div>
                   </div>
                 </div>
 
-                {/* Right: Single Signatory + QR Code */}
+                {/* Right: Single Signatory + QR Code (No enclosing box) */}
                 <div
                   style={{
-                    flex: 1,
                     display: "flex",
                     alignItems: "center",
-                    gap: "10px",
-                    background: "rgba(255, 255, 255, 0.96)",
-                    border: "1px solid #FDE68A",
-                    borderRadius: "10px",
-                    padding: "5px 10px",
+                    gap: "12px",
                     textAlign: "left",
-                    boxShadow: "0 2px 6px rgba(0, 0, 0, 0.05)",
                   }}
                 >
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}>
@@ -1127,26 +1396,27 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                         style={{
                           width: "48px",
                           height: "48px",
-                          borderRadius: "4px",
-                          border: "1px solid #CBD5E1",
+                          borderRadius: "6px",
+                          border: "1.5px solid #CBD5E1",
                           background: "#FFFFFF",
                           padding: "1px",
+                          boxShadow: "0 2px 6px rgba(0, 0, 0, 0.06)",
                         }}
                       />
                     ) : (
-                      <div style={{ width: "48px", height: "48px", background: "#F1F5F9", borderRadius: "4px" }} />
+                      <div style={{ width: "48px", height: "48px", background: "#F1F5F9", borderRadius: "6px" }} />
                     )}
                     <span style={{ fontSize: "6.5px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.5px", color: "#64748B" }}>
                       Scan Verifikasi
                     </span>
                   </div>
 
-                  <div style={{ borderLeft: "1px solid #E2E8F0", paddingLeft: "8px" }}>
+                  <div style={{ borderLeft: "1.5px solid #E2E8F0", paddingLeft: "10px" }}>
                     <div
                       style={{
                         fontFamily: "'Playfair Display', Georgia, cursive",
                         fontStyle: "italic",
-                        fontSize: "15px",
+                        fontSize: "16px",
                         fontWeight: 700,
                         color: "#1E293B",
                         lineHeight: 1,
@@ -1154,14 +1424,14 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     >
                       Dr. Yulini Rinantanti
                     </div>
-                    <div style={{ width: "125px", height: "1.5px", background: "#94A3B8", margin: "2px 0 3px 0" }} />
-                    <div style={{ fontSize: "10.5px", fontWeight: 800, color: "#0F172A", lineHeight: 1.1 }}>
+                    <div style={{ width: "130px", height: "1.5px", background: "#94A3B8", margin: "2px 0 3px 0" }} />
+                    <div style={{ fontSize: "11px", fontWeight: 800, color: "#0F172A", lineHeight: 1.1 }}>
                       Dr. Yulini Rinantanti, M. Ed.
                     </div>
-                    <div style={{ fontSize: "8px", fontWeight: 700, color: "#B45309", lineHeight: 1.1, marginTop: "1px" }}>
+                    <div style={{ fontSize: "8.5px", fontWeight: 700, color: "#B45309", lineHeight: 1.1, marginTop: "1px" }}>
                       Research Lead & Author · ReadLocal Kids
                     </div>
-                    <div style={{ fontSize: "7px", fontWeight: 600, color: "#64748B", lineHeight: 1.1 }}>
+                    <div style={{ fontSize: "7.5px", fontWeight: 600, color: "#64748B", lineHeight: 1.1 }}>
                       Universitas Cenderawasih · Program Literasi Papua
                     </div>
                   </div>
