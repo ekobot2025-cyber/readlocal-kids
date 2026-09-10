@@ -6,12 +6,13 @@ import { cn } from "@/lib/utils";
 
 const CATEGORIES = [
   "All Stories", 
-  "Nature", 
-  "Food", 
-  "Traditional House", 
-  "Arts & Music", 
+  "Animals",
+  "Culture",
+  "Arts & Music",
   "Daily Life", 
-  "Animals"
+  "Food", 
+  "Nature", 
+  "Environment"
 ];
 const GRADES = ["All Grades", "Grade 1-2", "Grade 3-4", "Grade 5-6"];
 
