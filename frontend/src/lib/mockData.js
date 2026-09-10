@@ -4,48 +4,48 @@ export const CULTURE = [
     name: "Honai",
     en: "Honai is a traditional house in Papua. It is round with a grass roof that keeps the family warm inside.",
     id_text: "Honai adalah rumah adat Papua. Berbentuk bulat dengan atap jerami yang menjaga keluarga tetap hangat di dalamnya.",
-    image: "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/c1e66f54d4db6f44b1bc376ad105bcce2b5f1d203673dcd6564c78f2adcf5593.jpeg",
-    story: "story-1"
+    image: "/images/stories/story-19.png",
+    story: "story-19"
   },
   {
     id: "noken",
     name: "Noken",
     en: "Noken is a traditional woven bag made from wood fiber or leaves. It is carried on the head or shoulder.",
     id_text: "Noken adalah tas rajut tradisional yang terbuat dari serat kayu atau dedaunan. Noken dibawa di atas kepala atau bahu.",
-    image: "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/a0dc5415c426d82d003c40bccf0fbc4db25f90bcb6e2b924eea955d6901f1ffc.jpeg",
-    story: "story-2"
+    image: "/images/stories/story-22.png",
+    story: "story-22"
   },
   {
     id: "papeda",
     name: "Papeda",
     en: "Papeda is a traditional sago porridge. It is soft, sticky, and served with yellow fish soup.",
     id_text: "Papeda adalah bubur sagu tradisional. Bertekstur lembut, lengket, dan biasanya disajikan dengan kuah ikan kuning.",
-    image: "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/d25d2b8b2cd9666fb76b8eb79c335fa6fd9ac8e0d9907148d2f60e85fb6ede12.jpeg",
-    story: "story-5"
+    image: "/images/stories/story-20.png",
+    story: "story-20"
   },
   {
     id: "bird_of_paradise",
     name: "Bird of Paradise",
     en: "The Bird of Paradise (Cendrawasih) is a beautiful bird with colorful feathers found in the tropical forests of Papua.",
     id_text: "Burung Cendrawasih adalah burung yang sangat indah dengan bulu berwarna-warni yang ditemukan di hutan tropis Papua.",
-    image: "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/82d27ef8022c37254a10b23a00948376b6b7a2e9301a9f6357600c2692758c9c.jpeg",
-    story: "story-6"
+    image: "/images/stories/story-21.png",
+    story: "story-21"
   },
   {
     id: "tifa",
     name: "Tifa",
     en: "Tifa is a traditional Papuan drum made of wood with beautiful carvings and covered with animal skin.",
     id_text: "Tifa adalah gendang tradisional Papua yang terbuat dari kayu dengan ukiran indah dan dilapisi kulit hewan.",
-    image: "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/33a5d55853f5eb34a57f7ae2fc19f9ea7342e2d199f111fd5b686d04efbcd682.jpeg",
-    story: "story-3"
+    image: "/images/stories/story-24.png",
+    story: "story-24"
   },
   {
     id: "sentani_lake",
     name: "Sentani Lake",
     en: "Sentani Lake is a large and peaceful lake near Jayapura. It is surrounded by green hills and village communities.",
     id_text: "Danau Sentani adalah danau besar yang damai di dekat Jayapura. Dikelilingi bukit-bukit hijau dan komunitas desa.",
-    image: "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/bad7a933915ecdc240ce7c09c9334942ca55e2caaaeea9694edbeed8fb3545be.jpeg",
-    story: "story-7"
+    image: "/images/stories/story-23.png",
+    story: "story-23"
   }
 ];
 

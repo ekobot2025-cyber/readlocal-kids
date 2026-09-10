@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export function Dialog({ open, onOpenChange, children }) {
+export function Dialog({ open, onOpenChange, children, maxWidth = "max-w-xl", className }) {
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -18,18 +18,18 @@ export function Dialog({ open, onOpenChange, children }) {
   if (!open) return null;
 
   return ReactDOM.createPortal(
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/40 backdrop-blur-sm"
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
         onClick={() => onOpenChange && onOpenChange(false)}
       />
       {/* Content wrapper */}
-      <div className="relative z-10 w-full max-w-2xl transform overflow-hidden rounded-3xl bg-white shadow-2xl transition-all animate-bounce-in">
+      <div className={cn("relative z-10 w-full transform overflow-hidden rounded-3xl bg-white shadow-2xl transition-all animate-bounce-in", maxWidth, className)}>
         <button
           type="button"
           onClick={() => onOpenChange && onOpenChange(false)}
-          className="absolute right-4 top-4 z-50 rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors cursor-pointer"
+          className="absolute right-4 top-4 z-50 rounded-full bg-slate-900/60 p-2 text-white hover:bg-slate-900/80 backdrop-blur-md transition-colors cursor-pointer shadow-md"
           aria-label="Close"
           data-testid="dialog-close-btn"
         >
