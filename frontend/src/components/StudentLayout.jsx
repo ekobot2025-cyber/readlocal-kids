@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Home, BookOpen, Mic, Gamepad2, BarChart3, LogOut, Compass, ChevronDown } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { Footer } from "@/components/Footer";
 import { useAuth } from "@/context/AuthContext";
 import {
   DropdownMenu,
@@ -45,7 +46,7 @@ export function StudentLayout({ children }) {
         </aside>
 
         {/* Main */}
-        <main className="min-h-[calc(100vh-65px)] flex-1 px-4 pb-28 pt-6 md:px-8 md:pb-10">
+        <main className="min-h-[calc(100vh-65px)] flex-1 flex flex-col justify-between px-4 pb-28 pt-6 md:px-8 md:pb-10">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,6 +54,9 @@ export function StudentLayout({ children }) {
           >
             {children}
           </motion.div>
+          <div className="mt-12">
+            <Footer showLogo={false} />
+          </div>
         </main>
       </div>
 

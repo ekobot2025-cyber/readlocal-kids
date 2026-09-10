@@ -6,6 +6,7 @@ import {
   ShoppingBag, Soup, Bird, Drum, Waves, GraduationCap,
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
 const HERO = "https://static.prod-images.emergentagent.com/jobs/22cefb94-57bb-4740-925f-65da674e47de/images/a7b0324a0584a89c20f2cb7ee1fc27401bd8b736185cb6658d491cc10928e172.jpeg";
@@ -180,12 +181,7 @@ export default function Landing() {
         </div>
       </section>
 
-      <footer className="border-t border-slate-100 py-8 text-center text-sm text-slate-400">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-5">
-          <Logo size={32} />
-          <p>©2026 by Mam Yulini & Miss Bunga</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

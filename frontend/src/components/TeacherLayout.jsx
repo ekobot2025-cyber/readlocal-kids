@@ -6,6 +6,7 @@ import {
   FlaskConical, BookMarked, Settings, LogOut, Menu,
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { Footer } from "@/components/Footer";
 import { useAuth } from "@/context/AuthContext";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -116,10 +117,13 @@ export function TeacherLayout({ children }) {
         </Avatar>
       </header>
 
-      <main className="px-4 py-6 md:px-8 lg:ml-64 lg:px-10 lg:py-8">
+      <main className="min-h-[calc(100vh-65px)] flex flex-col justify-between px-4 py-6 md:px-8 lg:ml-64 lg:px-10 lg:py-8">
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
           {children}
         </motion.div>
+        <div className="mt-12">
+          <Footer showLogo={false} />
+        </div>
       </main>
     </div>
   );
