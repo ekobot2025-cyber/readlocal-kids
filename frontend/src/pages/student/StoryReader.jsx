@@ -81,6 +81,14 @@ function ReadingMode({ story, onGoQuiz }) {
   const [feedback, setFeedback] = useState(null);
   const [saving, setSaving] = useState(false);
 
+  // Defensively ensure text is always a flat array of strings
+  const storyLines = useMemo(() => {
+    if (!story?.text) return [];
+    return (Array.isArray(story.text) ? story.text : [])
+      .flat(Infinity)
+      .filter((s) => typeof s === "string" && s.trim().length > 0);
+  }, [story?.text]);
+
   const handleWordTap = (wordStr) => {
     const clean = wordStr.replace(/[^a-zA-Z]/g, "");
     if (clean) {
@@ -91,12 +99,12 @@ function ReadingMode({ story, onGoQuiz }) {
 
   const listen = () => {
     if (storyAudio.speaking) return storyAudio.stop();
-    storyAudio.playSentences(story.id, story.text, SPEED[speed].rate);
+    storyAudio.playSentences(story.id, storyLines, SPEED[speed].rate);
   };
 
   const startReading = () => {
     rec.start();
-    speechAss.startAssessment(story.text);
+    speechAss.startAssessment(storyLines);
   };
 
   const savePractice = async (scoresObj) => {
@@ -131,7 +139,7 @@ function ReadingMode({ story, onGoQuiz }) {
   const stopReading = async () => {
     const duration = rec.seconds;
     rec.stop();
-    const evalResult = speechAss.stopAssessment(story.text);
+    const evalResult = speechAss.stopAssessment(storyLines);
 
     if (duration < 2) {
       toast.warning("Recording was too short. Please read aloud into your microphone!");
@@ -153,7 +161,7 @@ function ReadingMode({ story, onGoQuiz }) {
       };
     } else {
       // Fallback evaluation for browsers/devices without STT match
-      const targetWords = story.text.join(" ").split(/\s+/).filter(Boolean);
+      const targetWords = storyLines.join(" ").split(/\s+/).filter(Boolean);
       const fluency = Math.min(100, Math.max(75, 78 + Math.floor(Math.random() * 14)));
       const pronunciation = Math.min(100, Math.max(75, 80 + Math.floor(Math.random() * 12)));
       const confidence = Math.min(100, Math.max(80, 84 + Math.floor(Math.random() * 12)));
@@ -183,7 +191,7 @@ function ReadingMode({ story, onGoQuiz }) {
       {/* Story text with sentence highlighting and tappable words */}
       <div className="rounded-3xl border-2 border-slate-100 bg-white p-6 md:p-8" data-testid="story-text">
         <div className="space-y-4 text-xl leading-loose text-slate-700 md:text-2xl">
-          {story.text.map((line, i) => (
+          {storyLines.map((line, i) => (
             <p key={i}>
               <span className={cn("transition-colors rounded px-1.5 py-0.5", storyAudio.activeIndex === i && "reading-active font-semibold text-slate-900 bg-amber-100")}>
                 {line.split(" ").map((w, wIdx) => (

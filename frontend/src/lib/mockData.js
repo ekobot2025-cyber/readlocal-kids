@@ -60,7 +60,6 @@ export const STORIES = [
     cover: "/images/stories/story-1.png",
     duration: 2,
     text: [
-[
     "In the lush green forest of Papua, Kiko the little Cassowary is searching for sweet berries.",
     "Edgar and Kevia walk carefully along the jungle path under the warm morning sun.",
     "Suddenly, Kevia spots Kiko resting under a leafy banana tree.",
@@ -68,7 +67,6 @@ export const STORIES = [
     "Edgar nods softly and watches the colorful bird step gracefully across the grass.",
     "Kiko tilts his head, eats a ripe berry, and chirps a friendly morning greeting.",
     "Edgar and Kevia wave goodbye as Kiko runs happily deeper into the peaceful forest."
-]
 ],
     vocabulary: [
       { word: "cassowary", meaning: "A large bird with strong legs", example: "Kiko is a cassowary." },
@@ -93,7 +91,6 @@ export const STORIES = [
     cover: "/images/stories/story-2.png",
     duration: 2,
     text: [
-[
     "Aldrick and Elea visit their grandmother in the peaceful highland village.",
     "Grandmother sits on the woven mat making a traditional Papuan Noken.",
     "She weaves strong wood fibers into colorful patterns with patient care.",
@@ -101,7 +98,6 @@ export const STORIES = [
     "Elea learns how to interlace the natural fibers alongside her brother Aldrick.",
     "Aldrick proudly carries the finished Noken on his forehead filled with sweet potatoes.",
     "Elea smiles brightly, knowing their Papuan heritage will always live in their hearts."
-]
 ],
     vocabulary: [
       { word: "noken", meaning: "A traditional woven bag from Papua", example: "Aldrick carries a noken." },
@@ -126,14 +122,12 @@ export const STORIES = [
     cover: "/images/stories/story-3.png",
     duration: 2,
     text: [
-[
     "Raphael's father plays the traditional Tifa drum in the sunny village square.",
     "The carved wooden Tifa produces a deep, rhythmic Boom Boom sound.",
     "Raphael and Kyra clap their hands and dance merrily to the lively beat.",
     "\"The sound of Tifa brings our community together in joy!\" exclaims Raphael.",
     "Kyra leaps gracefully, wearing a colorful feather headband.",
     "The drum music echoes across the green hills, filling everyone with happiness."
-]
 ],
     vocabulary: [
       { word: "tifa", meaning: "A traditional wooden drum from Papua", example: "Edgar plays the tifa." },
@@ -157,14 +151,12 @@ export const STORIES = [
     cover: "/images/stories/story-4.png",
     duration: 2,
     text: [
-[
     "Good morning from Papua! The sun rises bright and warm over the tall green mountains.",
     "Prince, Sylvia, and Jovanka gather near Sentani Lake to start their day.",
     "Prince carries his school bag while Sylvia holds a fresh tropical fruit.",
     "Jovanka greets the fishermen rowing their wooden canoes on the quiet lake.",
     "\"We love reading aloud so we can share our Papuan stories with the world,\" says Prince.",
     "Sylvia and Jovanka laugh together, ready for a fun day of learning at school."
-]
 ],
     vocabulary: [
       { word: "sunrise", meaning: "The time when the sun comes up", example: "The sunrise lights the sky." },
@@ -188,14 +180,12 @@ export const STORIES = [
     cover: "/images/stories/story-5.png",
     duration: 2,
     text: [
-[
     "Today, Adelino and Sylvia's family enjoys a delicious Papeda lunch.",
     "Papeda is a traditional Papuan porridge made from natural sago starch.",
     "It is soft, smooth, and sticky, served alongside hot yellow fish soup.",
     "Adelino uses a pair of wooden sticks to roll the warm Papeda onto his plate.",
     "Sylvia tastes the savory soup and says, \"Papeda is our absolute favorite food!\"",
     "The family eats happily together, celebrating their rich culinary traditions."
-]
 ],
     vocabulary: [
       { word: "papeda", meaning: "A traditional sago dish from Papua", example: "Papeda is served warm." },
@@ -219,14 +209,12 @@ export const STORIES = [
     cover: "/images/stories/story-6.png",
     duration: 2,
     text: [
-[
     "Kyra and Enzo walk along a quiet forest trail in search of native wildlife.",
     "High up in the rainforest canopy, a gorgeous Bird of Paradise perches on a branch.",
     "Its brilliant yellow, red, and emerald feathers shine brightly in the sunlight.",
     "\"Look Enzo, it is the Cenderawasih, the proud bird of our homeland!\" whispers Kyra.",
     "Enzo gazes up in wonder as the majestic bird spreads its long, elegant tail feathers.",
     "Kyra and Enzo promise to protect the tropical forests so the birds stay safe forever."
-]
 ],
     vocabulary: [
       { word: "bird", meaning: "A feathered creature with wings", example: "The bird flies in the sky." },
@@ -253,14 +241,12 @@ export const STORIES = [
     cover: "/images/stories/story-7.png",
     duration: 3,
     text: [
-[
     "Edgar and Aldrick board a small wooden motorboat on Sentani Lake.",
     "The calm water reflects the blue sky and surrounding emerald green hills.",
     "They see traditional stilt houses built neatly over the clear water.",
     "\"Sentani Lake is one of the most peaceful places in Papua,\" remarks Edgar.",
     "Aldrick points to local fishermen casting their fishing nets in the morning light.",
     "Both boys feel grateful to live near such a magnificent lake."
-]
 ],
     vocabulary: [
       { word: "lake", meaning: "A large body of water surrounded by land", example: "Sentani Lake is peaceful." },
@@ -287,14 +273,12 @@ export const STORIES = [
     cover: "/images/stories/story-8.png",
     duration: 3,
     text: [
-[
     "Kevia and Raphael explore their uncle's orchard behind the village.",
     "They discover a tall tree laden with long red fruits known as Buah Merah.",
     "Uncle explains that Buah Merah is rich in nutrients and good for health.",
     "\"Our ancestors have used this natural fruit for generations,\" says Raphael.",
     "Kevia gathers the harvest into her woven basket with a cheerful smile.",
     "Kevia and Raphael return home eager to share the healthy fruit with their family."
-]
 ],
     vocabulary: [
       { word: "garden", meaning: "Ground used for growing plants", example: "Vegetables grow in the garden." },
@@ -320,14 +304,12 @@ export const STORIES = [
     cover: "/images/stories/story-9.png",
     duration: 3,
     text: [
-[
     "Prince and Elea join their grandparents to collect sago from the palm grove.",
     "Sago is a vital staple food for many communities across Papua.",
     "Grandfather carefully processes the sago palm trunk to extract pure starch.",
     "Prince helps carry the sago flour in a sturdy basket woven from leaves.",
     "Elea assists Grandmother in preparing warm sago cakes over the fire.",
     "Prince and Elea thank their grandparents for teaching them traditional food skills."
-]
 ],
     vocabulary: [
       { word: "sago", meaning: "Starch extracted from sago palms", example: "Sago flour is kept in a box." },
@@ -353,14 +335,12 @@ export const STORIES = [
     cover: "/images/stories/story-10.png",
     duration: 3,
     text: [
-[
     "Jovanka and Adelino wake up early in the scenic Baliem Valley.",
     "Fresh mountain mist drifts across the green fields and round Honai houses.",
     "Farmers tend to sweet potato gardens as the morning sun warms the valley.",
     "\"Baliem Valley is rich in culture and natural beauty,\" says Jovanka.",
     "Adelino helps carry fresh vegetables gathered from the farm.",
     "Jovanka and Adelino walk happily to school under the crisp highland sky."
-]
 ],
     vocabulary: [
       { word: "market", meaning: "A place where goods are bought and sold", example: "Hamadi Market is busy." },
@@ -387,14 +367,12 @@ export const STORIES = [
     cover: "/images/stories/story-11.png",
     duration: 3,
     text: [
-[
     "Enzo and Sylvia take a boat excursion across the turquoise waters of Raja Ampat.",
     "Below the crystal-clear surface, colorful coral reefs and tropical fish swim by.",
     "\"Raja Ampat has some of the richest marine life on Earth!\" shouts Enzo excitedly.",
     "Sylvia peers into the water and watches a sea turtle glide past their boat.",
     "Enzo and Sylvia learn how important it is to keep the ocean clean and healthy.",
     "They wave to local divers exploring the paradise islands."
-]
 ],
     vocabulary: [
       { word: "quietly", meaning: "With little or no noise", example: "Edgar walks quietly." },
@@ -420,14 +398,12 @@ export const STORIES = [
     cover: "/images/stories/story-12.png",
     duration: 3,
     text: [
-[
     "Edgar and Kyra prepare for the annual cultural parade in town.",
     "They wear traditional Papuan crowns adorned with natural bird feathers.",
     "\"These crowns represent our heritage and respect for nature,\" explains Edgar.",
     "Kyra fastens her woven sash while adjusting her feather headdress.",
     "Edgar and Kyra march proudly alongside their classmates in the grand festival.",
     "The crowd cheers as children display the vibrant art of Papua."
-]
 ],
     vocabulary: [
       { word: "beach", meaning: "A sandy shore by the ocean", example: "The sun shines on the beach." },
@@ -455,14 +431,12 @@ export const STORIES = [
     cover: "/images/stories/story-13.png",
     duration: 4,
     text: [
-[
     "Aldrick and Kevia visit Biak Island for a coastal adventure.",
     "Fishermen row out at dawn under a golden sunrise sky.",
     "Kevia collects shell treasures along the white sandy beach.",
     "\"Biak Island has cool sea breezes and rich maritime traditions,\" says Aldrick.",
     "Aldrick and Kevia listen to local elders tell stories of ancient sea journeys.",
     "They enjoy fresh coconut water while watching boats return to the shore."
-]
 ],
     vocabulary: [
       { word: "delicate", meaning: "Finely detailed and carefully crafted", example: "The noken has delicate patterns." },
@@ -490,14 +464,12 @@ export const STORIES = [
     cover: "/images/stories/story-14.png",
     duration: 4,
     text: [
-[
     "Raphael and Elea go hiking with their teacher in Lorentz National Park.",
     "The park stretches from snow-capped peaks down to tropical coastal wetlands.",
     "\"Lorentz National Park is a UNESCO World Heritage site,\" notes Raphael.",
     "Elea spots rare orchids blooming alongside the mountain river path.",
     "Raphael and Elea admire the vast wilderness protecting endemic Papuan animals.",
     "They promise to share environmental conservation lessons with their peers."
-]
 ],
     vocabulary: [
       { word: "illuminates", meaning: "Lights up and brightens", example: "Sunlight illuminates the lake." },
@@ -525,14 +497,12 @@ export const STORIES = [
     cover: "/images/stories/story-15.png",
     duration: 4,
     text: [
-[
     "Prince and Jovanka listen to an elder narrate the legend of Cenderawasih.",
     "According to legend, the bird brought beauty and harmony to the Papuan forests.",
     "\"We must treasure nature just as the story teaches us,\" says Prince.",
     "Jovanka draws a picture of the bird of paradise with vibrant crayons.",
     "Prince and Jovanka present their artwork during storytime at school.",
     "Their classmates applaud the wonderful tale of Papuan folklore."
-]
 ],
     vocabulary: [
       { word: "rainforest", meaning: "A dense tropical forest rich in plant and animal life", example: "Papua has vast rainforests." },
@@ -559,14 +529,12 @@ export const STORIES = [
     cover: "/images/stories/story-16.png",
     duration: 4,
     text: [
-[
     "Adelino, Enzo, Sylvia, and Kyra join hands for the energetic Yospan dance.",
     "Yospan is a traditional Papuan dance celebrating friendship and unity.",
     "The dancers leap, step, and clap to the fast tempo of Tifa drums.",
     "Adelino and Enzo lead the front line with enthusiastic dance moves.",
     "Sylvia and Kyra twirl happily, wearing colorful woven festival attire.",
     "Everyone in the village smiles and cheers during the joyful celebration."
-]
 ],
     vocabulary: [
       { word: "vibrant", meaning: "Full of energy, excitement, and bright colors", example: "The festival is vibrant." },
@@ -593,14 +561,12 @@ export const STORIES = [
     cover: "/images/stories/story-17.png",
     duration: 4,
     text: [
-[
     "Edgar, Raphael, and Elea visit the Papua Museum in Jayapura on a field trip.",
     "They view historic wood carvings, ancient woven nokens, and traditional instruments.",
     "\"Papua has hundreds of distinct languages and local customs,\" explains the guide.",
     "Edgar takes notes while Raphael examines an old map of island settlements.",
     "Elea records a short audio summary of her favorite exhibit on her tablet.",
     "Edgar, Raphael, and Elea return to school inspired by their diverse heritage."
-]
 ],
     vocabulary: [
       { word: "museum", meaning: "A place where historical or cultural items are kept", example: "They visit the Papua Museum." },
@@ -627,14 +593,12 @@ export const STORIES = [
     cover: "/images/stories/story-18.png",
     duration: 4,
     text: [
-[
     "From tall green mountains to clear blue seas, Papua is a land of wonder.",
     "Aldrick, Prince, Jovanka, and Kevia stand on a high hill overlooking Sentani Lake.",
     "They reflect on all the stories they have read together in friendship.",
     "\"We learn English so we can share our Papuan culture with the world,\" says Prince.",
     "Jovanka nods happily, adding, \"Reading Aloud builds our confidence every day.\"",
     "Aldrick, Prince, Jovanka, and Kevia smile together under the bright Papuan sky."
-]
 ],
     vocabulary: [
       { word: "wonder", meaning: "A feeling of amazement caused by something beautiful", example: "Papua is a land of wonder." },
@@ -662,13 +626,11 @@ export const STORIES = [
   "cover": "/images/stories/story-19.png",
   "duration": 2,
   "text": [
-[
     "This is Edgar's Honai.",
     "A Honai is a traditional house in Papua.",
     "It is small and round.",
     "The roof is made of grass.",
     "Edgar and his family stay warm inside the Honai."
-]
 ],
   "vocabulary": [
     {
@@ -736,13 +698,11 @@ export const STORIES = [
   "cover": "/images/stories/story-20.png",
   "duration": 2,
   "text": [
-[
     "Today, Aldrick's family eats Papeda.",
     "Papeda is made from sago.",
     "It is soft and sticky.",
     "They eat Papeda with fish and yellow soup.",
     "Papeda is one of their favorite foods."
-]
 ],
   "vocabulary": [
     {
@@ -810,13 +770,11 @@ export const STORIES = [
   "cover": "/images/stories/story-21.png",
   "duration": 3,
   "text": [
-[
     "The Bird of Paradise lives in Papua.",
     "It has beautiful feathers.",
     "Kyra sees the bird in the forest.",
     "It can fly high in the sky.",
     "Edgar and Kyra are proud of this beautiful bird."
-]
 ],
   "vocabulary": [
     {
@@ -884,14 +842,12 @@ export const STORIES = [
   "cover": "/images/stories/story-22.png",
   "duration": 3,
   "text": [
-[
     "Sylvia's mother makes a Noken.",
     "A Noken is a traditional woven bag.",
     "She weaves it using strong wood fiber.",
     "Her mother carries the Noken on her forehead.",
     "She fills it with fresh sweet potatoes and green vegetables.",
     "Sylvia loves her Noken because it is strong and beautiful."
-]
 ],
   "vocabulary": [
     {
@@ -959,14 +915,12 @@ export const STORIES = [
   "cover": "/images/stories/story-23.png",
   "duration": 3,
   "text": [
-[
     "Today, Raphael and Enzo visit Sentani Lake.",
     "The lake is big and very peaceful.",
     "Green hills surround the clear water.",
     "They see children playing happily near the water.",
     "Fishermen row wooden boats to catch fish.",
     "Raphael and Enzo watch the sunset over the mountains."
-]
 ],
   "vocabulary": [
     {
@@ -1034,14 +988,12 @@ export const STORIES = [
   "cover": "/images/stories/story-24.png",
   "duration": 2,
   "text": [
-[
     "Adelino's father plays a Tifa.",
     "A Tifa is a traditional drum from Papua.",
     "It is made of wood.",
     "He hits the drum with his hands.",
     "The Tifa makes a loud and happy sound.",
     "Adelino and Kevia dance and smile when the Tifa plays."
-]
 ],
   "vocabulary": [
     {
@@ -1109,14 +1061,12 @@ export const STORIES = [
   "cover": "/images/stories/story-25.png",
   "duration": 3,
   "text": [
-[
     "Today is the village festival.",
     "Prince, Elea, Jovanka, and Sylvia dance the Yospan dance together.",
     "Yospan is a traditional dance of friendship.",
     "They wear colorful sashes and feathers on their heads.",
     "They leap and clap their hands happily.",
     "The fast music of Tifa makes everyone feel excited and joyful."
-]
 ],
   "vocabulary": [
     {
@@ -1184,14 +1134,12 @@ export const STORIES = [
   "cover": "/images/stories/story-26.png",
   "duration": 2,
   "text": [
-[
     "Welcome to Enzo and Kyra's beautiful village in Papua.",
     "Their village is green and quiet.",
     "They have many round Honai houses.",
     "Behind the houses, there are tall mountains.",
     "Enzo and Kyra play outside under the blue sky.",
     "They love their village very much."
-]
 ],
   "vocabulary": [
     {

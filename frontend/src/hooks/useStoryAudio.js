@@ -58,6 +58,11 @@ export function useStoryAudio() {
       cancelledRef.current = false;
       setSpeaking(true);
 
+      // Defensively flatten in case nested array is passed
+      const cleanSentences = (Array.isArray(sentences) ? sentences : [])
+        .flat(Infinity)
+        .filter((s) => typeof s === "string" && s.trim().length > 0);
+
       const chosenAccent = accentRef.current;
       let i = 0;
 
@@ -68,7 +73,7 @@ export function useStoryAudio() {
           return;
         }
 
-        if (i >= sentences.length) {
+        if (i >= cleanSentences.length) {
           setSpeaking(false);
           setActiveIndex(-1);
           if (onDone) onDone();
@@ -77,7 +82,8 @@ export function useStoryAudio() {
 
         setActiveIndex(i);
         const accentKey = chosenAccent === "UK" ? "uk" : "us";
-        const src = `/audio/stories/${storyId}_s${i}_${accentKey}.mp3`;
+        // Cache-busting parameter to prevent browsers from serving obsolete cached MP3s
+        const src = `/audio/stories/${storyId}_s${i}_${accentKey}.mp3?v=20260910b`;
 
         // Try MP3 first
         const audio = new Audio(src);
@@ -100,7 +106,7 @@ export function useStoryAudio() {
 
           if (typeof window !== "undefined" && window.speechSynthesis) {
             window.speechSynthesis.cancel();
-            const u = new SpeechSynthesisUtterance(sentences[i]);
+            const u = new SpeechSynthesisUtterance(cleanSentences[i]);
             u.lang = chosenAccent === "UK" ? "en-GB" : "en-US";
             u.rate = rate;
 

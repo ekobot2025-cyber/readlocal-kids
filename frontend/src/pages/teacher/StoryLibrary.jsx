@@ -66,7 +66,10 @@ export default function StoryLibrary() {
 
               {/* Story text */}
               <div className="mt-4 space-y-2 rounded-2xl bg-slate-50 p-5 text-lg leading-relaxed text-slate-700">
-                {active.text.map((l, i) => (
+                {(Array.isArray(active.text) ? active.text : [])
+                  .flat(Infinity)
+                  .filter((l) => typeof l === "string" && l.trim().length > 0)
+                  .map((l, i) => (
                   <p key={i}>
                     <span className={cn("transition-colors", storyAudio.activeIndex === i && "reading-active font-semibold text-sky-600 bg-sky-100 px-1 rounded")}>
                       {l}
