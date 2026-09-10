@@ -80,11 +80,32 @@ async function handleLocalRequest(config) {
   if (url === "auth/login" && method === "post") {
     const { username, password } = body;
     const user = users.find((u) => u.username === username.toLowerCase());
-    if (!user || password !== `${user.username}123`) {
-      throw { response: { data: { detail: "Invalid demo credentials. Hint: use 'student' / 'student123'" } } };
+    if (!user || (user.password ? user.password !== password : password !== `${user.username}123`)) {
+      throw { response: { data: { detail: "Invalid username or password" } } };
     }
     localStorage.setItem("rlk_token", user.id);
     return res({ token: user.id, user });
+  }
+
+  if (url === "auth/register" && method === "post") {
+    const { name, username, password, role, grade } = body;
+    const cleanUsername = username.trim().toLowerCase();
+    if (users.some((u) => u.username === cleanUsername)) {
+      throw { response: { data: { detail: "Username is already taken. Please choose another." } } };
+    }
+    const newUser = {
+      id: `${role || "student"}-${Date.now()}`,
+      name: name.trim(),
+      username: cleanUsername,
+      password: password,
+      role: role || "student",
+      grade: grade || "Grade 4",
+      avatar: `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(name)}`,
+    };
+    users.push(newUser);
+    setLocal("rlk_db_users", users);
+    localStorage.setItem("rlk_token", newUser.id);
+    return res({ token: newUser.id, user: newUser });
   }
 
   if (url === "auth/me" && method === "get") {

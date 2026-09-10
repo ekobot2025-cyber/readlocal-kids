@@ -263,6 +263,13 @@ class StudentCreateInput(BaseModel):
     password: str
     grade: str = "Grade 4"
 
+class RegisterInput(BaseModel):
+    name: str
+    username: str
+    password: str
+    role: str = "student"
+    grade: Optional[str] = "Grade 4"
+
 # ---------------- Auth routes ----------------
 @api_router.post("/auth/login")
 async def login(data: LoginInput):
@@ -275,6 +282,30 @@ async def login(data: LoginInput):
     user_copy.pop("_id", None)
     user_copy.pop("password_hash", None)
     return {"token": token, "user": user_copy}
+
+@api_router.post("/auth/register")
+async def register(data: RegisterInput):
+    uname = data.username.strip().lower()
+    existing = await db.users.find_one({"username": uname})
+    if existing:
+        raise HTTPException(status_code=400, detail="Username is already taken")
+    user_id = f"{data.role}-{uuid.uuid4().hex[:8]}"
+    doc = {
+        "id": user_id,
+        "name": data.name.strip(),
+        "username": uname,
+        "email": f"{uname}@readlocal.com",
+        "password_hash": hash_password(data.password),
+        "role": data.role,
+        "grade": data.grade if data.role == "student" else None,
+        "avatar": f"https://api.dicebear.com/7.x/adventurer/svg?seed={data.name.strip()}"
+    }
+    await db.users.insert_one(doc)
+    token = create_token(user_id)
+    doc_copy = dict(doc)
+    doc_copy.pop("_id", None)
+    doc_copy.pop("password_hash", None)
+    return {"token": token, "user": doc_copy}
 
 @api_router.get("/auth/me")
 async def me(current=Depends(get_current_user)):
