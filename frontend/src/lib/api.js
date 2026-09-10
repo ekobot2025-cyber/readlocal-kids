@@ -88,10 +88,16 @@ async function handleLocalRequest(config) {
   }
 
   if (url === "auth/register" && method === "post") {
-    const { name, username, password, role, grade } = body;
+    const { name, username, password, role, grade, teacher_code } = body;
     const cleanUsername = username.trim().toLowerCase();
     if (users.some((u) => u.username === cleanUsername)) {
       throw { response: { data: { detail: "Username is already taken. Please choose another." } } };
+    }
+    if (role === "teacher") {
+      const validCode = "TEACHER2026";
+      if (!teacher_code || teacher_code.trim() !== validCode) {
+        throw { response: { data: { detail: "Invalid Teacher Passcode. Please enter the valid educator code (TEACHER2026)." } } };
+      }
     }
     const newUser = {
       id: `${role || "student"}-${Date.now()}`,
@@ -223,6 +229,19 @@ async function handleLocalRequest(config) {
     usersList.push(doc);
     setLocal("rlk_db_users", usersList);
     return res(doc);
+  }
+
+  if (url.startsWith("students/") && url.endsWith("/password") && method === "put") {
+    const sid = url.split("/")[1];
+    const usersList = getLocal("rlk_db_users");
+    const targetUser = usersList.find((u) => u.id === sid);
+    if (!targetUser) throw { response: { status: 404, data: { detail: "Student not found" } } };
+    if (!body.new_password || body.new_password.trim().length < 4) {
+      throw { response: { status: 400, data: { detail: "Password must be at least 4 characters" } } };
+    }
+    targetUser.password = body.new_password.trim();
+    setLocal("rlk_db_users", usersList);
+    return res({ message: "Password updated successfully" });
   }
 
   // 7. Student Analytics & Lists

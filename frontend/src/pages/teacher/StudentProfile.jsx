@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, BookOpenCheck, Trophy, Mic, ClipboardCheck, Save, Loader2 } from "lucide-react";
+import { ArrowLeft, BookOpenCheck, Trophy, Mic, ClipboardCheck, Save, Loader2, KeyRound } from "lucide-react";
 import { api } from "@/lib/api";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -19,9 +22,32 @@ export default function StudentProfile() {
   const navigate = useNavigate();
   const [data, setData] = useState(null);
   const [stories, setStories] = useState([]);
+  const [showReset, setShowReset] = useState(false);
+  const [newPassword, setNewPassword] = useState("");
+  const [resetting, setResetting] = useState(false);
 
   const load = () => api.get(`/students/${id}`).then((r) => setData(r.data));
   useEffect(() => { load(); api.get("/stories").then((r) => setStories(r.data)); }, [id]); // eslint-disable-line
+
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    if (!newPassword.trim() || newPassword.trim().length < 4) {
+      return toast.error("Password must be at least 4 characters long.");
+    }
+    setResetting(true);
+    try {
+      await api.put(`/students/${id}/password`, {
+        new_password: newPassword.trim(),
+      });
+      toast.success(`Password for ${data.name} successfully updated! 🔑`);
+      setShowReset(false);
+      setNewPassword("");
+    } catch (err) {
+      toast.error(err.response?.data?.detail || "Failed to reset password.");
+    } finally {
+      setResetting(false);
+    }
+  };
 
   if (!data) return <Skeleton className="h-96 rounded-3xl" />;
   const storyTitle = (sid) => stories.find((s) => s.id === sid)?.title || "Story";
@@ -33,12 +59,22 @@ export default function StudentProfile() {
       </button>
 
       {/* Header */}
-      <div className="flex items-center gap-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <Avatar className="h-20 w-20 border-2 border-slate-100"><AvatarImage src={data.avatar} /><AvatarFallback>{data.name[0]}</AvatarFallback></Avatar>
-        <div>
-          <h1 className="font-heading text-3xl font-bold text-slate-800">{data.name}</h1>
-          <p className="text-slate-400">{data.grade} · Student Reading Profile</p>
+      <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="flex items-center gap-4">
+          <Avatar className="h-20 w-20 border-2 border-slate-100"><AvatarImage src={data.avatar} /><AvatarFallback>{data.name[0]}</AvatarFallback></Avatar>
+          <div>
+            <h1 className="font-heading text-3xl font-bold text-slate-800">{data.name}</h1>
+            <p className="text-slate-400">@{data.username || data.id} · {data.grade} · Student Reading Profile</p>
+          </div>
         </div>
+
+        <Button
+          type="button"
+          onClick={() => { setShowReset(true); setNewPassword("123456"); }}
+          className="rounded-2xl border border-amber-200 bg-amber-50 text-amber-900 hover:bg-amber-100 font-bold text-sm px-4 py-2.5 gap-2 shadow-sm"
+        >
+          <KeyRound className="h-4 w-4 text-amber-600" /> Reset Password
+        </Button>
       </div>
 
       {/* Stats */}
@@ -175,6 +211,68 @@ function AssessmentForm({ studentId, stories, onSaved, existing, storyTitle }) {
           </div>
         </div>
       )}
+
+      {/* Reset Password Dialog */}
+      <Dialog open={showReset} onOpenChange={setShowReset}>
+        <DialogContent className="max-w-md rounded-3xl p-6">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-600">
+              <KeyRound className="h-6 w-6" />
+            </div>
+            <div>
+              <DialogTitle className="font-heading text-xl font-bold text-slate-800">
+                Reset Kata Sandi Siswa
+              </DialogTitle>
+              <p className="text-xs text-slate-400">
+                {data.name} (@{data.username || data.id})
+              </p>
+            </div>
+          </div>
+
+          <form onSubmit={handleResetPassword} className="space-y-4">
+            <div>
+              <Label htmlFor="sp-new-pass" className="font-bold text-slate-700">Password Baru / New Password</Label>
+              <Input
+                id="sp-new-pass"
+                type="text"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                placeholder="Minimal 4 karakter"
+                className="mt-1.5 rounded-2xl border-2 font-mono text-base"
+                required
+              />
+              <div className="mt-2 flex items-center justify-between">
+                <p className="text-xs text-slate-400">Minimal 4 karakter.</p>
+                <button
+                  type="button"
+                  onClick={() => setNewPassword("123456")}
+                  className="text-xs font-bold text-sky-600 hover:underline"
+                >
+                  ⚡ Set Default: 123456
+                </button>
+              </div>
+            </div>
+
+            <div className="flex gap-2.5 pt-2">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setShowReset(false)}
+                className="w-1/2 rounded-full py-5 text-sm font-bold border-2"
+              >
+                Batal
+              </Button>
+              <Button
+                type="submit"
+                disabled={resetting}
+                className="w-1/2 rounded-full bg-amber-500 hover:bg-amber-600 text-white py-5 text-sm font-bold shadow-md"
+              >
+                {resetting ? <Loader2 className="h-4 w-4 animate-spin" /> : "Simpan Sandi"}
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

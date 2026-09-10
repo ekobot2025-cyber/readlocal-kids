@@ -263,12 +263,16 @@ class StudentCreateInput(BaseModel):
     password: str
     grade: str = "Grade 4"
 
+class StudentPasswordResetInput(BaseModel):
+    new_password: str
+
 class RegisterInput(BaseModel):
     name: str
     username: str
     password: str
     role: str = "student"
     grade: Optional[str] = "Grade 4"
+    teacher_code: Optional[str] = None
 
 # ---------------- Auth routes ----------------
 @api_router.post("/auth/login")
@@ -289,6 +293,12 @@ async def register(data: RegisterInput):
     existing = await db.users.find_one({"username": uname})
     if existing:
         raise HTTPException(status_code=400, detail="Username is already taken")
+    
+    if data.role == "teacher":
+        expected_code = os.environ.get("TEACHER_PASSCODE", "TEACHER2026")
+        if not data.teacher_code or data.teacher_code.strip() != expected_code:
+            raise HTTPException(status_code=403, detail="Invalid Teacher Passcode. Please contact school administration.")
+
     user_id = f"{data.role}-{uuid.uuid4().hex[:8]}"
     doc = {
         "id": user_id,
@@ -451,6 +461,22 @@ async def create_student(data: StudentCreateInput, current=Depends(get_current_u
     prof.pop("_id", None)
     prof.pop("password_hash", None)
     return prof
+
+@api_router.put("/students/{student_id}/password")
+async def reset_student_password(student_id: str, data: StudentPasswordResetInput, current=Depends(get_current_user)):
+    if current["role"] != "teacher":
+        raise HTTPException(status_code=403, detail="Teachers only")
+    student = await db.users.find_one({"id": student_id, "role": "student"})
+    if not student:
+        raise HTTPException(status_code=404, detail="Student not found")
+    new_pw = data.new_password.strip()
+    if not new_pw or len(new_pw) < 4:
+        raise HTTPException(status_code=400, detail="Password must be at least 4 characters")
+    await db.users.update_one(
+        {"id": student_id},
+        {"$set": {"password_hash": hash_password(new_pw)}}
+    )
+    return {"message": "Password updated successfully"}
 
 @api_router.get("/students/{student_id}")
 async def student_detail(student_id: str, current=Depends(get_current_user)):

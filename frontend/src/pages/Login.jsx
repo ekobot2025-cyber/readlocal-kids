@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { GraduationCap, User, ArrowLeft, Loader2, UserPlus, LogIn } from "lucide-react";
+import { GraduationCap, User, ArrowLeft, Loader2, UserPlus, LogIn, ShieldCheck, KeyRound, HelpCircle } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useAuth } from "@/context/AuthContext";
 import { formatApiError } from "@/lib/api";
 import { toast } from "sonner";
@@ -21,7 +22,9 @@ export default function Login() {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [teacherCode, setTeacherCode] = useState("");
   const [grade, setGrade] = useState("Grade 4");
+  const [showForgot, setShowForgot] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -43,6 +46,11 @@ export default function Login() {
       return;
     }
 
+    if (isRegister && role === "teacher" && !teacherCode.trim()) {
+      setError("Please enter the Teacher / School Passcode.");
+      return;
+    }
+
     setLoading(true);
     try {
       if (isRegister) {
@@ -52,6 +60,7 @@ export default function Login() {
           password,
           role,
           grade: role === "student" ? grade : undefined,
+          teacher_code: role === "teacher" ? teacherCode.trim() : undefined,
         });
         toast.success(`Account created! Welcome, ${u.name}! 🎉`);
         navigate(u.role === "teacher" ? "/teacher" : "/app", { replace: true });
@@ -170,6 +179,17 @@ export default function Login() {
                 autoComplete={isRegister ? "new-password" : "current-password"}
                 required
               />
+              {!isRegister && (
+                <div className="flex justify-end pt-1.5">
+                  <button
+                    type="button"
+                    onClick={() => setShowForgot(true)}
+                    className="flex items-center gap-1 text-xs font-bold text-sky-600 hover:text-sky-700 hover:underline"
+                  >
+                    <HelpCircle className="h-3.5 w-3.5" /> Forgot Password? / Lupa Sandi?
+                  </button>
+                </div>
+              )}
             </div>
 
             {isRegister && role === "student" && (
@@ -185,6 +205,29 @@ export default function Login() {
                   <option value="Grade 3-4">Grade 3-4 (Elementary)</option>
                   <option value="Grade 5-6">Grade 5-6 (Intermediate)</option>
                 </select>
+              </div>
+            )}
+
+            {isRegister && role === "teacher" && (
+              <div>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="teacherCode" className="font-bold text-slate-700 flex items-center gap-1.5">
+                    <ShieldCheck className="h-4 w-4 text-sky-600" /> Teacher / School Passcode
+                  </Label>
+                  <span className="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">Required</span>
+                </div>
+                <Input
+                  id="teacherCode"
+                  type="password"
+                  value={teacherCode}
+                  onChange={(e) => setTeacherCode(e.target.value)}
+                  placeholder="Enter school passcode"
+                  className="mt-1.5 rounded-2xl border-2 py-6"
+                  required
+                />
+                <p className="mt-1.5 text-xs text-slate-400">
+                  Educator verification code (Default: <code className="font-mono text-sky-600 font-bold bg-sky-50 px-1 py-0.5 rounded">TEACHER2026</code>)
+                </p>
               </div>
             )}
 
@@ -238,6 +281,51 @@ export default function Login() {
           </div>
         </div>
       </div>
+
+      {/* Forgot Password Help Dialog */}
+      <Dialog open={showForgot} onOpenChange={setShowForgot}>
+        <DialogContent className="max-w-md rounded-3xl p-6">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100 text-sky-600">
+              <KeyRound className="h-6 w-6" />
+            </div>
+            <div>
+              <DialogTitle className="font-heading text-xl font-bold text-slate-800">
+                Bantuan Kata Sandi
+              </DialogTitle>
+              <p className="text-xs text-slate-400">ReadLocal Kids Account Support</p>
+            </div>
+          </div>
+
+          <div className="space-y-3.5 text-sm text-slate-600">
+            <div className="rounded-2xl border border-sky-100 bg-sky-50/70 p-4">
+              <h3 className="font-bold text-sky-900 flex items-center gap-1.5 text-sm">
+                <User className="h-4 w-4 text-sky-600" /> Untuk Akun Siswa (Student)
+              </h3>
+              <p className="mt-1.5 text-xs text-slate-600 leading-relaxed">
+                Lupa kata sandi? <strong>Kamu tidak perlu khawatir!</strong> Cukup beri tahu Gurumu di kelas. Gurumu dapat langsung melihat dan mereset kata sandimu dalam hitungan detik melalui <em>Teacher Dashboard → Students</em>.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-100 bg-slate-50 p-4">
+              <h3 className="font-bold text-slate-800 flex items-center gap-1.5 text-sm">
+                <GraduationCap className="h-4 w-4 text-indigo-600" /> Untuk Akun Guru (Teacher)
+              </h3>
+              <p className="mt-1.5 text-xs text-slate-600 leading-relaxed">
+                Untuk akun Guru/Pengajar, silakan hubungi tim administrator sekolah Anda melalui email <strong>admin@readlocal.com</strong> untuk verifikasi dan pemulihan akun.
+              </p>
+            </div>
+          </div>
+
+          <Button
+            type="button"
+            onClick={() => setShowForgot(false)}
+            className="mt-5 w-full rounded-full bg-sky-500 py-5 text-sm font-bold text-white hover:bg-sky-600"
+          >
+            Mengerti / Close
+          </Button>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
