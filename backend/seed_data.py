@@ -667,7 +667,7 @@ STORIES = [
     "category": "Traditional House",
     "level": "Beginner",
     "grade": "Grade 1-2",
-    "cover": "/images/stories/story-1.png",
+    "cover": "/images/stories/story-19.png",
     "duration": 2,
     "text": [
         "This is Edgar's Honai.",
@@ -739,7 +739,7 @@ STORIES = [
     "category": "Food",
     "level": "Beginner",
     "grade": "Grade 1-2",
-    "cover": "/images/stories/story-5.png",
+    "cover": "/images/stories/story-20.png",
     "duration": 2,
     "text": [
         "Today, Aldrick's family eats Papeda.",
@@ -811,7 +811,7 @@ STORIES = [
     "category": "Animals",
     "level": "Beginner",
     "grade": "Grade 3-4",
-    "cover": "/images/stories/story-6.png",
+    "cover": "/images/stories/story-21.png",
     "duration": 3,
     "text": [
         "The Bird of Paradise lives in Papua.",
@@ -883,7 +883,7 @@ STORIES = [
     "category": "Daily Life",
     "level": "Intermediate",
     "grade": "Grade 3-4",
-    "cover": "/images/stories/story-2.png",
+    "cover": "/images/stories/story-22.png",
     "duration": 3,
     "text": [
         "Sylvia's mother makes a Noken.",
@@ -956,7 +956,7 @@ STORIES = [
     "category": "Nature",
     "level": "Intermediate",
     "grade": "Grade 5-6",
-    "cover": "/images/stories/story-7.png",
+    "cover": "/images/stories/story-23.png",
     "duration": 3,
     "text": [
         "Today, Edgar and Aldrick visit Sentani Lake.",
@@ -1029,7 +1029,7 @@ STORIES = [
     "category": "Arts & Music",
     "level": "Beginner",
     "grade": "Grade 3-4",
-    "cover": "/images/stories/story-3.png",
+    "cover": "/images/stories/story-24.png",
     "duration": 2,
     "text": [
         "Edgar's father plays a Tifa.",
@@ -1102,7 +1102,7 @@ STORIES = [
     "category": "Arts & Music",
     "level": "Intermediate",
     "grade": "Grade 5-6",
-    "cover": "/images/stories/story-16.png",
+    "cover": "/images/stories/story-25.png",
     "duration": 3,
     "text": [
         "Today is the village festival.",
@@ -1175,7 +1175,7 @@ STORIES = [
     "category": "Daily Life",
     "level": "Beginner",
     "grade": "Grade 1-2",
-    "cover": "/images/stories/story-18.png",
+    "cover": "/images/stories/story-26.png",
     "duration": 2,
     "text": [
         "Welcome to Edgar and Kyra's beautiful village in Papua.",
