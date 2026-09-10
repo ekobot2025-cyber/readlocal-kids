@@ -72,3 +72,10 @@ h1, h2, h3, h4, h5, .font-heading {
 @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; }
 }
+
+@media print {
+    .no-print, [data-print-hide="true"], [data-testid="dialog-close-btn"] {
+        display: none !important;
+    }
+}
+

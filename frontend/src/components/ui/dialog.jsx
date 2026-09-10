@@ -29,8 +29,9 @@ export function Dialog({ open, onOpenChange, children, maxWidth = "max-w-xl", cl
         <button
           type="button"
           onClick={() => onOpenChange && onOpenChange(false)}
-          className="absolute right-4 top-4 z-50 rounded-full bg-slate-900/60 p-2 text-white hover:bg-slate-900/80 backdrop-blur-md transition-colors cursor-pointer shadow-md"
+          className="no-print absolute right-4 top-4 z-50 rounded-full bg-slate-900/60 p-2 text-white hover:bg-slate-900/80 backdrop-blur-md transition-colors cursor-pointer shadow-md"
           aria-label="Close"
+          data-print-hide="true"
           data-testid="dialog-close-btn"
         >
           <X className="h-5 w-5" />
