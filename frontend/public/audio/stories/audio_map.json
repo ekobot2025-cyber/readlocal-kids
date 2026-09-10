@@ -1,738 +1,588 @@
 {
   "story-1": {
     "0": {
-      "text": "Kiko is a little cassowary.",
+      "text": "In the lush green forest of Papua, Kiko the little Cassowary is searching for sweet berries.",
       "uk": "/audio/stories/story-1_s0_uk.mp3",
       "us": "/audio/stories/story-1_s0_us.mp3"
     },
     "1": {
-      "text": "He lives in the Papuan forest.",
+      "text": "Edgar and Kevia walk carefully along the jungle path under the warm morning sun.",
       "uk": "/audio/stories/story-1_s1_uk.mp3",
       "us": "/audio/stories/story-1_s1_us.mp3"
     },
     "2": {
-      "text": "Kiko has black feathers and strong legs.",
+      "text": "Suddenly, Kevia spots Kiko resting under a leafy banana tree.",
       "uk": "/audio/stories/story-1_s2_uk.mp3",
       "us": "/audio/stories/story-1_s2_us.mp3"
     },
     "3": {
-      "text": "Edgar sees Kiko walking under a tall tree.",
+      "text": "\"Look Edgar, it is Kiko!\" whispers Kevia with a big happy smile.",
       "uk": "/audio/stories/story-1_s3_uk.mp3",
       "us": "/audio/stories/story-1_s3_us.mp3"
     },
     "4": {
-      "text": "\"Good morning, Kiko!\" says Edgar.",
+      "text": "Edgar nods softly and watches the colorful bird step gracefully across the grass.",
       "uk": "/audio/stories/story-1_s4_uk.mp3",
       "us": "/audio/stories/story-1_s4_us.mp3"
     },
     "5": {
-      "text": "Kiko finds a sweet red fruit on the ground.",
+      "text": "Kiko tilts his head, eats a ripe berry, and chirps a friendly morning greeting.",
       "uk": "/audio/stories/story-1_s5_uk.mp3",
       "us": "/audio/stories/story-1_s5_us.mp3"
     },
     "6": {
-      "text": "He loves his beautiful forest home.",
+      "text": "Edgar and Kevia wave goodbye as Kiko runs happily deeper into the peaceful forest.",
       "uk": "/audio/stories/story-1_s6_uk.mp3",
       "us": "/audio/stories/story-1_s6_us.mp3"
     }
   },
   "story-2": {
     "0": {
-      "text": "This is Aldrick's noken.",
+      "text": "Aldrick and Elea visit their grandmother in the peaceful highland village.",
       "uk": "/audio/stories/story-2_s0_uk.mp3",
       "us": "/audio/stories/story-2_s0_us.mp3"
     },
     "1": {
-      "text": "The noken is woven and very beautiful.",
+      "text": "Grandmother sits on the woven mat making a traditional Papuan Noken.",
       "uk": "/audio/stories/story-2_s1_uk.mp3",
       "us": "/audio/stories/story-2_s1_us.mp3"
     },
     "2": {
-      "text": "It is colored brown and red.",
+      "text": "She weaves strong wood fibers into colorful patterns with patient care.",
       "uk": "/audio/stories/story-2_s2_uk.mp3",
       "us": "/audio/stories/story-2_s2_us.mp3"
     },
     "3": {
-      "text": "Aldrick's mother gave it to him.",
+      "text": "\"A Noken is not just a bag; it holds our hard work and love,\" explains Grandmother.",
       "uk": "/audio/stories/story-2_s3_uk.mp3",
       "us": "/audio/stories/story-2_s3_us.mp3"
     },
     "4": {
-      "text": "He puts his English book in his noken.",
+      "text": "Elea learns how to interlace the natural fibers alongside her brother Aldrick.",
       "uk": "/audio/stories/story-2_s4_uk.mp3",
       "us": "/audio/stories/story-2_s4_us.mp3"
     },
     "5": {
-      "text": "He also puts his pencil inside.",
+      "text": "Aldrick proudly carries the finished Noken on his forehead filled with sweet potatoes.",
       "uk": "/audio/stories/story-2_s5_uk.mp3",
       "us": "/audio/stories/story-2_s5_us.mp3"
     },
     "6": {
-      "text": "Aldrick carries his noken to school happily.",
+      "text": "Elea smiles brightly, knowing their Papuan heritage will always live in their hearts.",
       "uk": "/audio/stories/story-2_s6_uk.mp3",
       "us": "/audio/stories/story-2_s6_us.mp3"
     }
   },
   "story-3": {
     "0": {
-      "text": "Edgar holds a wooden tifa drum.",
+      "text": "Raphael's father plays the traditional Tifa drum in the sunny village square.",
       "uk": "/audio/stories/story-3_s0_uk.mp3",
       "us": "/audio/stories/story-3_s0_us.mp3"
     },
     "1": {
-      "text": "He taps the drum softly with his hands.",
+      "text": "The carved wooden Tifa produces a deep, rhythmic Boom Boom sound.",
       "uk": "/audio/stories/story-3_s1_uk.mp3",
       "us": "/audio/stories/story-3_s1_us.mp3"
     },
     "2": {
-      "text": "Boom, boom, boom! goes the tifa.",
+      "text": "Raphael and Kyra clap their hands and dance merrily to the lively beat.",
       "uk": "/audio/stories/story-3_s2_uk.mp3",
       "us": "/audio/stories/story-3_s2_us.mp3"
     },
     "3": {
-      "text": "Kyra listens to the happy music.",
+      "text": "\"The sound of Tifa brings our community together in joy!\" exclaims Raphael.",
       "uk": "/audio/stories/story-3_s3_uk.mp3",
       "us": "/audio/stories/story-3_s3_us.mp3"
     },
     "4": {
-      "text": "They smile and dance to the rhythm.",
+      "text": "Kyra leaps gracefully, wearing a colorful feather headband.",
       "uk": "/audio/stories/story-3_s4_uk.mp3",
       "us": "/audio/stories/story-3_s4_us.mp3"
     },
     "5": {
-      "text": "Boom, boom, boom! Everyone feels joyful.",
+      "text": "The drum music echoes across the green hills, filling everyone with happiness.",
       "uk": "/audio/stories/story-3_s5_uk.mp3",
       "us": "/audio/stories/story-3_s5_us.mp3"
     }
   },
   "story-4": {
     "0": {
-      "text": "Good morning from Papua!",
+      "text": "Good morning from Papua! The sun rises bright and warm over the tall green mountains.",
       "uk": "/audio/stories/story-4_s0_uk.mp3",
       "us": "/audio/stories/story-4_s0_us.mp3"
     },
     "1": {
-      "text": "The bright sun rises over the green hills.",
+      "text": "Prince, Sylvia, and Jovanka gather near Sentani Lake to start their day.",
       "uk": "/audio/stories/story-4_s1_uk.mp3",
       "us": "/audio/stories/story-4_s1_us.mp3"
     },
     "2": {
-      "text": "Edgar hears birds singing in the trees.",
+      "text": "Prince carries his school bag while Sylvia holds a fresh tropical fruit.",
       "uk": "/audio/stories/story-4_s2_uk.mp3",
       "us": "/audio/stories/story-4_s2_us.mp3"
     },
     "3": {
-      "text": "\"Good morning, family!\" says Aldrick.",
+      "text": "Jovanka greets the fishermen rowing their wooden canoes on the quiet lake.",
       "uk": "/audio/stories/story-4_s3_uk.mp3",
       "us": "/audio/stories/story-4_s3_us.mp3"
     },
     "4": {
-      "text": "They eat warm breakfast together.",
+      "text": "\"We love reading aloud so we can share our Papuan stories with the world,\" says Prince.",
       "uk": "/audio/stories/story-4_s4_uk.mp3",
       "us": "/audio/stories/story-4_s4_us.mp3"
     },
     "5": {
-      "text": "Now, Edgar, Kyra, and Sylvia walk to school happily.",
+      "text": "Sylvia and Jovanka laugh together, ready for a fun day of learning at school.",
       "uk": "/audio/stories/story-4_s5_uk.mp3",
       "us": "/audio/stories/story-4_s5_us.mp3"
     }
   },
   "story-5": {
     "0": {
-      "text": "Today, Edgar's family enjoys papeda for lunch.",
+      "text": "Today, Adelino and Sylvia's family enjoys a delicious Papeda lunch.",
       "uk": "/audio/stories/story-5_s0_uk.mp3",
       "us": "/audio/stories/story-5_s0_us.mp3"
     },
     "1": {
-      "text": "Papeda is made from sago starch.",
+      "text": "Papeda is a traditional Papuan porridge made from natural sago starch.",
       "uk": "/audio/stories/story-5_s1_uk.mp3",
       "us": "/audio/stories/story-5_s1_us.mp3"
     },
     "2": {
-      "text": "It is soft and sticky.",
+      "text": "It is soft, smooth, and sticky, served alongside hot yellow fish soup.",
       "uk": "/audio/stories/story-5_s2_uk.mp3",
       "us": "/audio/stories/story-5_s2_us.mp3"
     },
     "3": {
-      "text": "Sylvia dips papeda into yellow fish soup.",
+      "text": "Adelino uses a pair of wooden sticks to roll the warm Papeda onto his plate.",
       "uk": "/audio/stories/story-5_s3_uk.mp3",
       "us": "/audio/stories/story-5_s3_us.mp3"
     },
     "4": {
-      "text": "\"This soup is so delicious!\" says Aldrick.",
+      "text": "Sylvia tastes the savory soup and says, \"Papeda is our absolute favorite food!\"",
       "uk": "/audio/stories/story-5_s4_uk.mp3",
       "us": "/audio/stories/story-5_s4_us.mp3"
     },
     "5": {
-      "text": "Eating together makes the family happy.",
+      "text": "The family eats happily together, celebrating their rich culinary traditions.",
       "uk": "/audio/stories/story-5_s5_uk.mp3",
       "us": "/audio/stories/story-5_s5_us.mp3"
     }
   },
   "story-6": {
     "0": {
-      "text": "Kyra sees a bird high up in a tree.",
+      "text": "Kyra and Enzo walk along a quiet forest trail in search of native wildlife.",
       "uk": "/audio/stories/story-6_s0_uk.mp3",
       "us": "/audio/stories/story-6_s0_us.mp3"
     },
     "1": {
-      "text": "It is a colorful Bird of Paradise.",
+      "text": "High up in the rainforest canopy, a gorgeous Bird of Paradise perches on a branch.",
       "uk": "/audio/stories/story-6_s1_uk.mp3",
       "us": "/audio/stories/story-6_s1_us.mp3"
     },
     "2": {
-      "text": "The bird has bright yellow and blue feathers.",
+      "text": "Its brilliant yellow, red, and emerald feathers shine brightly in the sunlight.",
       "uk": "/audio/stories/story-6_s2_uk.mp3",
       "us": "/audio/stories/story-6_s2_us.mp3"
     },
     "3": {
-      "text": "It spreads its wings gracefully.",
+      "text": "\"Look Enzo, it is the Cenderawasih, the proud bird of our homeland!\" whispers Kyra.",
       "uk": "/audio/stories/story-6_s3_uk.mp3",
       "us": "/audio/stories/story-6_s3_us.mp3"
     },
     "4": {
-      "text": "\"Look, Edgar! It is so beautiful!\" whispers Aldrick.",
+      "text": "Enzo gazes up in wonder as the majestic bird spreads its long, elegant tail feathers.",
       "uk": "/audio/stories/story-6_s4_uk.mp3",
       "us": "/audio/stories/story-6_s4_us.mp3"
     },
     "5": {
-      "text": "The bird flies quietly across the Papuan forest.",
+      "text": "Kyra and Enzo promise to protect the tropical forests so the birds stay safe forever.",
       "uk": "/audio/stories/story-6_s5_uk.mp3",
       "us": "/audio/stories/story-6_s5_us.mp3"
     }
   },
   "story-7": {
     "0": {
-      "text": "It is a beautiful morning at Sentani Lake.",
+      "text": "Edgar and Aldrick board a small wooden motorboat on Sentani Lake.",
       "uk": "/audio/stories/story-7_s0_uk.mp3",
       "us": "/audio/stories/story-7_s0_us.mp3"
     },
     "1": {
-      "text": "Edgar goes to the lake with his father and Aldrick.",
+      "text": "The calm water reflects the blue sky and surrounding emerald green hills.",
       "uk": "/audio/stories/story-7_s1_uk.mp3",
       "us": "/audio/stories/story-7_s1_us.mp3"
     },
     "2": {
-      "text": "The water is calm and the sky is bright blue.",
+      "text": "They see traditional stilt houses built neatly over the clear water.",
       "uk": "/audio/stories/story-7_s2_uk.mp3",
       "us": "/audio/stories/story-7_s2_us.mp3"
     },
     "3": {
-      "text": "\"Look, Dad! There are small fish swimming near the boat!\" says Edgar.",
+      "text": "\"Sentani Lake is one of the most peaceful places in Papua,\" remarks Edgar.",
       "uk": "/audio/stories/story-7_s3_uk.mp3",
       "us": "/audio/stories/story-7_s3_us.mp3"
     },
     "4": {
-      "text": "They step carefully into a wooden canoe.",
+      "text": "Aldrick points to local fishermen casting their fishing nets in the morning light.",
       "uk": "/audio/stories/story-7_s4_uk.mp3",
       "us": "/audio/stories/story-7_s4_us.mp3"
     },
     "5": {
-      "text": "His father slowly rows the boat across the water.",
+      "text": "Both boys feel grateful to live near such a magnificent lake.",
       "uk": "/audio/stories/story-7_s5_uk.mp3",
       "us": "/audio/stories/story-7_s5_us.mp3"
-    },
-    "6": {
-      "text": "Aldrick points to the green hills surrounding the lake.",
-      "uk": "/audio/stories/story-7_s6_uk.mp3",
-      "us": "/audio/stories/story-7_s6_us.mp3"
-    },
-    "7": {
-      "text": "\"This lake is so peaceful,\" says Aldrick.",
-      "uk": "/audio/stories/story-7_s7_uk.mp3",
-      "us": "/audio/stories/story-7_s7_us.mp3"
-    },
-    "8": {
-      "text": "\"Yes,\" answers Edgar's father. \"We must keep our lake clean.\"",
-      "uk": "/audio/stories/story-7_s8_uk.mp3",
-      "us": "/audio/stories/story-7_s8_us.mp3"
-    },
-    "9": {
-      "text": "Edgar and Aldrick smile, wanting Sentani Lake to stay beautiful forever.",
-      "uk": "/audio/stories/story-7_s9_uk.mp3",
-      "us": "/audio/stories/story-7_s9_us.mp3"
     }
   },
   "story-8": {
     "0": {
-      "text": "Kyra and Edgar walk through the garden with their uncle.",
+      "text": "Kevia and Raphael explore their uncle's orchard behind the village.",
       "uk": "/audio/stories/story-8_s0_uk.mp3",
       "us": "/audio/stories/story-8_s0_us.mp3"
     },
     "1": {
-      "text": "They spot a long red fruit hanging from a tall plant.",
+      "text": "They discover a tall tree laden with long red fruits known as Buah Merah.",
       "uk": "/audio/stories/story-8_s1_uk.mp3",
       "us": "/audio/stories/story-8_s1_us.mp3"
     },
     "2": {
-      "text": "\"That is Buah Merah, a special fruit from Papua,\" explains Uncle.",
+      "text": "Uncle explains that Buah Merah is rich in nutrients and good for health.",
       "uk": "/audio/stories/story-8_s2_uk.mp3",
       "us": "/audio/stories/story-8_s2_us.mp3"
     },
     "3": {
-      "text": "Sylvia comes closer to observe its unique shape.",
+      "text": "\"Our ancestors have used this natural fruit for generations,\" says Raphael.",
       "uk": "/audio/stories/story-8_s3_uk.mp3",
       "us": "/audio/stories/story-8_s3_us.mp3"
     },
     "4": {
-      "text": "The fruit has a deep red color and bumpy skin.",
+      "text": "Kevia gathers the harvest into her woven basket with a cheerful smile.",
       "uk": "/audio/stories/story-8_s4_uk.mp3",
       "us": "/audio/stories/story-8_s4_us.mp3"
     },
     "5": {
-      "text": "Their family uses Buah Merah in traditional cooking.",
+      "text": "Kevia and Raphael return home eager to share the healthy fruit with their family.",
       "uk": "/audio/stories/story-8_s5_uk.mp3",
       "us": "/audio/stories/story-8_s5_us.mp3"
-    },
-    "6": {
-      "text": "\"Nature gives us so many wonderful plants,\" says Kyra.",
-      "uk": "/audio/stories/story-8_s6_uk.mp3",
-      "us": "/audio/stories/story-8_s6_us.mp3"
-    },
-    "7": {
-      "text": "Edgar agrees and helps harvest vegetables for dinner.",
-      "uk": "/audio/stories/story-8_s7_uk.mp3",
-      "us": "/audio/stories/story-8_s7_us.mp3"
     }
   },
   "story-9": {
     "0": {
-      "text": "Edgar wants to make a warm dish for his grandmother.",
+      "text": "Prince and Elea join their grandparents to collect sago from the palm grove.",
       "uk": "/audio/stories/story-9_s0_uk.mp3",
       "us": "/audio/stories/story-9_s0_us.mp3"
     },
     "1": {
-      "text": "First, he gets fresh sago flour from the wooden box.",
+      "text": "Sago is a vital staple food for many communities across Papua.",
       "uk": "/audio/stories/story-9_s1_uk.mp3",
       "us": "/audio/stories/story-9_s1_us.mp3"
     },
     "2": {
-      "text": "Next, Aldrick helps him boil clean water in a pot.",
+      "text": "Grandfather carefully processes the sago palm trunk to extract pure starch.",
       "uk": "/audio/stories/story-9_s2_uk.mp3",
       "us": "/audio/stories/story-9_s2_us.mp3"
     },
     "3": {
-      "text": "Then, Edgar stirs the sago slowly until it turns clear and soft.",
+      "text": "Prince helps carry the sago flour in a sturdy basket woven from leaves.",
       "uk": "/audio/stories/story-9_s3_uk.mp3",
       "us": "/audio/stories/story-9_s3_us.mp3"
     },
     "4": {
-      "text": "Finally, Grandmother pours hot yellow fish soup over the papeda.",
+      "text": "Elea assists Grandmother in preparing warm sago cakes over the fire.",
       "uk": "/audio/stories/story-9_s4_uk.mp3",
       "us": "/audio/stories/story-9_s4_us.mp3"
     },
     "5": {
-      "text": "\"Thank you, Edgar and Aldrick! You are helpful grandsons,\" says Grandmother.",
+      "text": "Prince and Elea thank their grandparents for teaching them traditional food skills.",
       "uk": "/audio/stories/story-9_s5_uk.mp3",
       "us": "/audio/stories/story-9_s5_us.mp3"
-    },
-    "6": {
-      "text": "They all sit together in the Honai and enjoy their meal.",
-      "uk": "/audio/stories/story-9_s6_uk.mp3",
-      "us": "/audio/stories/story-9_s6_us.mp3"
     }
   },
   "story-10": {
     "0": {
-      "text": "On Saturday morning, Sylvia visits Hamadi Market in Jayapura with her aunt.",
+      "text": "Jovanka and Adelino wake up early in the scenic Baliem Valley.",
       "uk": "/audio/stories/story-10_s0_uk.mp3",
       "us": "/audio/stories/story-10_s0_us.mp3"
     },
     "1": {
-      "text": "The market is busy and full of bright colors.",
+      "text": "Fresh mountain mist drifts across the green fields and round Honai houses.",
       "uk": "/audio/stories/story-10_s1_uk.mp3",
       "us": "/audio/stories/story-10_s1_us.mp3"
     },
     "2": {
-      "text": "Friendly sellers display fresh fish, green vegetables, and sweet bananas.",
+      "text": "Farmers tend to sweet potato gardens as the morning sun warms the valley.",
       "uk": "/audio/stories/story-10_s2_uk.mp3",
       "us": "/audio/stories/story-10_s2_us.mp3"
     },
     "3": {
-      "text": "Sylvia carries a large woven noken bag on her shoulder.",
+      "text": "\"Baliem Valley is rich in culture and natural beauty,\" says Jovanka.",
       "uk": "/audio/stories/story-10_s3_uk.mp3",
       "us": "/audio/stories/story-10_s3_us.mp3"
     },
     "4": {
-      "text": "\"Hello, young man! Would you like fresh pineapples?\" asks a smiling seller.",
+      "text": "Adelino helps carry fresh vegetables gathered from the farm.",
       "uk": "/audio/stories/story-10_s4_uk.mp3",
       "us": "/audio/stories/story-10_s4_us.mp3"
     },
     "5": {
-      "text": "\"Yes, please! We will buy three pineapples,\" replies Aldrick politely.",
+      "text": "Jovanka and Adelino walk happily to school under the crisp highland sky.",
       "uk": "/audio/stories/story-10_s5_uk.mp3",
       "us": "/audio/stories/story-10_s5_us.mp3"
-    },
-    "6": {
-      "text": "Her aunt buys sweet potatoes and fresh fish for dinner.",
-      "uk": "/audio/stories/story-10_s6_uk.mp3",
-      "us": "/audio/stories/story-10_s6_us.mp3"
-    },
-    "7": {
-      "text": "Sylvia enjoys seeing the community work together at the market.",
-      "uk": "/audio/stories/story-10_s7_uk.mp3",
-      "us": "/audio/stories/story-10_s7_us.mp3"
     }
   },
   "story-11": {
     "0": {
-      "text": "Edgar walks quietly through the tall forest trees.",
+      "text": "Enzo and Sylvia take a boat excursion across the turquoise waters of Raja Ampat.",
       "uk": "/audio/stories/story-11_s0_uk.mp3",
       "us": "/audio/stories/story-11_s0_us.mp3"
     },
     "1": {
-      "text": "He carries a small notebook to draw wild animals.",
+      "text": "Below the crystal-clear surface, colorful coral reefs and tropical fish swim by.",
       "uk": "/audio/stories/story-11_s1_uk.mp3",
       "us": "/audio/stories/story-11_s1_us.mp3"
     },
     "2": {
-      "text": "Suddenly, he hears a soft chirping sound above a fern branch.",
+      "text": "\"Raja Ampat has some of the richest marine life on Earth!\" shouts Enzo excitedly.",
       "uk": "/audio/stories/story-11_s2_uk.mp3",
       "us": "/audio/stories/story-11_s2_us.mp3"
     },
     "3": {
-      "text": "Edgar stops walking and stays very still.",
+      "text": "Sylvia peers into the water and watches a sea turtle glide past their boat.",
       "uk": "/audio/stories/story-11_s3_uk.mp3",
       "us": "/audio/stories/story-11_s3_us.mp3"
     },
     "4": {
-      "text": "A tiny colorful bird with a long tail perches on a branch.",
+      "text": "Enzo and Sylvia learn how important it is to keep the ocean clean and healthy.",
       "uk": "/audio/stories/story-11_s4_uk.mp3",
       "us": "/audio/stories/story-11_s4_us.mp3"
     },
     "5": {
-      "text": "Aldrick joins him and whispers, \"We should watch quietly without disturbing it.\"",
+      "text": "They wave to local divers exploring the paradise islands.",
       "uk": "/audio/stories/story-11_s5_uk.mp3",
       "us": "/audio/stories/story-11_s5_us.mp3"
-    },
-    "6": {
-      "text": "Edgar draws the bird carefully in his notebook.",
-      "uk": "/audio/stories/story-11_s6_uk.mp3",
-      "us": "/audio/stories/story-11_s6_us.mp3"
-    },
-    "7": {
-      "text": "The little bird chirps happily and flies deeper into the green forest.",
-      "uk": "/audio/stories/story-11_s7_uk.mp3",
-      "us": "/audio/stories/story-11_s7_us.mp3"
     }
   },
   "story-12": {
     "0": {
-      "text": "The afternoon sun shines over the sandy beach.",
+      "text": "Edgar and Kyra prepare for the annual cultural parade in town.",
       "uk": "/audio/stories/story-12_s0_uk.mp3",
       "us": "/audio/stories/story-12_s0_us.mp3"
     },
     "1": {
-      "text": "Edgar and Aldrick meet their friends after school to play football.",
+      "text": "They wear traditional Papuan crowns adorned with natural bird feathers.",
       "uk": "/audio/stories/story-12_s1_uk.mp3",
       "us": "/audio/stories/story-12_s1_us.mp3"
     },
     "2": {
-      "text": "They set up two wooden posts as goals on the sand.",
+      "text": "\"These crowns represent our heritage and respect for nature,\" explains Edgar.",
       "uk": "/audio/stories/story-12_s2_uk.mp3",
       "us": "/audio/stories/story-12_s2_us.mp3"
     },
     "3": {
-      "text": "\"Pass the ball to me, Edgar!\" shouts Aldrick with excitement.",
+      "text": "Kyra fastens her woven sash while adjusting her feather headdress.",
       "uk": "/audio/stories/story-12_s3_uk.mp3",
       "us": "/audio/stories/story-12_s3_us.mp3"
     },
     "4": {
-      "text": "Edgar kicks the ball smoothly across the shore.",
+      "text": "Edgar and Kyra march proudly alongside their classmates in the grand festival.",
       "uk": "/audio/stories/story-12_s4_uk.mp3",
       "us": "/audio/stories/story-12_s4_us.mp3"
     },
     "5": {
-      "text": "The waves splash gently against the sand as the boys run and score.",
+      "text": "The crowd cheers as children display the vibrant art of Papua.",
       "uk": "/audio/stories/story-12_s5_uk.mp3",
       "us": "/audio/stories/story-12_s5_us.mp3"
-    },
-    "6": {
-      "text": "Everyone cheers and high-fives each other.",
-      "uk": "/audio/stories/story-12_s6_uk.mp3",
-      "us": "/audio/stories/story-12_s6_us.mp3"
-    },
-    "7": {
-      "text": "Playing sports together builds strong friendship and teamwork.",
-      "uk": "/audio/stories/story-12_s7_uk.mp3",
-      "us": "/audio/stories/story-12_s7_us.mp3"
     }
   },
   "story-13": {
     "0": {
-      "text": "On a peaceful Sunday afternoon, Sylvia sits with her grandmother outside their Honai.",
+      "text": "Aldrick and Kevia visit Biak Island for a coastal adventure.",
       "uk": "/audio/stories/story-13_s0_uk.mp3",
       "us": "/audio/stories/story-13_s0_us.mp3"
     },
     "1": {
-      "text": "Grandmother holds a beautiful woven noken with delicate patterns.",
+      "text": "Fishermen row out at dawn under a golden sunrise sky.",
       "uk": "/audio/stories/story-13_s1_uk.mp3",
       "us": "/audio/stories/story-13_s1_us.mp3"
     },
     "2": {
-      "text": "\"Grandmother, how long did it take to weave this noken?\" asks Aldrick curiously.",
+      "text": "Kevia collects shell treasures along the white sandy beach.",
       "uk": "/audio/stories/story-13_s2_uk.mp3",
       "us": "/audio/stories/story-13_s2_us.mp3"
     },
     "3": {
-      "text": "\"It took many days of patience, my child,\" replies Grandmother with a warm smile.",
+      "text": "\"Biak Island has cool sea breezes and rich maritime traditions,\" says Aldrick.",
       "uk": "/audio/stories/story-13_s3_uk.mp3",
       "us": "/audio/stories/story-13_s3_us.mp3"
     },
     "4": {
-      "text": "\"I selected strong bark fibers from the forest and dyed them using natural plant leaves.\"",
+      "text": "Aldrick and Kevia listen to local elders tell stories of ancient sea journeys.",
       "uk": "/audio/stories/story-13_s4_uk.mp3",
       "us": "/audio/stories/story-13_s4_us.mp3"
     },
     "5": {
-      "text": "She hands the noken to Sylvia, who touches the carefully braided handles.",
+      "text": "They enjoy fresh coconut water while watching boats return to the shore.",
       "uk": "/audio/stories/story-13_s5_uk.mp3",
       "us": "/audio/stories/story-13_s5_us.mp3"
-    },
-    "6": {
-      "text": "\"Handmade objects carry our family's hard work, care, and memories,\" Grandmother explains.",
-      "uk": "/audio/stories/story-13_s6_uk.mp3",
-      "us": "/audio/stories/story-13_s6_us.mp3"
-    },
-    "7": {
-      "text": "Edgar joins them and listens intently to the story behind each woven pattern.",
-      "uk": "/audio/stories/story-13_s7_uk.mp3",
-      "us": "/audio/stories/story-13_s7_us.mp3"
-    },
-    "8": {
-      "text": "Sylvia promises to treasure the noken and pass down these valuable stories.",
-      "uk": "/audio/stories/story-13_s8_uk.mp3",
-      "us": "/audio/stories/story-13_s8_us.mp3"
     }
   },
   "story-14": {
     "0": {
-      "text": "As dawn breaks over Sentani Lake, golden sunlight illuminates the mist above the calm water.",
+      "text": "Raphael and Elea go hiking with their teacher in Lorentz National Park.",
       "uk": "/audio/stories/story-14_s0_uk.mp3",
       "us": "/audio/stories/story-14_s0_us.mp3"
     },
     "1": {
-      "text": "Edgar and Aldrick wake up early to help their community clean the lakeside shore.",
+      "text": "The park stretches from snow-capped peaks down to tropical coastal wetlands.",
       "uk": "/audio/stories/story-14_s1_uk.mp3",
       "us": "/audio/stories/story-14_s1_us.mp3"
     },
     "2": {
-      "text": "Green tropical hills reflect clearly on the glass-like surface of the lake.",
+      "text": "\"Lorentz National Park is a UNESCO World Heritage site,\" notes Raphael.",
       "uk": "/audio/stories/story-14_s2_uk.mp3",
       "us": "/audio/stories/story-14_s2_us.mp3"
     },
     "3": {
-      "text": "Local fishermen row traditional canoes toward the center of the lake to begin their day.",
+      "text": "Elea spots rare orchids blooming alongside the mountain river path.",
       "uk": "/audio/stories/story-14_s3_uk.mp3",
       "us": "/audio/stories/story-14_s3_us.mp3"
     },
     "4": {
-      "text": "\"If plastic trash enters the water, it harms the fish and plants,\" explains Edgar.",
+      "text": "Raphael and Elea admire the vast wilderness protecting endemic Papuan animals.",
       "uk": "/audio/stories/story-14_s4_uk.mp3",
       "us": "/audio/stories/story-14_s4_us.mp3"
     },
     "5": {
-      "text": "Together with their classmates, they pick up stray plastic bottles and food wrappers.",
+      "text": "They promise to share environmental conservation lessons with their peers.",
       "uk": "/audio/stories/story-14_s5_uk.mp3",
       "us": "/audio/stories/story-14_s5_us.mp3"
-    },
-    "6": {
-      "text": "\"Keeping nature clean protects our lake for generations to come,\" says Aldrick thoughtfully.",
-      "uk": "/audio/stories/story-14_s6_uk.mp3",
-      "us": "/audio/stories/story-14_s6_us.mp3"
-    },
-    "7": {
-      "text": "By mid-morning, the lakeside is spotless, and birds sing happily in the nearby trees.",
-      "uk": "/audio/stories/story-14_s7_uk.mp3",
-      "us": "/audio/stories/story-14_s7_us.mp3"
-    },
-    "8": {
-      "text": "Both boys feel proud that their small effort helps preserve Papua's natural environment.",
-      "uk": "/audio/stories/story-14_s8_uk.mp3",
-      "us": "/audio/stories/story-14_s8_us.mp3"
     }
   },
   "story-15": {
     "0": {
-      "text": "The rainforests of Papua are home to thousands of unique plants and wild animals.",
+      "text": "Prince and Jovanka listen to an elder narrate the legend of Cenderawasih.",
       "uk": "/audio/stories/story-15_s0_uk.mp3",
       "us": "/audio/stories/story-15_s0_us.mp3"
     },
     "1": {
-      "text": "During an outdoor science class, Edgar and Aldrick walk along a shaded forest trail.",
+      "text": "According to legend, the bird brought beauty and harmony to the Papuan forests.",
       "uk": "/audio/stories/story-15_s1_uk.mp3",
       "us": "/audio/stories/story-15_s1_us.mp3"
     },
     "2": {
-      "text": "Their teacher points to tall ironwood trees that have grown for over fifty years.",
+      "text": "\"We must treasure nature just as the story teaches us,\" says Prince.",
       "uk": "/audio/stories/story-15_s2_uk.mp3",
       "us": "/audio/stories/story-15_s2_us.mp3"
     },
     "3": {
-      "text": "\"Trees absorb rainwater, prevent soil erosion, and provide fresh air,\" explains Teacher.",
+      "text": "Jovanka draws a picture of the bird of paradise with vibrant crayons.",
       "uk": "/audio/stories/story-15_s3_uk.mp3",
       "us": "/audio/stories/story-15_s3_us.mp3"
     },
     "4": {
-      "text": "Overhead, colorful lorikeets and cassowaries rely on forest fruits for their daily food.",
+      "text": "Prince and Jovanka present their artwork during storytime at school.",
       "uk": "/audio/stories/story-15_s4_uk.mp3",
       "us": "/audio/stories/story-15_s4_us.mp3"
     },
     "5": {
-      "text": "\"When we protect the forest, we protect clean water and air for everyone,\" says Aldrick.",
+      "text": "Their classmates applaud the wonderful tale of Papuan folklore.",
       "uk": "/audio/stories/story-15_s5_uk.mp3",
       "us": "/audio/stories/story-15_s5_us.mp3"
-    },
-    "6": {
-      "text": "Edgar writes down observations in his science journal to share with his school.",
-      "uk": "/audio/stories/story-15_s6_uk.mp3",
-      "us": "/audio/stories/story-15_s6_us.mp3"
-    },
-    "7": {
-      "text": "The students learn that taking care of nature is a shared responsibility for all.",
-      "uk": "/audio/stories/story-15_s7_uk.mp3",
-      "us": "/audio/stories/story-15_s7_us.mp3"
-    },
-    "8": {
-      "text": "They leave the forest with a renewed commitment to plant new trees at school.",
-      "uk": "/audio/stories/story-15_s8_uk.mp3",
-      "us": "/audio/stories/story-15_s8_us.mp3"
     }
   },
   "story-16": {
     "0": {
-      "text": "Every year, the community gathers at Sentani Lake for a vibrant cultural festival.",
+      "text": "Adelino, Enzo, Sylvia, and Kyra join hands for the energetic Yospan dance.",
       "uk": "/audio/stories/story-16_s0_uk.mp3",
       "us": "/audio/stories/story-16_s0_us.mp3"
     },
     "1": {
-      "text": "Edgar and Aldrick dress in traditional woven sashes and colorful headbands.",
+      "text": "Yospan is a traditional Papuan dance celebrating friendship and unity.",
       "uk": "/audio/stories/story-16_s1_uk.mp3",
       "us": "/audio/stories/story-16_s1_us.mp3"
     },
     "2": {
-      "text": "The sound of tifa drums fills the air with rhythmic and energetic beats.",
+      "text": "The dancers leap, step, and clap to the fast tempo of Tifa drums.",
       "uk": "/audio/stories/story-16_s2_uk.mp3",
       "us": "/audio/stories/story-16_s2_us.mp3"
     },
     "3": {
-      "text": "Dancers perform the Yospan dance, leaping gracefully to the beat of the music.",
+      "text": "Adelino and Enzo lead the front line with enthusiastic dance moves.",
       "uk": "/audio/stories/story-16_s3_uk.mp3",
       "us": "/audio/stories/story-16_s3_us.mp3"
     },
     "4": {
-      "text": "\"Look at the colorful decorations on the wooden boats!\" exclaims Aldrick happily.",
+      "text": "Sylvia and Kyra twirl happily, wearing colorful woven festival attire.",
       "uk": "/audio/stories/story-16_s4_uk.mp3",
       "us": "/audio/stories/story-16_s4_us.mp3"
     },
     "5": {
-      "text": "Families share traditional dishes like papeda, grilled fish, and fresh fruits.",
+      "text": "Everyone in the village smiles and cheers during the joyful celebration.",
       "uk": "/audio/stories/story-16_s5_uk.mp3",
       "us": "/audio/stories/story-16_s5_us.mp3"
-    },
-    "6": {
-      "text": "People from different villages sing songs of friendship, unity, and celebration.",
-      "uk": "/audio/stories/story-16_s6_uk.mp3",
-      "us": "/audio/stories/story-16_s6_us.mp3"
-    },
-    "7": {
-      "text": "Edgar takes photographs to document the joyful cultural traditions.",
-      "uk": "/audio/stories/story-16_s7_uk.mp3",
-      "us": "/audio/stories/story-16_s7_us.mp3"
-    },
-    "8": {
-      "text": "The festival reminds everyone that cultural arts bring people together in harmony.",
-      "uk": "/audio/stories/story-16_s8_uk.mp3",
-      "us": "/audio/stories/story-16_s8_us.mp3"
     }
   },
   "story-17": {
     "0": {
-      "text": "Today, Edgar and Aldrick join a school field trip to the Papua Museum in Jayapura.",
+      "text": "Edgar, Raphael, and Elea visit the Papua Museum in Jayapura on a field trip.",
       "uk": "/audio/stories/story-17_s0_uk.mp3",
       "us": "/audio/stories/story-17_s0_us.mp3"
     },
     "1": {
-      "text": "Inside the exhibition hall, they view historical wood carvings, woven nokens, and tifa drums.",
+      "text": "They view historic wood carvings, ancient woven nokens, and traditional instruments.",
       "uk": "/audio/stories/story-17_s1_uk.mp3",
       "us": "/audio/stories/story-17_s1_us.mp3"
     },
     "2": {
-      "text": "A museum guide explains that Papua has hundreds of distinct languages and local traditions.",
+      "text": "\"Papua has hundreds of distinct languages and local customs,\" explains the guide.",
       "uk": "/audio/stories/story-17_s2_uk.mp3",
       "us": "/audio/stories/story-17_s2_us.mp3"
     },
     "3": {
-      "text": "\"Each region has its own unique arts, stories, and environmental wisdom,\" says the guide.",
+      "text": "Edgar takes notes while Raphael examines an old map of island settlements.",
       "uk": "/audio/stories/story-17_s3_uk.mp3",
       "us": "/audio/stories/story-17_s3_us.mp3"
     },
     "4": {
-      "text": "Aldrick examines an ancient map showing coastal villages, highland valleys, and islands.",
+      "text": "Elea records a short audio summary of her favorite exhibit on her tablet.",
       "uk": "/audio/stories/story-17_s4_uk.mp3",
       "us": "/audio/stories/story-17_s4_us.mp3"
     },
     "5": {
-      "text": "Edgar takes notes on how historical items were crafted using natural materials.",
+      "text": "Edgar, Raphael, and Elea return to school inspired by their diverse heritage.",
       "uk": "/audio/stories/story-17_s5_uk.mp3",
       "us": "/audio/stories/story-17_s5_us.mp3"
-    },
-    "6": {
-      "text": "\"Diversity makes our homeland rich and special,\" remarks Edgar to his classmate.",
-      "uk": "/audio/stories/story-17_s6_uk.mp3",
-      "us": "/audio/stories/story-17_s6_us.mp3"
-    },
-    "7": {
-      "text": "Before leaving, the students record short audio summaries of their favorite museum exhibits.",
-      "uk": "/audio/stories/story-17_s7_uk.mp3",
-      "us": "/audio/stories/story-17_s7_us.mp3"
-    },
-    "8": {
-      "text": "They return to school inspired to learn more about the diverse heritage of Indonesia.",
-      "uk": "/audio/stories/story-17_s8_uk.mp3",
-      "us": "/audio/stories/story-17_s8_us.mp3"
     }
   },
   "story-18": {
     "0": {
-      "text": "From tall green mountains to clear blue seas, Papua is a land of wonder and beauty.",
+      "text": "From tall green mountains to clear blue seas, Papua is a land of wonder.",
       "uk": "/audio/stories/story-18_s0_uk.mp3",
       "us": "/audio/stories/story-18_s0_us.mp3"
     },
     "1": {
-      "text": "Edgar and Aldrick stand on a high hill overlooking Sentani Lake as the sun warms the morning air.",
+      "text": "Aldrick, Prince, Jovanka, and Kevia stand on a high hill overlooking Sentani Lake.",
       "uk": "/audio/stories/story-18_s1_uk.mp3",
       "us": "/audio/stories/story-18_s1_us.mp3"
     },
     "2": {
-      "text": "They remember all the stories they have read: Kiko the Cassowary, Honai houses, Nokens, and Tifa drums.",
+      "text": "They reflect on all the stories they have read together in friendship.",
       "uk": "/audio/stories/story-18_s2_uk.mp3",
       "us": "/audio/stories/story-18_s2_us.mp3"
     },
     "3": {
-      "text": "\"We learn English so we can share the stories of our home with the world,\" says Edgar.",
+      "text": "\"We learn English so we can share our Papuan culture with the world,\" says Prince.",
       "uk": "/audio/stories/story-18_s3_uk.mp3",
       "us": "/audio/stories/story-18_s3_us.mp3"
     },
     "4": {
-      "text": "Aldrick nods happily and adds, \"Reading Aloud helps us speak with confidence and joy.\"",
+      "text": "Jovanka nods happily, adding, \"Reading Aloud builds our confidence every day.\"",
       "uk": "/audio/stories/story-18_s4_uk.mp3",
       "us": "/audio/stories/story-18_s4_us.mp3"
     },
     "5": {
-      "text": "Children across Papua read, listen, and practice together in friendship.",
+      "text": "Aldrick, Prince, Jovanka, and Kevia smile together under the bright Papuan sky.",
       "uk": "/audio/stories/story-18_s5_uk.mp3",
       "us": "/audio/stories/story-18_s5_us.mp3"
-    },
-    "6": {
-      "text": "They respect the forests, lakes, animals, and rich cultural traditions surrounding them.",
-      "uk": "/audio/stories/story-18_s6_uk.mp3",
-      "us": "/audio/stories/story-18_s6_us.mp3"
-    },
-    "7": {
-      "text": "Papua is our home: we learn from it, care for it, and share its stories with everyone.",
-      "uk": "/audio/stories/story-18_s7_uk.mp3",
-      "us": "/audio/stories/story-18_s7_us.mp3"
     }
   },
   "story-19": {
@@ -850,7 +700,7 @@
   },
   "story-23": {
     "0": {
-      "text": "Today, Edgar and Aldrick visit Sentani Lake.",
+      "text": "Today, Raphael and Enzo visit Sentani Lake.",
       "uk": "/audio/stories/story-23_s0_uk.mp3",
       "us": "/audio/stories/story-23_s0_us.mp3"
     },
@@ -875,14 +725,14 @@
       "us": "/audio/stories/story-23_s4_us.mp3"
     },
     "5": {
-      "text": "They enjoy the cool wind and watch the beautiful sunset over the mountains.",
+      "text": "Raphael and Enzo watch the sunset over the mountains.",
       "uk": "/audio/stories/story-23_s5_uk.mp3",
       "us": "/audio/stories/story-23_s5_us.mp3"
     }
   },
   "story-24": {
     "0": {
-      "text": "Edgar's father plays a Tifa.",
+      "text": "Adelino's father plays a Tifa.",
       "uk": "/audio/stories/story-24_s0_uk.mp3",
       "us": "/audio/stories/story-24_s0_us.mp3"
     },
@@ -907,7 +757,7 @@
       "us": "/audio/stories/story-24_s4_us.mp3"
     },
     "5": {
-      "text": "Edgar and Kyra dance and smile when the Tifa plays.",
+      "text": "Adelino and Kevia dance and smile when the Tifa plays.",
       "uk": "/audio/stories/story-24_s5_uk.mp3",
       "us": "/audio/stories/story-24_s5_us.mp3"
     }
@@ -919,7 +769,7 @@
       "us": "/audio/stories/story-25_s0_us.mp3"
     },
     "1": {
-      "text": "Edgar, Aldrick, Kyra, and Sylvia dance the Yospan dance together.",
+      "text": "Prince, Elea, Jovanka, and Sylvia dance the Yospan dance together.",
       "uk": "/audio/stories/story-25_s1_uk.mp3",
       "us": "/audio/stories/story-25_s1_us.mp3"
     },
@@ -946,7 +796,7 @@
   },
   "story-26": {
     "0": {
-      "text": "Welcome to Edgar and Kyra's beautiful village in Papua.",
+      "text": "Welcome to Enzo and Kyra's beautiful village in Papua.",
       "uk": "/audio/stories/story-26_s0_uk.mp3",
       "us": "/audio/stories/story-26_s0_us.mp3"
     },
@@ -966,7 +816,7 @@
       "us": "/audio/stories/story-26_s3_us.mp3"
     },
     "4": {
-      "text": "Edgar and Kyra play outside under the blue sky.",
+      "text": "Enzo and Kyra play outside under the blue sky.",
       "uk": "/audio/stories/story-26_s4_uk.mp3",
       "us": "/audio/stories/story-26_s4_us.mp3"
     },
