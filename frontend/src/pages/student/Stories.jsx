@@ -12,7 +12,8 @@ const CATEGORIES = [
   "Daily Life", 
   "Food", 
   "Nature", 
-  "Environment"
+  "Environment",
+  "Traditional House"
 ];
 const GRADES = ["All Grades", "Grade 1-2", "Grade 3-4", "Grade 5-6"];
 
