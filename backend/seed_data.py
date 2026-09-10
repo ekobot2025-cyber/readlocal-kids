@@ -518,7 +518,7 @@ STORIES = [
             {"question": "What activity do Edgar and Aldrick do by the lake?", "options": ["Build a hotel", "Clean the lakeside shore with classmates", "Swim across the sea"], "answer": 1},
             {"question": "Why is plastic trash dangerous for the lake?", "options": ["It makes the boat go faster", "It attracts big ships", "It harms fish and aquatic plants"], "answer": 2},
             {"question": "What reflects on the surface of the lake?", "options": ["Green tropical hills", "Tall neon lights", "Airplane wings"], "answer": 0},
-            {"question": "How do the boys feel after cleaning the lakeside?", "options": ["Angry and tired", "Proud to protect the environment", "Bored"], answer: 1}
+            {"question": "How do the boys feel after cleaning the lakeside?", "options": ["Angry and tired", "Proud to protect the environment", "Bored"], "answer": 1}
         ]
     },
     {
