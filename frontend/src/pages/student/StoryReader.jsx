@@ -100,8 +100,18 @@ function ReadingMode({ story, onGoQuiz }) {
   };
 
   const stopReading = () => {
+    const duration = rec.seconds;
     rec.stop();
     const evalResult = speechAss.stopAssessment(story.text);
+
+    if (duration < 3 || (evalResult && evalResult.matchedCount === 0)) {
+      toast.warning("Recording was too short or no speech was detected. Please speak into your microphone while reading!");
+      rec.reset();
+      speechAss.resetAssessment();
+      setFeedback(null);
+      return;
+    }
+
     if (evalResult) {
       setFeedback({
         fluency: evalResult.fluency,
@@ -110,11 +120,6 @@ function ReadingMode({ story, onGoQuiz }) {
         completion: evalResult.completeness,
         wordResults: evalResult.wordResults,
       });
-    } else {
-      const fluency = 82 + Math.floor(Math.random() * 12);
-      const pronunciation = 80 + Math.floor(Math.random() * 14);
-      const confidence = 85 + Math.floor(Math.random() * 10);
-      setFeedback({ fluency, pronunciation, confidence, completion: 100 });
     }
   };
 
