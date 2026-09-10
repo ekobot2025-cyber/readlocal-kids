@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { BookOpenCheck, Mic, Trophy, Clock } from "lucide-react";
+import { BookOpenCheck, Mic, Trophy, Clock, Award } from "lucide-react";
 import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip, CartesianGrid } from "recharts";
 import { api } from "@/lib/api";
+import { useAuth } from "@/context/AuthContext";
+import { CertificateModal } from "@/components/CertificateModal";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const BADGES = [
@@ -17,7 +19,9 @@ const BADGES = [
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export default function StudentProgress() {
+  const { user } = useAuth();
   const [data, setData] = useState(null);
+  const [showCert, setShowCert] = useState(false);
 
   useEffect(() => {
     Promise.all([api.get("/stories"), api.get("/practices"), api.get("/quiz-results")]).then(([s, p, q]) => {
@@ -125,13 +129,22 @@ export default function StudentProgress() {
             </p>
           </div>
           <button
-            onClick={() => window.print()}
-            className="mt-6 w-full rounded-full bg-amber-500 py-3 font-bold text-white hover:bg-amber-600 shadow-md transition-all cursor-pointer"
+            type="button"
+            onClick={() => setShowCert(true)}
+            className="mt-6 w-full rounded-full bg-amber-500 py-3.5 font-bold text-white hover:bg-amber-600 shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
           >
-            🎓 Print / Download Certificate
+            <Award className="h-5 w-5" /> Preview & Print Certificate
           </button>
         </div>
       </div>
+
+      {/* Certificate Modal */}
+      <CertificateModal
+        open={showCert}
+        onClose={() => setShowCert(false)}
+        studentName={user?.name || "Maria Papuana"}
+        stats={data}
+      />
     </div>
   );
 }
