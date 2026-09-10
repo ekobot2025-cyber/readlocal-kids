@@ -6,7 +6,7 @@ import {
   ChevronLeft, ChevronRight, Sparkles, CheckCircle2, XCircle, Star, BookText,
 } from "lucide-react";
 import { api } from "@/lib/api";
-import { useSpeech } from "@/hooks/useSpeech";
+import { useStoryAudio } from "@/hooks/useStoryAudio";
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
 import { useRecorder } from "@/hooks/useRecorder";
 import { LevelBadge } from "@/components/LevelBadge";
@@ -72,15 +72,15 @@ export default function StoryReader() {
 
 /* ---------------- Reading Mode ---------------- */
 function ReadingMode({ story, onGoQuiz }) {
-  const speech = useSpeech();
+  const storyAudio = useStoryAudio();
   const rec = useRecorder();
   const [speed, setSpeed] = useState(1);
   const [feedback, setFeedback] = useState(null);
   const [saving, setSaving] = useState(false);
 
   const listen = () => {
-    if (speech.speaking) return speech.stop();
-    speech.speakSequence(story.text, SPEED[speed].rate);
+    if (storyAudio.speaking) return storyAudio.stop();
+    storyAudio.playSentences(story.id, story.text, SPEED[speed].rate);
   };
 
   const savePractice = async () => {
@@ -113,18 +113,12 @@ function ReadingMode({ story, onGoQuiz }) {
 
   return (
     <div className="space-y-6">
-      {!speech.supported && (
-        <p className="rounded-xl bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-700">
-          Listen (Text-to-Speech) is not supported on this browser.
-        </p>
-      )}
-
-      {/* Story text */}
+      {/* Story text with sentence highlighting */}
       <div className="rounded-3xl border-2 border-slate-100 bg-white p-6 md:p-8" data-testid="story-text">
         <div className="space-y-4 text-xl leading-loose text-slate-700 md:text-2xl">
           {story.text.map((line, i) => (
             <p key={i}>
-              <span className={cn("transition-colors", speech.activeIndex === i && "reading-active font-semibold text-slate-900")}>
+              <span className={cn("transition-colors", storyAudio.activeIndex === i && "reading-active font-semibold text-slate-900")}>
                 {line}
               </span>
             </p>
@@ -140,20 +134,20 @@ function ReadingMode({ story, onGoQuiz }) {
             <div className="flex rounded-full bg-slate-100 p-1 border border-slate-200" data-testid="accent-selector">
               <button
                 type="button"
-                onClick={() => speech.setAccent("UK")}
+                onClick={() => storyAudio.setAccent("UK")}
                 className={cn(
                   "flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold transition-all",
-                  speech.accent === "UK" ? "bg-amber-500 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"
+                  storyAudio.accent === "UK" ? "bg-amber-500 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"
                 )}
               >
                 🇬🇧 UK (British)
               </button>
               <button
                 type="button"
-                onClick={() => speech.setAccent("US")}
+                onClick={() => storyAudio.setAccent("US")}
                 className={cn(
                   "flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold transition-all",
-                  speech.accent === "US" ? "bg-sky-500 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"
+                  storyAudio.accent === "US" ? "bg-sky-500 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"
                 )}
               >
                 🇺🇸 US (American)
@@ -175,8 +169,8 @@ function ReadingMode({ story, onGoQuiz }) {
 
       {/* Controls */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        <Button onClick={listen} data-testid="listen-btn" className={cn("rounded-full py-6 text-base font-bold text-white", speech.speaking ? "bg-rose-500 hover:bg-rose-600" : "bg-sky-500 hover:bg-sky-600")}>
-          {speech.speaking ? <><Square className="mr-1.5 h-5 w-5" /> Stop</> : <><Volume2 className="mr-1.5 h-5 w-5" /> Listen</>}
+        <Button onClick={listen} data-testid="listen-btn" className={cn("rounded-full py-6 text-base font-bold text-white", storyAudio.speaking ? "bg-rose-500 hover:bg-rose-600" : "bg-sky-500 hover:bg-sky-600")}>
+          {storyAudio.speaking ? <><Square className="mr-1.5 h-5 w-5" /> Stop</> : <><Volume2 className="mr-1.5 h-5 w-5" /> Listen</>}
         </Button>
 
         {!rec.recording ? (
