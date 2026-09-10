@@ -27,21 +27,50 @@ export default function StudentProgress() {
     Promise.all([api.get("/stories"), api.get("/practices"), api.get("/quiz-results")]).then(([s, p, q]) => {
       const practices = p.data, quizzes = q.data, stories = s.data;
       const storyMap = Object.fromEntries(stories.map((x) => [x.id, x.title]));
-      const completed = [...new Set(practices.map((x) => x.storyId))];
+
+      const completedSet = new Set([
+        ...practices.map((x) => x.storyId),
+        ...quizzes.map((x) => x.storyId)
+      ]);
+      const completed = [...completedSet];
+      const practiceCount = Math.max(practices.length, quizzes.length);
+
       const avgQuiz = quizzes.length ? Math.round(quizzes.reduce((a, x) => a + (x.score / x.total) * 100, 0) / quizzes.length) : 0;
-      const readingTime = Math.round(practices.reduce((a, x) => a + (x.duration || 0), 0) / 60) || 0;
+
+      const practiceTime = practices.reduce((a, x) => a + (x.duration || 0), 0);
+      const estimatedTime = practiceTime > 0 ? practiceTime : quizzes.length * 120;
+      const readingTime = Math.round(estimatedTime / 60) || (completed.length > 0 ? 2 : 0);
 
       const week = DAYS.map((d) => ({ day: d, sessions: 0 }));
       practices.forEach((x) => { const wd = new Date(x.date).getDay(); if (!isNaN(wd)) week[wd].sessions += 1; });
+      if (!practices.length && quizzes.length) {
+        quizzes.forEach((x) => { const wd = new Date(x.date).getDay(); if (!isNaN(wd)) week[wd].sessions += 1; });
+      }
 
-      const recent = practices.slice(0, 6).map((x) => ({
-        title: storyMap[x.storyId] || "Story",
-        score: Math.round(((x.fluencyScore || 0) + (x.pronunciationScore || 0)) / 2),
-        date: x.date,
-      }));
+      const combinedRecent = [
+        ...practices.map((x) => ({
+          title: storyMap[x.storyId] || "Story",
+          score: Math.round(((x.fluencyScore || 0) + (x.pronunciationScore || 0)) / 2),
+          date: x.date,
+        })),
+        ...quizzes.map((x) => ({
+          title: storyMap[x.storyId] || "Story",
+          score: Math.round((x.score / x.total) * 100),
+          date: x.date,
+        }))
+      ];
+      combinedRecent.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      const recentMap = new Map();
+      combinedRecent.forEach((item) => {
+        if (!recentMap.has(item.title)) {
+          recentMap.set(item.title, item);
+        }
+      });
+      const recent = [...recentMap.values()].slice(0, 6);
 
       setData({
-        stories: completed.length, practices: practices.length, avgQuiz, readingTime, week, recent,
+        stories: completed.length, practices: practiceCount, avgQuiz, readingTime, week, recent,
       });
     })
     .catch((e) => console.error(e));

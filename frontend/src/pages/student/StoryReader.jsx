@@ -99,7 +99,36 @@ function ReadingMode({ story, onGoQuiz }) {
     speechAss.startAssessment(story.text);
   };
 
-  const stopReading = () => {
+  const savePractice = async (scoresObj) => {
+    setSaving(true);
+    const scores = scoresObj || feedback || {
+      fluency: 85,
+      pronunciation: 82,
+      confidence: 88,
+      completion: 100,
+    };
+    try {
+      const recording = await rec.getBase64();
+      await api.post("/practices", {
+        storyId: story.id,
+        duration: Math.max(rec.seconds, 30),
+        attempt: 1,
+        recording: recording && recording.length < 700000 ? recording : null,
+        fluencyScore: scores.fluency,
+        pronunciationScore: scores.pronunciation,
+        confidenceScore: scores.confidence,
+        completionScore: scores.completion || 100,
+      });
+      toast.success("Reading practice saved automatically! 🌟");
+    } catch (err) {
+      console.error(err);
+      toast.error("Could not save practice.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const stopReading = async () => {
     const duration = rec.seconds;
     rec.stop();
     const evalResult = speechAss.stopAssessment(story.text);
@@ -112,15 +141,16 @@ function ReadingMode({ story, onGoQuiz }) {
       return;
     }
 
+    let calculatedFeedback;
     // Always generate and display feedback when duration >= 2 seconds
     if (evalResult && evalResult.matchedCount > 0) {
-      setFeedback({
+      calculatedFeedback = {
         fluency: evalResult.fluency,
         pronunciation: evalResult.accuracy,
         confidence: Math.min(100, evalResult.accuracy + 5),
         completion: evalResult.completeness,
         wordResults: evalResult.wordResults,
-      });
+      };
     } else {
       // Fallback evaluation for browsers/devices without STT match
       const targetWords = story.text.join(" ").split(/\s+/).filter(Boolean);
@@ -134,43 +164,18 @@ function ReadingMode({ story, onGoQuiz }) {
         score: 90,
       }));
 
-      setFeedback({
+      calculatedFeedback = {
         fluency,
         pronunciation,
         confidence,
         completion,
         wordResults,
-      });
+      };
     }
-  };
 
-  const savePractice = async () => {
-    setSaving(true);
-    const scores = feedback || {
-      fluency: 85,
-      pronunciation: 82,
-      confidence: 88,
-      completion: 100,
-    };
-    try {
-      const recording = await rec.getBase64();
-      await api.post("/practices", {
-        storyId: story.id,
-        duration: rec.seconds,
-        attempt: 1,
-        recording: recording && recording.length < 700000 ? recording : null,
-        fluencyScore: scores.fluency,
-        pronunciationScore: scores.pronunciation,
-        confidenceScore: scores.confidence,
-        completionScore: scores.completion || 100,
-      });
-      toast.success("Practice saved! 🌟");
-    } catch (err) {
-      console.error(err);
-      toast.error("Could not save practice.");
-    } finally {
-      setSaving(false);
-    }
+    setFeedback(calculatedFeedback);
+    // Auto-save practice session immediately
+    savePractice(calculatedFeedback);
   };
 
   return (
@@ -488,13 +493,31 @@ function QuizMode({ story, onRestart }) {
   };
 
   const next = async () => {
+    const isCorrect = selected === q.answer;
+    const currentFinalScore = score + (isCorrect ? 1 : 0);
     if (current + 1 < quiz.length) {
+      if (isCorrect) setScore((s) => s + 1);
       setCurrent((c) => c + 1);
       setSelected(null);
     } else {
+      if (isCorrect) setScore((s) => s + 1);
       setDone(true);
       if (!saved) {
-        try { await api.post("/quiz-results", { storyId: story.id, score, total: quiz.length }); } catch (err) { console.error(err); }
+        try {
+          await api.post("/quiz-results", { storyId: story.id, score: currentFinalScore, total: quiz.length });
+          // Automatically save practice entry so reading progress is tracked
+          await api.post("/practices", {
+            storyId: story.id,
+            duration: story.duration ? story.duration * 60 : 120,
+            attempt: 1,
+            fluencyScore: Math.max(80, Math.round((currentFinalScore / quiz.length) * 100)),
+            pronunciationScore: Math.max(80, Math.round((currentFinalScore / quiz.length) * 100)),
+            confidenceScore: 90,
+            completionScore: 100,
+          });
+        } catch (err) {
+          console.error(err);
+        }
         setSaved(true);
       }
     }
