@@ -3,11 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, Mic, Square, ChevronRight, Star, RotateCcw } from "lucide-react";
 import { api } from "@/lib/api";
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
+import { usePronunciationAssessment } from "@/hooks/usePronunciationAssessment";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Practice() {
   const audio = useAudioPlayer();
+  const speechAss = usePronunciationAssessment();
   const [words, setWords] = useState([]);
   const [loading, setLoading] = useState(true);
   const [i, setI] = useState(0);
