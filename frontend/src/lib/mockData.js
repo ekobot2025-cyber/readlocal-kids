@@ -646,4 +646,586 @@ export const STORIES = [
       { question: "What is the final message of the story?", options: ["Leave the forest alone", "Papua is our home: we learn from it, care for it, and share its stories", "Do not read books"], answer: 1 }
     ]
   }
+,
+{
+  "id": "story-19",
+  "title": "My Honai",
+  "category": "Traditional House",
+  "level": "Beginner",
+  "grade": "Grade 1-2",
+  "cover": "/images/stories/story-1.png",
+  "duration": 2,
+  "text": [
+    "This is Edgar's Honai.",
+    "A Honai is a traditional house in Papua.",
+    "It is small and round.",
+    "The roof is made of grass.",
+    "Edgar and his family stay warm inside the Honai."
+  ],
+  "vocabulary": [
+    {
+      "word": "Honai",
+      "meaning": "A traditional house in Papua",
+      "example": "This is a Honai."
+    },
+    {
+      "word": "House",
+      "meaning": "A building where people live",
+      "example": "We stay inside the house."
+    },
+    {
+      "word": "Roof",
+      "meaning": "The top cover of a building",
+      "example": "The roof keeps us dry."
+    },
+    {
+      "word": "Grass",
+      "meaning": "A green plant that covers the ground",
+      "example": "The grass is soft."
+    },
+    {
+      "word": "Family",
+      "meaning": "A group of parents and children",
+      "example": "I love my family."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is a Honai?",
+      "options": [
+        "A traditional house",
+        "A traditional food",
+        "A bird"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What is the roof made of?",
+      "options": [
+        "Glass",
+        "Grass",
+        "Metal"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Who stays inside the Honai?",
+      "options": [
+        "Edgar and his family",
+        "Fish",
+        "Birds"
+      ],
+      "answer": 0
+    }
+  ]
+},
+{
+  "id": "story-20",
+  "title": "Papeda Day",
+  "category": "Food",
+  "level": "Beginner",
+  "grade": "Grade 1-2",
+  "cover": "/images/stories/story-5.png",
+  "duration": 2,
+  "text": [
+    "Today, Aldrick's family eats Papeda.",
+    "Papeda is made from sago.",
+    "It is soft and sticky.",
+    "They eat Papeda with fish and yellow soup.",
+    "Papeda is one of their favorite foods."
+  ],
+  "vocabulary": [
+    {
+      "word": "Papeda",
+      "meaning": "A traditional sago porridge from Papua",
+      "example": "I like eating Papeda."
+    },
+    {
+      "word": "Sago",
+      "meaning": "Starch from sago palm stems",
+      "example": "We make porridge from sago."
+    },
+    {
+      "word": "Fish",
+      "meaning": "An animal that swims in water",
+      "example": "Yellow fish soup is tasty."
+    },
+    {
+      "word": "Soup",
+      "meaning": "A hot liquid food",
+      "example": "Yellow soup is delicious."
+    },
+    {
+      "word": "Sticky",
+      "meaning": "Tending to cling or glue",
+      "example": "Papeda is soft and sticky."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is Papeda made from?",
+      "options": [
+        "Rice",
+        "Sago",
+        "Corn"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is the texture of Papeda?",
+      "options": [
+        "Hard and dry",
+        "Soft and sticky",
+        "Cold and sweet"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What does Aldrick's family eat Papeda with?",
+      "options": [
+        "Chicken and rice",
+        "Fish and yellow soup",
+        "Bread and butter"
+      ],
+      "answer": 1
+    }
+  ]
+},
+{
+  "id": "story-21",
+  "title": "The Bird of Paradise",
+  "category": "Animals",
+  "level": "Beginner",
+  "grade": "Grade 3-4",
+  "cover": "/images/stories/story-6.png",
+  "duration": 3,
+  "text": [
+    "The Bird of Paradise lives in Papua.",
+    "It has beautiful feathers.",
+    "Kyra sees the bird in the forest.",
+    "It can fly high in the sky.",
+    "Edgar and Kyra are proud of this beautiful bird."
+  ],
+  "vocabulary": [
+    {
+      "word": "Paradise",
+      "meaning": "A very beautiful place or bird",
+      "example": "This is a bird of paradise."
+    },
+    {
+      "word": "Feather",
+      "meaning": "One of the light things covering a bird",
+      "example": "The feathers are colorful."
+    },
+    {
+      "word": "Forest",
+      "meaning": "A large area covered with trees",
+      "example": "Wild animals live in the forest."
+    },
+    {
+      "word": "Fly",
+      "meaning": "To move through the air with wings",
+      "example": "Birds can fly high."
+    },
+    {
+      "word": "Proud",
+      "meaning": "Feeling deep satisfaction",
+      "example": "I am proud of my home."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Where does the Bird of Paradise live?",
+      "options": [
+        "In the desert",
+        "In the ocean",
+        "In the forest"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What makes this bird special?",
+      "options": [
+        "It can swim fast",
+        "It has beautiful feathers",
+        "It is very big"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How do Edgar and Kyra feel about the bird?",
+      "options": [
+        "They are proud of it",
+        "They are afraid of it",
+        "They do not like it"
+      ],
+      "answer": 0
+    }
+  ]
+},
+{
+  "id": "story-22",
+  "title": "My Noken",
+  "category": "Daily Life",
+  "level": "Intermediate",
+  "grade": "Grade 3-4",
+  "cover": "/images/stories/story-2.png",
+  "duration": 3,
+  "text": [
+    "Sylvia's mother makes a Noken.",
+    "A Noken is a traditional woven bag.",
+    "She weaves it using strong wood fiber.",
+    "Her mother carries the Noken on her forehead.",
+    "She fills it with fresh sweet potatoes and green vegetables.",
+    "Sylvia loves her Noken because it is strong and beautiful."
+  ],
+  "vocabulary": [
+    {
+      "word": "Noken",
+      "meaning": "Traditional woven bag from Papua",
+      "example": "We carry goods in a Noken."
+    },
+    {
+      "word": "Woven",
+      "meaning": "Made by interlacing threads or fibers",
+      "example": "A woven bag is strong."
+    },
+    {
+      "word": "Weaves",
+      "meaning": "Creates fabric or items by interlacing threads",
+      "example": "She weaves a beautiful pattern."
+    },
+    {
+      "word": "Fiber",
+      "meaning": "Threadlike material from plants or trees",
+      "example": "Wood fiber is used for weaving."
+    },
+    {
+      "word": "Forehead",
+      "meaning": "The part of the face above the eyebrows",
+      "example": "She wears the bag strap on her forehead."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is a Noken?",
+      "options": [
+        "A woven bag",
+        "A type of hat",
+        "A sweet potato"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Where is the Noken carried?",
+      "options": [
+        "On the shoulder",
+        "On the forehead",
+        "In the hand"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is inside the mother's Noken?",
+      "options": [
+        "Books and pens",
+        "Sweet potatoes and vegetables",
+        "Shells and fish"
+      ],
+      "answer": 1
+    }
+  ]
+},
+{
+  "id": "story-23",
+  "title": "A Day at Sentani Lake",
+  "category": "Nature",
+  "level": "Intermediate",
+  "grade": "Grade 5-6",
+  "cover": "/images/stories/story-7.png",
+  "duration": 3,
+  "text": [
+    "Today, Edgar and Aldrick visit Sentani Lake.",
+    "The lake is big and very peaceful.",
+    "Green hills surround the clear water.",
+    "They see children playing happily near the water.",
+    "Fishermen row wooden boats to catch fish.",
+    "They enjoy the cool wind and watch the beautiful sunset over the mountains."
+  ],
+  "vocabulary": [
+    {
+      "word": "Lake",
+      "meaning": "A large body of water surrounded by land",
+      "example": "Sentani is a famous lake."
+    },
+    {
+      "word": "Peaceful",
+      "meaning": "Quiet and calm",
+      "example": "The lake is quiet and peaceful."
+    },
+    {
+      "word": "Fishermen",
+      "meaning": "People who catch fish",
+      "example": "Fishermen catch fish in the lake."
+    },
+    {
+      "word": "Row",
+      "meaning": "To propel a boat using oars",
+      "example": "They row the boat to the shore."
+    },
+    {
+      "word": "Sunset",
+      "meaning": "The time when the sun disappears below the horizon",
+      "example": "The sunset looks orange."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What surrounds the water of Sentani Lake?",
+      "options": [
+        "Tall buildings",
+        "Green hills",
+        "Sandy deserts"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What do the fishermen use to catch fish?",
+      "options": [
+        "Large ships",
+        "Wooden boats",
+        "Helicopters"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What beautiful view do they watch at the end of the day?",
+      "options": [
+        "The sunrise",
+        "The sunset",
+        "The heavy rain"
+      ],
+      "answer": 1
+    }
+  ]
+},
+{
+  "id": "story-24",
+  "title": "Playing the Tifa",
+  "category": "Arts & Music",
+  "level": "Beginner",
+  "grade": "Grade 3-4",
+  "cover": "/images/stories/story-3.png",
+  "duration": 2,
+  "text": [
+    "Edgar's father plays a Tifa.",
+    "A Tifa is a traditional drum from Papua.",
+    "It is made of wood.",
+    "He hits the drum with his hands.",
+    "The Tifa makes a loud and happy sound.",
+    "Edgar and Kyra dance and smile when the Tifa plays."
+  ],
+  "vocabulary": [
+    {
+      "word": "Tifa",
+      "meaning": "A traditional wooden drum from Papua",
+      "example": "He plays the Tifa."
+    },
+    {
+      "word": "Drum",
+      "meaning": "A musical instrument played by beating",
+      "example": "I like playing the drum."
+    },
+    {
+      "word": "Hits",
+      "meaning": "Beats or strikes with hands",
+      "example": "He hits the drum softly."
+    },
+    {
+      "word": "Loud",
+      "meaning": "Making a lot of noise",
+      "example": "The music is loud."
+    },
+    {
+      "word": "Dance",
+      "meaning": "To move your body to music",
+      "example": "We dance together."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is a Tifa?",
+      "options": [
+        "A traditional drum",
+        "A traditional dance",
+        "A traditional house"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "How is the Tifa played?",
+      "options": [
+        "By blowing it",
+        "By hitting it with hands",
+        "By shaking it"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What do Edgar and Kyra do when the Tifa plays?",
+      "options": [
+        "They sleep",
+        "They cry",
+        "They dance and smile"
+      ],
+      "answer": 2
+    }
+  ]
+},
+{
+  "id": "story-25",
+  "title": "Yospan Dance",
+  "category": "Arts & Music",
+  "level": "Intermediate",
+  "grade": "Grade 5-6",
+  "cover": "/images/stories/story-16.png",
+  "duration": 3,
+  "text": [
+    "Today is the village festival.",
+    "Edgar, Aldrick, Kyra, and Sylvia dance the Yospan dance together.",
+    "Yospan is a traditional dance of friendship.",
+    "They wear colorful sashes and feathers on their heads.",
+    "They leap and clap their hands happily.",
+    "The fast music of Tifa makes everyone feel excited and joyful."
+  ],
+  "vocabulary": [
+    {
+      "word": "Yospan",
+      "meaning": "A traditional dance from Papua",
+      "example": "Yospan is a joyful dance."
+    },
+    {
+      "word": "Festival",
+      "meaning": "A day or period of celebration",
+      "example": "We celebrate the festival."
+    },
+    {
+      "word": "Friendship",
+      "meaning": "A relationship between friends",
+      "example": "This is a dance of friendship."
+    },
+    {
+      "word": "Leap",
+      "meaning": "To jump high or forward",
+      "example": "We leap and clap during the dance."
+    },
+    {
+      "word": "Clap",
+      "meaning": "To strike the palms of hands together",
+      "example": "We clap to the beat."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What kind of dance is Yospan?",
+      "options": [
+        "A dance of sadness",
+        "A dance of friendship",
+        "A slow dance"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What do the dancers wear on their heads?",
+      "options": [
+        "Caps",
+        "Feathers",
+        "Helmets"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How do the dancers move in Yospan?",
+      "options": [
+        "They sleep",
+        "They leap and clap",
+        "They run away"
+      ],
+      "answer": 1
+    }
+  ]
+},
+{
+  "id": "story-26",
+  "title": "My Village in Papua",
+  "category": "Daily Life",
+  "level": "Beginner",
+  "grade": "Grade 1-2",
+  "cover": "/images/stories/story-18.png",
+  "duration": 2,
+  "text": [
+    "Welcome to Edgar and Kyra's beautiful village in Papua.",
+    "Their village is green and quiet.",
+    "They have many round Honai houses.",
+    "Behind the houses, there are tall mountains.",
+    "Edgar and Kyra play outside under the blue sky.",
+    "They love their village very much."
+  ],
+  "vocabulary": [
+    {
+      "word": "Village",
+      "meaning": "A small group of houses in the countryside",
+      "example": "I live in a small village."
+    },
+    {
+      "word": "Quiet",
+      "meaning": "Making very little noise",
+      "example": "My village is calm and quiet."
+    },
+    {
+      "word": "Behind",
+      "meaning": "At the back of something",
+      "example": "The mountains are behind our houses."
+    },
+    {
+      "word": "Mountain",
+      "meaning": "A very high hill",
+      "example": "The mountains are tall."
+    },
+    {
+      "word": "Outside",
+      "meaning": "Not inside a building",
+      "example": "We play outside in the sun."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "How is the village described?",
+      "options": [
+        "Green and quiet",
+        "Loud and busy",
+        "Dirty and hot"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What is behind the houses?",
+      "options": [
+        "A river",
+        "Tall mountains",
+        "A big school"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What houses are in the village?",
+      "options": [
+        "Modern apartments",
+        "Round Honai houses",
+        "Stone castles"
+      ],
+      "answer": 1
+    }
+  ]
+}
 ];

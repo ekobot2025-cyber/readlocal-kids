@@ -90,7 +90,7 @@
       "us": "/audio/stories/story-3_s2_us.mp3"
     },
     "3": {
-      "text": "Aldrick listens to the happy music.",
+      "text": "Kyra listens to the happy music.",
       "uk": "/audio/stories/story-3_s3_uk.mp3",
       "us": "/audio/stories/story-3_s3_us.mp3"
     },
@@ -132,7 +132,7 @@
       "us": "/audio/stories/story-4_s4_us.mp3"
     },
     "5": {
-      "text": "Now, Edgar and Aldrick walk to school happily.",
+      "text": "Now, Edgar, Kyra, and Sylvia walk to school happily.",
       "uk": "/audio/stories/story-4_s5_uk.mp3",
       "us": "/audio/stories/story-4_s5_us.mp3"
     }
@@ -154,7 +154,7 @@
       "us": "/audio/stories/story-5_s2_us.mp3"
     },
     "3": {
-      "text": "Aldrick dips papeda into yellow fish soup.",
+      "text": "Sylvia dips papeda into yellow fish soup.",
       "uk": "/audio/stories/story-5_s3_uk.mp3",
       "us": "/audio/stories/story-5_s3_us.mp3"
     },
@@ -171,7 +171,7 @@
   },
   "story-6": {
     "0": {
-      "text": "Aldrick sees a bird high up in a tree.",
+      "text": "Kyra sees a bird high up in a tree.",
       "uk": "/audio/stories/story-6_s0_uk.mp3",
       "us": "/audio/stories/story-6_s0_us.mp3"
     },
@@ -255,7 +255,7 @@
   },
   "story-8": {
     "0": {
-      "text": "Lani and Edgar walk through the garden with their uncle.",
+      "text": "Kyra and Edgar walk through the garden with their uncle.",
       "uk": "/audio/stories/story-8_s0_uk.mp3",
       "us": "/audio/stories/story-8_s0_us.mp3"
     },
@@ -270,7 +270,7 @@
       "us": "/audio/stories/story-8_s2_us.mp3"
     },
     "3": {
-      "text": "Aldrick comes closer to observe its unique shape.",
+      "text": "Sylvia comes closer to observe its unique shape.",
       "uk": "/audio/stories/story-8_s3_uk.mp3",
       "us": "/audio/stories/story-8_s3_us.mp3"
     },
@@ -285,7 +285,7 @@
       "us": "/audio/stories/story-8_s5_us.mp3"
     },
     "6": {
-      "text": "\"Nature gives us so many wonderful plants,\" says Lani.",
+      "text": "\"Nature gives us so many wonderful plants,\" says Kyra.",
       "uk": "/audio/stories/story-8_s6_uk.mp3",
       "us": "/audio/stories/story-8_s6_us.mp3"
     },
@@ -334,7 +334,7 @@
   },
   "story-10": {
     "0": {
-      "text": "On Saturday morning, Aldrick visits Hamadi Market in Jayapura with his aunt.",
+      "text": "On Saturday morning, Sylvia visits Hamadi Market in Jayapura with her aunt.",
       "uk": "/audio/stories/story-10_s0_uk.mp3",
       "us": "/audio/stories/story-10_s0_us.mp3"
     },
@@ -349,7 +349,7 @@
       "us": "/audio/stories/story-10_s2_us.mp3"
     },
     "3": {
-      "text": "Aldrick carries a large woven noken bag on his shoulder.",
+      "text": "Sylvia carries a large woven noken bag on her shoulder.",
       "uk": "/audio/stories/story-10_s3_uk.mp3",
       "us": "/audio/stories/story-10_s3_us.mp3"
     },
@@ -364,12 +364,12 @@
       "us": "/audio/stories/story-10_s5_us.mp3"
     },
     "6": {
-      "text": "His aunt buys sweet potatoes and fresh fish for dinner.",
+      "text": "Her aunt buys sweet potatoes and fresh fish for dinner.",
       "uk": "/audio/stories/story-10_s6_uk.mp3",
       "us": "/audio/stories/story-10_s6_us.mp3"
     },
     "7": {
-      "text": "Aldrick enjoys seeing the community work together at the market.",
+      "text": "Sylvia enjoys seeing the community work together at the market.",
       "uk": "/audio/stories/story-10_s7_uk.mp3",
       "us": "/audio/stories/story-10_s7_us.mp3"
     }
@@ -460,7 +460,7 @@
   },
   "story-13": {
     "0": {
-      "text": "On a peaceful Sunday afternoon, Aldrick sits with his grandmother outside their Honai.",
+      "text": "On a peaceful Sunday afternoon, Sylvia sits with her grandmother outside their Honai.",
       "uk": "/audio/stories/story-13_s0_uk.mp3",
       "us": "/audio/stories/story-13_s0_us.mp3"
     },
@@ -485,7 +485,7 @@
       "us": "/audio/stories/story-13_s4_us.mp3"
     },
     "5": {
-      "text": "She hands the noken to Aldrick, who touches the carefully braided handles.",
+      "text": "She hands the noken to Sylvia, who touches the carefully braided handles.",
       "uk": "/audio/stories/story-13_s5_uk.mp3",
       "us": "/audio/stories/story-13_s5_us.mp3"
     },
@@ -500,7 +500,7 @@
       "us": "/audio/stories/story-13_s7_us.mp3"
     },
     "8": {
-      "text": "Aldrick promises to treasure the noken and pass down these valuable stories.",
+      "text": "Sylvia promises to treasure the noken and pass down these valuable stories.",
       "uk": "/audio/stories/story-13_s8_uk.mp3",
       "us": "/audio/stories/story-13_s8_us.mp3"
     }
@@ -733,6 +733,247 @@
       "text": "Papua is our home: we learn from it, care for it, and share its stories with everyone.",
       "uk": "/audio/stories/story-18_s7_uk.mp3",
       "us": "/audio/stories/story-18_s7_us.mp3"
+    }
+  },
+  "story-19": {
+    "0": {
+      "text": "This is Edgar's Honai.",
+      "uk": "/audio/stories/story-19_s0_uk.mp3",
+      "us": "/audio/stories/story-19_s0_us.mp3"
+    },
+    "1": {
+      "text": "A Honai is a traditional house in Papua.",
+      "uk": "/audio/stories/story-19_s1_uk.mp3",
+      "us": "/audio/stories/story-19_s1_us.mp3"
+    },
+    "2": {
+      "text": "It is small and round.",
+      "uk": "/audio/stories/story-19_s2_uk.mp3",
+      "us": "/audio/stories/story-19_s2_us.mp3"
+    },
+    "3": {
+      "text": "The roof is made of grass.",
+      "uk": "/audio/stories/story-19_s3_uk.mp3",
+      "us": "/audio/stories/story-19_s3_us.mp3"
+    },
+    "4": {
+      "text": "Edgar and his family stay warm inside the Honai.",
+      "uk": "/audio/stories/story-19_s4_uk.mp3",
+      "us": "/audio/stories/story-19_s4_us.mp3"
+    }
+  },
+  "story-20": {
+    "0": {
+      "text": "Today, Aldrick's family eats Papeda.",
+      "uk": "/audio/stories/story-20_s0_uk.mp3",
+      "us": "/audio/stories/story-20_s0_us.mp3"
+    },
+    "1": {
+      "text": "Papeda is made from sago.",
+      "uk": "/audio/stories/story-20_s1_uk.mp3",
+      "us": "/audio/stories/story-20_s1_us.mp3"
+    },
+    "2": {
+      "text": "It is soft and sticky.",
+      "uk": "/audio/stories/story-20_s2_uk.mp3",
+      "us": "/audio/stories/story-20_s2_us.mp3"
+    },
+    "3": {
+      "text": "They eat Papeda with fish and yellow soup.",
+      "uk": "/audio/stories/story-20_s3_uk.mp3",
+      "us": "/audio/stories/story-20_s3_us.mp3"
+    },
+    "4": {
+      "text": "Papeda is one of their favorite foods.",
+      "uk": "/audio/stories/story-20_s4_uk.mp3",
+      "us": "/audio/stories/story-20_s4_us.mp3"
+    }
+  },
+  "story-21": {
+    "0": {
+      "text": "The Bird of Paradise lives in Papua.",
+      "uk": "/audio/stories/story-21_s0_uk.mp3",
+      "us": "/audio/stories/story-21_s0_us.mp3"
+    },
+    "1": {
+      "text": "It has beautiful feathers.",
+      "uk": "/audio/stories/story-21_s1_uk.mp3",
+      "us": "/audio/stories/story-21_s1_us.mp3"
+    },
+    "2": {
+      "text": "Kyra sees the bird in the forest.",
+      "uk": "/audio/stories/story-21_s2_uk.mp3",
+      "us": "/audio/stories/story-21_s2_us.mp3"
+    },
+    "3": {
+      "text": "It can fly high in the sky.",
+      "uk": "/audio/stories/story-21_s3_uk.mp3",
+      "us": "/audio/stories/story-21_s3_us.mp3"
+    },
+    "4": {
+      "text": "Edgar and Kyra are proud of this beautiful bird.",
+      "uk": "/audio/stories/story-21_s4_uk.mp3",
+      "us": "/audio/stories/story-21_s4_us.mp3"
+    }
+  },
+  "story-22": {
+    "0": {
+      "text": "Sylvia's mother makes a Noken.",
+      "uk": "/audio/stories/story-22_s0_uk.mp3",
+      "us": "/audio/stories/story-22_s0_us.mp3"
+    },
+    "1": {
+      "text": "A Noken is a traditional woven bag.",
+      "uk": "/audio/stories/story-22_s1_uk.mp3",
+      "us": "/audio/stories/story-22_s1_us.mp3"
+    },
+    "2": {
+      "text": "She weaves it using strong wood fiber.",
+      "uk": "/audio/stories/story-22_s2_uk.mp3",
+      "us": "/audio/stories/story-22_s2_us.mp3"
+    },
+    "3": {
+      "text": "Her mother carries the Noken on her forehead.",
+      "uk": "/audio/stories/story-22_s3_uk.mp3",
+      "us": "/audio/stories/story-22_s3_us.mp3"
+    },
+    "4": {
+      "text": "She fills it with fresh sweet potatoes and green vegetables.",
+      "uk": "/audio/stories/story-22_s4_uk.mp3",
+      "us": "/audio/stories/story-22_s4_us.mp3"
+    },
+    "5": {
+      "text": "Sylvia loves her Noken because it is strong and beautiful.",
+      "uk": "/audio/stories/story-22_s5_uk.mp3",
+      "us": "/audio/stories/story-22_s5_us.mp3"
+    }
+  },
+  "story-23": {
+    "0": {
+      "text": "Today, Edgar and Aldrick visit Sentani Lake.",
+      "uk": "/audio/stories/story-23_s0_uk.mp3",
+      "us": "/audio/stories/story-23_s0_us.mp3"
+    },
+    "1": {
+      "text": "The lake is big and very peaceful.",
+      "uk": "/audio/stories/story-23_s1_uk.mp3",
+      "us": "/audio/stories/story-23_s1_us.mp3"
+    },
+    "2": {
+      "text": "Green hills surround the clear water.",
+      "uk": "/audio/stories/story-23_s2_uk.mp3",
+      "us": "/audio/stories/story-23_s2_us.mp3"
+    },
+    "3": {
+      "text": "They see children playing happily near the water.",
+      "uk": "/audio/stories/story-23_s3_uk.mp3",
+      "us": "/audio/stories/story-23_s3_us.mp3"
+    },
+    "4": {
+      "text": "Fishermen row wooden boats to catch fish.",
+      "uk": "/audio/stories/story-23_s4_uk.mp3",
+      "us": "/audio/stories/story-23_s4_us.mp3"
+    },
+    "5": {
+      "text": "They enjoy the cool wind and watch the beautiful sunset over the mountains.",
+      "uk": "/audio/stories/story-23_s5_uk.mp3",
+      "us": "/audio/stories/story-23_s5_us.mp3"
+    }
+  },
+  "story-24": {
+    "0": {
+      "text": "Edgar's father plays a Tifa.",
+      "uk": "/audio/stories/story-24_s0_uk.mp3",
+      "us": "/audio/stories/story-24_s0_us.mp3"
+    },
+    "1": {
+      "text": "A Tifa is a traditional drum from Papua.",
+      "uk": "/audio/stories/story-24_s1_uk.mp3",
+      "us": "/audio/stories/story-24_s1_us.mp3"
+    },
+    "2": {
+      "text": "It is made of wood.",
+      "uk": "/audio/stories/story-24_s2_uk.mp3",
+      "us": "/audio/stories/story-24_s2_us.mp3"
+    },
+    "3": {
+      "text": "He hits the drum with his hands.",
+      "uk": "/audio/stories/story-24_s3_uk.mp3",
+      "us": "/audio/stories/story-24_s3_us.mp3"
+    },
+    "4": {
+      "text": "The Tifa makes a loud and happy sound.",
+      "uk": "/audio/stories/story-24_s4_uk.mp3",
+      "us": "/audio/stories/story-24_s4_us.mp3"
+    },
+    "5": {
+      "text": "Edgar and Kyra dance and smile when the Tifa plays.",
+      "uk": "/audio/stories/story-24_s5_uk.mp3",
+      "us": "/audio/stories/story-24_s5_us.mp3"
+    }
+  },
+  "story-25": {
+    "0": {
+      "text": "Today is the village festival.",
+      "uk": "/audio/stories/story-25_s0_uk.mp3",
+      "us": "/audio/stories/story-25_s0_us.mp3"
+    },
+    "1": {
+      "text": "Edgar, Aldrick, Kyra, and Sylvia dance the Yospan dance together.",
+      "uk": "/audio/stories/story-25_s1_uk.mp3",
+      "us": "/audio/stories/story-25_s1_us.mp3"
+    },
+    "2": {
+      "text": "Yospan is a traditional dance of friendship.",
+      "uk": "/audio/stories/story-25_s2_uk.mp3",
+      "us": "/audio/stories/story-25_s2_us.mp3"
+    },
+    "3": {
+      "text": "They wear colorful sashes and feathers on their heads.",
+      "uk": "/audio/stories/story-25_s3_uk.mp3",
+      "us": "/audio/stories/story-25_s3_us.mp3"
+    },
+    "4": {
+      "text": "They leap and clap their hands happily.",
+      "uk": "/audio/stories/story-25_s4_uk.mp3",
+      "us": "/audio/stories/story-25_s4_us.mp3"
+    },
+    "5": {
+      "text": "The fast music of Tifa makes everyone feel excited and joyful.",
+      "uk": "/audio/stories/story-25_s5_uk.mp3",
+      "us": "/audio/stories/story-25_s5_us.mp3"
+    }
+  },
+  "story-26": {
+    "0": {
+      "text": "Welcome to Edgar and Kyra's beautiful village in Papua.",
+      "uk": "/audio/stories/story-26_s0_uk.mp3",
+      "us": "/audio/stories/story-26_s0_us.mp3"
+    },
+    "1": {
+      "text": "Their village is green and quiet.",
+      "uk": "/audio/stories/story-26_s1_uk.mp3",
+      "us": "/audio/stories/story-26_s1_us.mp3"
+    },
+    "2": {
+      "text": "They have many round Honai houses.",
+      "uk": "/audio/stories/story-26_s2_uk.mp3",
+      "us": "/audio/stories/story-26_s2_us.mp3"
+    },
+    "3": {
+      "text": "Behind the houses, there are tall mountains.",
+      "uk": "/audio/stories/story-26_s3_uk.mp3",
+      "us": "/audio/stories/story-26_s3_us.mp3"
+    },
+    "4": {
+      "text": "Edgar and Kyra play outside under the blue sky.",
+      "uk": "/audio/stories/story-26_s4_uk.mp3",
+      "us": "/audio/stories/story-26_s4_us.mp3"
+    },
+    "5": {
+      "text": "They love their village very much.",
+      "uk": "/audio/stories/story-26_s5_uk.mp3",
+      "us": "/audio/stories/story-26_s5_us.mp3"
     }
   }
 }
