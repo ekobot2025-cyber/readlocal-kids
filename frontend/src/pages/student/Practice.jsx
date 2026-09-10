@@ -2,12 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, Mic, Square, ChevronRight, Star, RotateCcw } from "lucide-react";
 import { api } from "@/lib/api";
-import { useSpeech } from "@/hooks/useSpeech";
+import { useAudioPlayer } from "@/hooks/useAudioPlayer";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Practice() {
-  const speech = useSpeech();
+  const audio = useAudioPlayer();
   const [words, setWords] = useState([]);
   const [loading, setLoading] = useState(true);
   const [i, setI] = useState(0);
@@ -126,7 +126,7 @@ export default function Practice() {
         <p className="mt-2 text-slate-500">{word.meaning}</p>
 
         <div className="mt-6 flex justify-center gap-3">
-          <Button onClick={() => speech.speak(word.word, 0.85)} variant="outline" data-testid="pron-listen-btn" className="rounded-full border-2 py-6 font-bold text-sky-600">
+          <Button onClick={() => audio.playWord(word.word, "UK")} variant="outline" data-testid="pron-listen-btn" className="rounded-full border-2 py-6 font-bold text-sky-600">
             <Volume2 className="mr-1.5 h-5 w-5" /> Listen
           </Button>
           {!recording ? (

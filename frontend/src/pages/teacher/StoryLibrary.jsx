@@ -2,20 +2,26 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Volume2, Square, BookText, Eye } from "lucide-react";
 import { api } from "@/lib/api";
-import { useSpeech } from "@/hooks/useSpeech";
+import { useStoryAudio } from "@/hooks/useStoryAudio";
 import { LevelBadge } from "@/components/LevelBadge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 
 export default function StoryLibrary() {
   const [stories, setStories] = useState([]);
   const [active, setActive] = useState(null);
-  const speech = useSpeech();
+  const storyAudio = useStoryAudio();
 
   useEffect(() => { api.get("/stories").then((r) => setStories(r.data)); }, []);
 
-  const open = (s) => { speech.stop(); setActive(s); };
+  const open = (s) => { storyAudio.stop(); setActive(s); };
+
+  const handleClose = () => {
+    storyAudio.stop();
+    setActive(null);
+  };
 
   return (
     <div className="space-y-6">
@@ -44,17 +50,30 @@ export default function StoryLibrary() {
         </div>
       )}
 
-      <Dialog open={!!active} onOpenChange={(o) => { if (!o) { speech.stop(); setActive(null); } }}>
+      <Dialog open={!!active} onOpenChange={(o) => { if (!o) handleClose(); }}>
         <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto rounded-3xl">
           {active && (
             <div data-testid="story-preview" className="p-6">
               <DialogTitle className="font-heading text-2xl font-bold text-slate-800">{active.title}</DialogTitle>
               <div className="mt-1 flex items-center gap-2"><LevelBadge level={active.level} /><span className="text-sm text-slate-400">{active.category} · {active.grade}</span></div>
               <div className="mt-4 space-y-2 rounded-2xl bg-slate-50 p-5 text-lg leading-relaxed text-slate-700">
-                {active.text.map((l, i) => <p key={i}>{l}</p>)}
+                {active.text.map((l, i) => (
+                  <p key={i}>
+                    <span className={cn("transition-colors", storyAudio.activeIndex === i && "reading-active font-semibold text-sky-600 bg-sky-100 px-1 rounded")}>
+                      {l}
+                    </span>
+                  </p>
+                ))}
               </div>
-              <Button onClick={() => speech.speaking ? speech.stop() : speech.speakSequence(active.text, 1)} data-testid="preview-listen" className="mt-4 rounded-full bg-sky-500 font-bold text-white hover:bg-sky-600">
-                {speech.speaking ? <><Square className="mr-1.5 h-4 w-4" />Stop</> : <><Volume2 className="mr-1.5 h-4 w-4" />Listen to Model</>}
+              <Button
+                onClick={() => storyAudio.speaking ? storyAudio.stop() : storyAudio.playSentences(active.id, active.text, 1)}
+                data-testid="preview-listen"
+                className={cn(
+                  "mt-4 rounded-full font-bold text-white transition-colors",
+                  storyAudio.speaking ? "bg-rose-500 hover:bg-rose-600" : "bg-sky-500 hover:bg-sky-600"
+                )}
+              >
+                {storyAudio.speaking ? <><Square className="mr-1.5 h-4 w-4" />Stop</> : <><Volume2 className="mr-1.5 h-4 w-4" />Listen to Model</>}
               </Button>
               <div className="mt-5">
                 <h4 className="mb-2 flex items-center gap-1.5 font-bold text-slate-700"><BookText className="h-4 w-4" /> Vocabulary</h4>
