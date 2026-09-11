@@ -19,8 +19,10 @@
 
 **ReadLocal Kids** is an interactive, culturally contextualized digital English reading platform developed specifically for elementary school learners in Papua, Indonesia. By marrying **Papuan indigenous folk stories, traditional ecological knowledge, and cultural heritage** with modern **speech recognition and pronunciation assessment**, ReadLocal Kids empowers young learners to master oral reading fluency in English while nurturing deep pride in their local heritage.
 
-> **Research Lead & Author**: **Dr. Yulini Rinantanti, M. Ed.**  
-> *Dedicated to advancing literacy and joyful language acquisition across Papua.*
+> **Research & Development Team**:
+> - **[Dr. Yulini Rinantanti, M. Ed.](https://sinta.kemdiktisaintek.go.id/authors/profile/6010144)** (*Mam Yulini*) — **Research Lead & Author**
+> - **[Bunga Padaunan](https://www.instagram.com/unge_padaunan)** (*Miss Bunga*) — **Co-Author & Educational Researcher**
+> - **[Enterdie](https://www.linkedin.com/in/papedatimur)** — **UI/UX Designer & Lead Developer**
 
 ---
 
@@ -201,13 +203,25 @@ The compiled static assets will be output to `frontend/dist/`, ready for deploym
 
 ---
 
+## 👥 Research & Development Team
+
+ReadLocal Kids was created through the collaborative passion of researchers, educators, and designers:
+
+| Name | Role | Profile / Link |
+|---|---|---|
+| **Dr. Yulini Rinantanti, M. Ed.** (*Mam Yulini*) | Research Lead & Author | [SINTA Profile](https://sinta.kemdiktisaintek.go.id/authors/profile/6010144) |
+| **Bunga Padaunan** (*Miss Bunga*) | Co-Author & Educational Researcher | [Instagram (@unge_padaunan)](https://www.instagram.com/unge_padaunan) |
+| **Enterdie** | UI/UX Designer & Lead Developer | [LinkedIn Profile](https://www.linkedin.com/in/papedatimur) |
+
+---
+
 ## 📜 Research & Citation
 
 If you use or reference ReadLocal Kids in educational research, literacy interventions, or academic publications, please cite:
 
 ```bibtex
 @misc{rinantanti2026readlocal,
-  author    = {Dr. Yulini Rinantanti, M. Ed.},
+  author    = {Dr. Yulini Rinantanti, M. Ed. and Bunga Padaunan and Enterdie},
   title     = {ReadLocal Kids: Papuan Reading Aloud & Cultural Discovery Digital Learning Platform},
   year      = {2026},
   publisher = {GitHub},
