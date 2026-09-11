@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useRef } from "react";
+import React, { createContext, useContext, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -30,7 +30,7 @@ export function SheetTrigger({ children, asChild }) {
   if (asChild) {
     return React.cloneElement(React.Children.only(children), {
       onClick: (e) => {
-        onOpenChange && onOpenChange(!open);
+        if (onOpenChange) onOpenChange(!open);
         if (children.props.onClick) children.props.onClick(e);
       }
     });

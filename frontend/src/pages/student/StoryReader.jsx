@@ -511,25 +511,21 @@ function QuizMode({ story, onRestart }) {
   };
 
   const next = async () => {
-    const isCorrect = selected === q.answer;
-    const currentFinalScore = score + (isCorrect ? 1 : 0);
     if (current + 1 < quiz.length) {
-      if (isCorrect) setScore((s) => s + 1);
       setCurrent((c) => c + 1);
       setSelected(null);
     } else {
-      if (isCorrect) setScore((s) => s + 1);
       setDone(true);
       if (!saved) {
         try {
-          await api.post("/quiz-results", { storyId: story.id, score: currentFinalScore, total: quiz.length });
+          await api.post("/quiz-results", { storyId: story.id, score, total: quiz.length });
           // Automatically save practice entry so reading progress is tracked
           await api.post("/practices", {
             storyId: story.id,
             duration: story.duration ? story.duration * 60 : 120,
             attempt: 1,
-            fluencyScore: Math.max(80, Math.round((currentFinalScore / quiz.length) * 100)),
-            pronunciationScore: Math.max(80, Math.round((currentFinalScore / quiz.length) * 100)),
+            fluencyScore: Math.max(80, Math.round((score / quiz.length) * 100)),
+            pronunciationScore: Math.max(80, Math.round((score / quiz.length) * 100)),
             confidenceScore: 90,
             completionScore: 100,
           });

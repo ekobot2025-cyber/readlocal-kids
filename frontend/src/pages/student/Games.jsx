@@ -79,7 +79,7 @@ function MatchGame({ items }) {
   return (
     <div className="rounded-3xl border-2 border-slate-100 bg-white p-6" data-testid="match-game">
       <p className="mb-4 text-center font-semibold text-slate-500">Tap a word, then tap its picture.</p>
-      {won && <div className="mb-4 rounded-2xl bg-green-50 p-3 text-center font-bold text-green-700"><Trophy className="mr-1 inline h-5 w-5" />You matched them all!</div>}\
+      {won && <div className="mb-4 rounded-2xl bg-green-50 p-3 text-center font-bold text-green-700"><Trophy className="mr-1 inline h-5 w-5" />You matched them all!</div>}
       <div className="mb-5 flex flex-wrap justify-center gap-2">
         {words.map((w) => (
           <button
@@ -90,7 +90,7 @@ function MatchGame({ items }) {
             className={cn("rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors",
               matched.includes(w.id) ? "border-green-300 bg-green-100 text-green-600 line-through" :
               selected === w.id ? "border-sky-500 bg-sky-500 text-white" : "border-slate-200 text-slate-600 hover:border-sky-300")}
-          >\
+          >
             {w.name}
           </button>
         ))}
@@ -152,8 +152,8 @@ function ArrangeGame({ sentences }) {
       {status === "correct" && <p className="mb-3 rounded-xl bg-green-50 py-2 text-center font-bold text-green-700">✅ "{correct.join(" ")}"</p>}
       {status === "wrong" && <p className="mb-3 rounded-xl bg-rose-50 py-2 text-center font-bold text-rose-600">Not quite — try again!</p>}
       <div className="flex gap-3">
-        <Button onClick={check} disabled={built.length !== correct.length} data-testid="arrange-check" className="flex-1 rounded-full bg-green-500 py-6 font-bold text-white hover:bg-green-600">Check</Button>\
-        <Button onClick={nextS} variant="outline" data-testid="arrange-next" className="rounded-full border-2 py-6 font-bold"><RotateCcw className="mr-1.5 h-4 w-4" />Next</Button>\
+        <Button onClick={check} disabled={built.length !== correct.length} data-testid="arrange-check" className="flex-1 rounded-full bg-green-500 py-6 font-bold text-white hover:bg-green-600">Check</Button>
+        <Button onClick={nextS} variant="outline" data-testid="arrange-next" className="rounded-full border-2 py-6 font-bold"><RotateCcw className="mr-1.5 h-4 w-4" />Next</Button>
       </div>
     </div>
   );
@@ -199,7 +199,7 @@ function MissingGame() {
           );
         })}
       </div>
-      <Button onClick={next} disabled={selected === null} data-testid="missing-next" className="mt-5 rounded-full bg-sky-500 px-8 py-6 font-bold text-white hover:bg-sky-600">Next</Button>\
+      <Button onClick={next} disabled={selected === null} data-testid="missing-next" className="mt-5 rounded-full bg-sky-500 px-8 py-6 font-bold text-white hover:bg-sky-600">Next</Button>
     </div>
   );
 }

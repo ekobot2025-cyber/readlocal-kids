@@ -99,10 +99,11 @@ export function useStoryAudio() {
           playNext();
         };
 
-        audio.onerror = () => {
-          // Fallback: Web Speech API for this sentence
+        let fallbackTriggered = false;
+        const triggerFallback = () => {
+          if (fallbackTriggered || cancelledRef.current) return;
+          fallbackTriggered = true;
           audioRef.current = null;
-          if (cancelledRef.current) return;
 
           if (typeof window !== "undefined" && window.speechSynthesis) {
             window.speechSynthesis.cancel();
@@ -147,8 +148,10 @@ export function useStoryAudio() {
           }
         };
 
+        audio.onerror = triggerFallback;
+
         audio.play().catch(() => {
-          audio.onerror();
+          triggerFallback();
         });
       };
 
