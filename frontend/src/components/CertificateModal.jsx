@@ -65,7 +65,7 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
     .left-section {
       width: 64%;
       height: 100%;
-      padding: 44px 50px 34px 54px;
+      padding: 42px 48px 32px 52px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -101,12 +101,12 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
       color: #0F172A;
       line-height: 1.15;
       letter-spacing: -0.8px;
-      margin-top: 12px;
+      margin-top: 11px;
     }
     
     /* Recipient Name */
     .recipient-block {
-      margin-top: 26px;
+      margin-top: 22px;
     }
     .recipient-name {
       font-family: 'Montserrat', sans-serif;
@@ -122,33 +122,33 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      margin-top: 15px;
+      gap: 24px;
+      margin-top: 14px;
     }
     .citation-text {
-      font-size: 11.8px;
-      line-height: 1.55;
+      font-size: 12.2px;
+      line-height: 1.6;
       color: #475569;
       font-weight: 500;
-      max-width: 375px;
+      max-width: 365px;
     }
     .citation-text strong {
       color: #0F172A;
       font-weight: 700;
     }
     .certified-stamp-img {
-      width: 112px;
-      height: 112px;
+      width: 170px;
+      height: 170px;
       object-fit: contain;
       flex-shrink: 0;
-      filter: drop-shadow(0 4px 14px rgba(59, 130, 246, 0.22));
+      filter: drop-shadow(0 6px 18px rgba(59, 130, 246, 0.28));
     }
     
     /* Dual Papuan Cultural Achievement Banner */
     .feature-dual-banner {
       display: flex;
       gap: 14px;
-      margin-top: 14px;
+      margin-top: 12px;
       margin-bottom: 2px;
       width: 100%;
     }
@@ -242,8 +242,8 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
       width: 100%;
       height: 1.5px;
       background-color: #E2E8F0;
-      margin-top: 16px;
-      margin-bottom: 14px;
+      margin-top: 14px;
+      margin-bottom: 12px;
     }
     
     /* Footer Metadata: 3 Columns */
@@ -678,7 +678,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   </h1>
 
                   {/* Recipient Name */}
-                  <div style={{ marginTop: "32px" }}>
+                  <div style={{ marginTop: "22px" }}>
                     <div
                       style={{
                         fontFamily: "'Montserrat', sans-serif",
@@ -694,14 +694,14 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   </div>
 
                   {/* Citation & Stamp Row */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", marginTop: "20px" }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "18px", marginTop: "14px" }}>
                     <p
                       style={{
                         fontSize: "11.5px",
                         lineHeight: 1.55,
                         color: "#475569",
                         fontWeight: 500,
-                        maxWidth: "340px",
+                        maxWidth: "315px",
                         margin: 0,
                       }}
                     >
@@ -711,11 +711,11 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                       src={CANVA_STAMP_BASE64}
                       alt="ReadLocal Kids Certified"
                       style={{
-                        width: "100px",
-                        height: "100px",
+                        width: "145px",
+                        height: "145px",
                         objectFit: "contain",
                         flexShrink: 0,
-                        filter: "drop-shadow(0 4px 12px rgba(59, 130, 246, 0.22))",
+                        filter: "drop-shadow(0 5px 16px rgba(59, 130, 246, 0.28))",
                       }}
                     />
                   </div>
@@ -999,7 +999,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
               style={{
                 width: "64%",
                 height: "100%",
-                padding: "44px 50px 34px 54px",
+                padding: "42px 48px 32px 52px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
@@ -1029,7 +1029,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     color: "#0F172A",
                     lineHeight: 1.15,
                     letterSpacing: "-0.8px",
-                    marginTop: "12px",
+                    marginTop: "11px",
                     marginRight: 0,
                     marginBottom: 0,
                     marginLeft: 0,
@@ -1040,7 +1040,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 </h1>
 
                 {/* Recipient Name */}
-                <div style={{ marginTop: "26px" }}>
+                <div style={{ marginTop: "22px" }}>
                   <div
                     style={{
                       fontFamily: "'Montserrat', sans-serif",
@@ -1056,14 +1056,14 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 </div>
 
                 {/* Citation & Stamp Row */}
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "20px", marginTop: "15px" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px", marginTop: "14px" }}>
                   <p
                     style={{
-                      fontSize: "11.8px",
-                      lineHeight: 1.55,
+                      fontSize: "12.2px",
+                      lineHeight: 1.6,
                       color: "#475569",
                       fontWeight: 500,
-                      maxWidth: "375px",
+                      maxWidth: "365px",
                       margin: 0,
                     }}
                   >
@@ -1073,18 +1073,18 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     src={CANVA_STAMP_BASE64}
                     alt="ReadLocal Kids Certified"
                     style={{
-                      width: "112px",
-                      height: "112px",
+                      width: "170px",
+                      height: "170px",
                       objectFit: "contain",
                       flexShrink: 0,
-                      filter: "drop-shadow(0 4px 14px rgba(59, 130, 246, 0.22))",
+                      filter: "drop-shadow(0 6px 18px rgba(59, 130, 246, 0.28))",
                     }}
                   />
                 </div>
               </div>
 
               {/* Dual Papuan Cultural Achievement Banner */}
-              <div style={{ display: "flex", gap: "14px", marginTop: "14px", marginBottom: "2px", width: "100%" }}>
+              <div style={{ display: "flex", gap: "14px", marginTop: "12px", marginBottom: "2px", width: "100%" }}>
                 <div
                   style={{
                     flex: 1,
@@ -1198,7 +1198,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
 
               {/* Divider & Footer */}
               <div>
-                <div style={{ width: "100%", height: "1.5px", backgroundColor: "#E2E8F0", marginTop: "16px", marginBottom: "14px" }} />
+                <div style={{ width: "100%", height: "1.5px", backgroundColor: "#E2E8F0", marginTop: "14px", marginBottom: "12px" }} />
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1.6fr", gap: "16px", alignItems: "center" }}>
                   {/* Issue Date */}
                   <div>
