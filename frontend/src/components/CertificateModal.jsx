@@ -126,11 +126,11 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
       margin-top: 14px;
     }
     .citation-text {
-      font-size: 12.2px;
-      line-height: 1.6;
-      color: #475569;
+      font-size: 15px;
+      line-height: 1.58;
+      color: #334155;
       font-weight: 500;
-      max-width: 365px;
+      max-width: 405px;
     }
     .citation-text strong {
       color: #0F172A;
@@ -697,11 +697,11 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "18px", marginTop: "14px" }}>
                     <p
                       style={{
-                        fontSize: "11.5px",
+                        fontSize: "13.8px",
                         lineHeight: 1.55,
-                        color: "#475569",
+                        color: "#334155",
                         fontWeight: 500,
-                        maxWidth: "315px",
+                        maxWidth: "345px",
                         margin: 0,
                       }}
                     >
@@ -1059,11 +1059,11 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px", marginTop: "14px" }}>
                   <p
                     style={{
-                      fontSize: "12.2px",
-                      lineHeight: 1.6,
-                      color: "#475569",
+                      fontSize: "15px",
+                      lineHeight: 1.58,
+                      color: "#334155",
                       fontWeight: 500,
-                      maxWidth: "365px",
+                      maxWidth: "405px",
                       margin: 0,
                     }}
                   >
