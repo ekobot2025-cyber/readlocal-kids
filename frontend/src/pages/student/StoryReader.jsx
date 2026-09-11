@@ -403,6 +403,16 @@ function VocabularyMode({ story }) {
   const [i, setI] = useState(0);
   const vocab = story.vocabulary || [];
   const card = vocab[i];
+
+  // Stop audio and reset accent when switching cards or leaving
+  useEffect(() => {
+    audio.stop();
+    setPlayingAccent(null);
+    return () => {
+      audio.stop();
+    };
+  }, [i, story?.id]);
+
   if (!card) return null;
 
   return (

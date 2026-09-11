@@ -22,44 +22,72 @@ export function useAudioPlayer() {
   const playWord = useCallback((word, accent = "UK", onEnd) => {
     stop(); // Stop any current audio first
 
-    const normalized = word.toLowerCase().trim().replace(/\s+/g, "_");
+    if (!word) {
+      if (onEnd) onEnd();
+      return;
+    }
+
+    const cleanWord = word.trim();
+    const normalized = cleanWord.toLowerCase().replace(/[-\s]+/g, "_");
     const accentKey = accent === "UK" ? "uk" : "us";
     const src = `/audio/vocab/${normalized}_${accentKey}.mp3`;
 
     const audio = new Audio(src);
     audioRef.current = audio;
 
-    audio.onended = () => {
+    let ended = false;
+    const handleEnd = () => {
+      if (ended) return;
+      ended = true;
       audioRef.current = null;
       if (onEnd) onEnd();
     };
 
-    audio.onerror = () => {
-      // Fallback to Web Speech API if MP3 not found
-      console.warn(`Audio file not found: ${src}, falling back to Web Speech API`);
+    audio.onended = handleEnd;
+
+    let fallbackTriggered = false;
+    const triggerFallback = () => {
+      if (fallbackTriggered || ended) return;
+      fallbackTriggered = true;
+      console.warn(`Audio file not found or failed: ${src}, falling back to Web Speech API`);
       audioRef.current = null;
+
       if (typeof window !== "undefined" && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-        const u = new SpeechSynthesisUtterance(word);
-        u.lang = accent === "UK" ? "en-GB" : "en-US";
-        u.rate = 0.9;
+        try {
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(cleanWord);
+          u.lang = accent === "UK" ? "en-GB" : "en-US";
+          u.rate = 0.9;
 
-        const voices = window.speechSynthesis.getVoices();
-        if (accent === "UK") {
-          const ukVoice = voices.find((v) => v.lang === "en-GB" || v.lang === "en_GB");
-          if (ukVoice) u.voice = ukVoice;
-        } else {
-          const usVoice = voices.find((v) => v.lang === "en-US" || v.lang === "en_US");
-          if (usVoice) u.voice = usVoice;
+          const speak = () => {
+            const voices = window.speechSynthesis.getVoices();
+            if (accent === "UK") {
+              const ukVoice = voices.find((v) => v.lang === "en-GB" || v.lang === "en_GB");
+              if (ukVoice) u.voice = ukVoice;
+            } else {
+              const usVoice = voices.find((v) => v.lang === "en-US" || v.lang === "en_US");
+              if (usVoice) u.voice = usVoice;
+            }
+            u.onend = handleEnd;
+            u.onerror = handleEnd;
+            window.speechSynthesis.speak(u);
+          };
+
+          // Delay slightly to prevent Chromium bug where cancel() immediately cancels speak()
+          setTimeout(speak, 40);
+        } catch (e) {
+          console.error("Web Speech API fallback error:", e);
+          handleEnd();
         }
-
-        u.onend = () => { if (onEnd) onEnd(); };
-        window.speechSynthesis.speak(u);
+      } else {
+        handleEnd();
       }
     };
 
+    audio.onerror = triggerFallback;
+
     audio.play().catch(() => {
-      audio.onerror();
+      triggerFallback();
     });
   }, [stop]);
 
