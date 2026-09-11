@@ -336,41 +336,31 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
       color: #64748B;
     }
     .sign-content {
-      border-left: 1.5px solid #E2E8F0;
+      border-left: 1.5px solid #CBD5E1;
       padding-left: 12px;
-    }
-    .sign-script {
-      font-family: 'Playfair Display', Georgia, cursive;
-      font-style: italic;
-      font-size: 18px;
-      font-weight: 700;
-      color: #1E293B;
-      line-height: 1;
-    }
-    .sign-line {
-      width: 140px;
-      height: 2px;
-      background: #94A3B8;
-      margin: 3px 0 4px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .sign-name {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 800;
       color: #0F172A;
-      line-height: 1.1;
+      line-height: 1.2;
     }
     .sign-role {
-      font-size: 9px;
+      font-size: 9.5px;
       font-weight: 700;
       color: #B45309;
-      line-height: 1.1;
-      margin-top: 1.5px;
+      line-height: 1.25;
+      margin-top: 2px;
     }
     .sign-inst {
-      font-size: 8px;
+      font-size: 8.5px;
       font-weight: 600;
       color: #64748B;
-      line-height: 1.1;
+      line-height: 1.25;
+      margin-top: 1px;
     }
 
     /* Footer Bar */
@@ -470,8 +460,6 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
             <span class="qr-label">Scan Verifikasi</span>
           </div>
           <div class="sign-content">
-            <div class="sign-script">Dr. Yulini Rinantanti</div>
-            <div class="sign-line"></div>
             <div class="sign-name">Dr. Yulini Rinantanti, M. Ed.</div>
             <div class="sign-role">Research Lead & Author · ReadLocal Kids</div>
             <div class="sign-inst">Universitas Cenderawasih · Program Literasi Papua</div>
@@ -987,27 +975,14 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                       </span>
                     </div>
 
-                    <div style={{ borderLeft: "1.5px solid #E2E8F0", paddingLeft: "12px" }}>
-                      <div
-                        style={{
-                          fontFamily: "'Playfair Display', Georgia, cursive",
-                          fontStyle: "italic",
-                          fontSize: "18px",
-                          fontWeight: 700,
-                          color: "#1E293B",
-                          lineHeight: 1,
-                        }}
-                      >
-                        Dr. Yulini Rinantanti
-                      </div>
-                      <div style={{ width: "140px", height: "2px", background: "#94A3B8", margin: "3px 0 4px 0" }} />
-                      <div style={{ fontSize: "12px", fontWeight: 800, color: "#0F172A", lineHeight: 1.1 }}>
+                    <div style={{ borderLeft: "1.5px solid #CBD5E1", paddingLeft: "12px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                      <div style={{ fontSize: "13px", fontWeight: 800, color: "#0F172A", lineHeight: 1.2 }}>
                         Dr. Yulini Rinantanti, M. Ed.
                       </div>
-                      <div style={{ fontSize: "9px", fontWeight: 700, color: "#B45309", lineHeight: 1.1, margin: "1.5px 0 0 0" }}>
+                      <div style={{ fontSize: "9.5px", fontWeight: 700, color: "#B45309", lineHeight: 1.25, marginTop: "2px" }}>
                         Research Lead & Author · ReadLocal Kids
                       </div>
-                      <div style={{ fontSize: "8px", fontWeight: 600, color: "#64748B", lineHeight: 1.1 }}>
+                      <div style={{ fontSize: "8.5px", fontWeight: 600, color: "#64748B", lineHeight: 1.25, marginTop: "1px" }}>
                         Universitas Cenderawasih · Program Literasi Papua
                       </div>
                     </div>
@@ -1420,30 +1395,17 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     </span>
                   </div>
 
-                    <div style={{ borderLeft: "1.5px solid #E2E8F0", paddingLeft: "12px" }}>
-                    <div
-                      style={{
-                        fontFamily: "'Playfair Display', Georgia, cursive",
-                        fontStyle: "italic",
-                        fontSize: "18px",
-                        fontWeight: 700,
-                        color: "#1E293B",
-                        lineHeight: 1,
-                      }}
-                    >
-                      Dr. Yulini Rinantanti
+                    <div style={{ borderLeft: "1.5px solid #CBD5E1", paddingLeft: "12px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                      <div style={{ fontSize: "13px", fontWeight: 800, color: "#0F172A", lineHeight: 1.2 }}>
+                        Dr. Yulini Rinantanti, M. Ed.
+                      </div>
+                      <div style={{ fontSize: "9.5px", fontWeight: 700, color: "#B45309", lineHeight: 1.25, marginTop: "2px" }}>
+                        Research Lead & Author · ReadLocal Kids
+                      </div>
+                      <div style={{ fontSize: "8.5px", fontWeight: 600, color: "#64748B", lineHeight: 1.25, marginTop: "1px" }}>
+                        Universitas Cenderawasih · Program Literasi Papua
+                      </div>
                     </div>
-                    <div style={{ width: "140px", height: "2px", background: "#94A3B8", margin: "3px 0 4px 0" }} />
-                    <div style={{ fontSize: "12px", fontWeight: 800, color: "#0F172A", lineHeight: 1.1 }}>
-                      Dr. Yulini Rinantanti, M. Ed.
-                    </div>
-                    <div style={{ fontSize: "9px", fontWeight: 700, color: "#B45309", lineHeight: 1.1, margin: "1.5px 0 0 0" }}>
-                      Research Lead & Author · ReadLocal Kids
-                    </div>
-                    <div style={{ fontSize: "8px", fontWeight: 600, color: "#64748B", lineHeight: 1.1 }}>
-                      Universitas Cenderawasih · Program Literasi Papua
-                    </div>
-                  </div>
                 </div>
               </div>
 
