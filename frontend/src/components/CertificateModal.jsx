@@ -11,12 +11,12 @@ import { Printer, Award, ExternalLink, Sparkles } from "lucide-react";
  * Perfectly calibrated for A4 Landscape (297mm x 210mm).
  */
 function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBase64 }) {
-  const logoIconSvg = `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  const logoIconSvg = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
     <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
   </svg>`;
 
-  const badgeIconSvg = `<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  const badgeIconSvg = `<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
     <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
   </svg>`;
@@ -63,42 +63,42 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
       box-sizing: border-box;
     }
     
-    /* Top-Left Official Application Logo */
+    /* Top-Left Official Application Logo - Exactly matches app branding */
     .app-logo-topleft {
       position: absolute;
       top: 5%;
       left: 6%;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       z-index: 10;
     }
     .app-logo-box {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
       background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
-      border: 2px solid #BAE6FD;
+      border: 1.8px solid #BAE6FD;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.18);
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
     }
     .app-logo-dot {
       position: absolute;
       top: -3px;
       right: -3px;
-      width: 13px;
-      height: 13px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       background-color: #F59E0B;
-      border: 2.5px solid #FFFFFF;
+      border: 2.2px solid #FFFFFF;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     }
     .app-logo-text-title {
       font-family: 'Fredoka', sans-serif;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 800;
       color: #0F172A;
       line-height: 1.1;
@@ -108,7 +108,7 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
       color: #0EA5E9;
     }
     .app-logo-text-sub {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1.5px;
@@ -116,65 +116,69 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
       margin-top: 1.5px;
     }
 
-    /* Main Certificate Content */
+    /* Main Certificate Content - Full page layout, no excessive empty spaces */
     .cert-content {
       position: absolute;
-      top: 29.5%;
-      bottom: 9.5%;
-      left: 28%;
-      right: 17.5%;
+      top: 23.5%;
+      bottom: 7%;
+      left: 26%;
+      right: 14%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       text-align: center;
     }
+    
+    .cert-header-block {
+      margin-bottom: 2px;
+    }
     .cert-title {
       font-family: 'Fredoka', sans-serif;
-      font-size: 26.5px;
+      font-size: 32px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       color: #0F172A;
       margin: 0;
       line-height: 1.1;
     }
     .program-tag {
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       color: #B45309;
-      margin-top: 1px;
+      margin-top: 2px;
       display: block;
     }
     .award-to {
-      font-size: 12px;
+      font-size: 13.5px;
       font-style: italic;
       font-weight: 600;
       color: #64748B;
-      margin-top: 1px;
+      margin-top: 2px;
     }
     .student-name {
       font-family: 'Fredoka', sans-serif;
-      font-size: 38px;
+      font-size: 46px;
       font-weight: 800;
       color: #D97706;
       line-height: 1.1;
       letter-spacing: -0.5px;
-      margin-top: 2px;
-      text-shadow: 0 1px 4px rgba(217, 119, 6, 0.2);
+      margin-top: 3px;
+      text-shadow: 0 2px 6px rgba(217, 119, 6, 0.2);
     }
     .papua-divider {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      margin: 2px auto 0 auto;
-      max-width: 300px;
+      gap: 10px;
+      margin: 4px auto 0 auto;
+      max-width: 420px;
     }
     .papua-divider-line {
       flex: 1;
-      height: 2px;
+      height: 2.5px;
       background: linear-gradient(to right, transparent, #F59E0B);
       border-radius: 9999px;
     }
@@ -182,17 +186,19 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
       background: linear-gradient(to left, transparent, #F59E0B);
     }
     .papua-diamond {
-      width: 9px;
-      height: 9px;
+      width: 11px;
+      height: 11px;
       transform: rotate(45deg);
       background: #D97706;
-      border: 1.5px solid #FEF3C7;
+      border: 2px solid #FEF3C7;
     }
+
+    /* Full-width Citation */
     .citation-text {
-      max-width: 580px;
-      margin: 3px auto 0 auto;
-      font-size: 11.2px;
-      line-height: 1.45;
+      width: 100%;
+      margin: 6px auto 0 auto;
+      font-size: 12.8px;
+      line-height: 1.55;
       color: #334155;
       font-weight: 500;
     }
@@ -200,50 +206,51 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
       color: #0F172A;
       font-weight: 700;
     }
+
+    /* 3 Competency Cards - Expands to fill width gracefully */
     .competency-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      max-width: 590px;
-      margin: 4px auto 0 auto;
-      text-align: left;
+      gap: 14px;
+      width: 100%;
+      margin: 8px auto 0 auto;
     }
     .competency-card {
       background: rgba(255, 255, 255, 0.96);
-      border: 1px solid #FCD34D;
-      border-left: 3.5px solid #F59E0B;
-      border-radius: 8px;
-      padding: 5px 8px;
+      border: 1.5px solid #FCD34D;
+      border-left: 4px solid #F59E0B;
+      border-radius: 10px;
+      padding: 8px 12px;
       display: flex;
       align-items: flex-start;
-      gap: 7px;
-      box-shadow: 0 1.5px 5px rgba(0, 0, 0, 0.05);
+      gap: 9px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
     }
     .competency-icon {
-      font-size: 16px;
+      font-size: 19px;
       line-height: 1;
       padding-top: 2px;
     }
     .competency-title {
-      font-size: 10px;
+      font-size: 11.5px;
       font-weight: 800;
       color: #92400E;
-      line-height: 1.2;
+      line-height: 1.25;
     }
     .competency-desc {
-      font-size: 7.8px;
+      font-size: 9px;
       color: #475569;
-      line-height: 1.25;
-      margin-top: 1px;
+      line-height: 1.35;
+      margin-top: 2px;
     }
 
-    /* Bottom Validation: NO BOX / ENCLOSING CARD */
+    /* Bottom Validation: Frameless / No Box */
     .validation-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 4px;
-      gap: 12px;
+      margin-top: 8px;
+      width: 100%;
     }
     
     /* Left: Official App Icon Badge (Larger, No Box) */
@@ -278,32 +285,32 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
     }
     .app-badge-text-title {
       font-family: 'Fredoka', sans-serif;
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 700;
       color: #B45309;
       text-transform: uppercase;
       line-height: 1.15;
     }
     .app-badge-text-sub {
-      font-size: 9.2px;
+      font-size: 9.5px;
       color: #475569;
       font-weight: 600;
-      line-height: 1.25;
-      margin-top: 1.5px;
+      line-height: 1.3;
+      margin-top: 2px;
     }
     .app-badge-text-certified {
-      font-size: 9.2px;
+      font-size: 9.5px;
       color: #D97706;
       font-weight: 800;
-      line-height: 1.25;
-      margin-top: 1px;
+      line-height: 1.3;
+      margin-top: 1.5px;
     }
 
-    /* Right: Signatory + QR Code (No enclosing box) */
+    /* Right: Signatory + QR Code (Frameless / No Box) */
     .signatory-section {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-align: left;
     }
     .qr-box {
@@ -313,8 +320,8 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
       gap: 2px;
     }
     .qr-img {
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
       border-radius: 6px;
       border: 1.5px solid #CBD5E1;
       background: #FFFFFF;
@@ -322,7 +329,7 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
     }
     .qr-label {
-      font-size: 6.5px;
+      font-size: 7px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -330,37 +337,37 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
     }
     .sign-content {
       border-left: 1.5px solid #E2E8F0;
-      padding-left: 10px;
+      padding-left: 12px;
     }
     .sign-script {
       font-family: 'Playfair Display', Georgia, cursive;
       font-style: italic;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
       color: #1E293B;
       line-height: 1;
     }
     .sign-line {
-      width: 130px;
-      height: 1.5px;
+      width: 140px;
+      height: 2px;
       background: #94A3B8;
-      margin: 2px 0 3px 0;
+      margin: 3px 0 4px 0;
     }
     .sign-name {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
       color: #0F172A;
       line-height: 1.1;
     }
     .sign-role {
-      font-size: 8.5px;
+      font-size: 9px;
       font-weight: 700;
       color: #B45309;
       line-height: 1.1;
-      margin-top: 1px;
+      margin-top: 1.5px;
     }
     .sign-inst {
-      font-size: 7.5px;
+      font-size: 8px;
       font-weight: 600;
       color: #64748B;
       line-height: 1.1;
@@ -372,10 +379,11 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
       align-items: center;
       justify-content: space-between;
       border-top: 1.5px solid rgba(245, 158, 11, 0.35);
-      padding-top: 3px;
-      font-size: 8.5px;
+      padding-top: 4px;
+      font-size: 9px;
       font-weight: 700;
       color: #475569;
+      margin-top: 4px;
     }
     .footer-bar span {
       color: #0F172A;
@@ -392,13 +400,13 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
       </div>
       <div>
         <div class="app-logo-text-title">ReadLocal <span>Kids</span></div>
-        <div class="app-logo-text-sub">Papua Edition · Read English, Discover Culture</div>
+        <div class="app-logo-text-sub">READ ENGLISH · DISCOVER CULTURE</div>
       </div>
     </div>
 
-    <!-- Main Certificate Content -->
+    <!-- Main Certificate Content (Full page layout) -->
     <div class="cert-content">
-      <div>
+      <div class="cert-header-block">
         <h1 class="cert-title">Certificate of Accomplishment</h1>
         <span class="program-tag">Papuan Reading Aloud & Cultural Discovery Program</span>
         <p class="award-to">This certificate is proudly awarded to</p>
@@ -440,7 +448,7 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
         </div>
       </div>
 
-      <!-- Bottom Validation: NO BOX / ENCLOSING CARD -->
+      <!-- Bottom Validation: Frameless / No Box -->
       <div class="validation-row">
         <!-- Left: ReadLocal Kids App Icon Badge (Larger, No Box) -->
         <div class="app-badge-section">
@@ -455,7 +463,7 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl, bgBas
           </div>
         </div>
 
-        <!-- Right: Signatory + QR Code (No enclosing box) -->
+        <!-- Right: Signatory + QR Code (Frameless / No Box) -->
         <div class="signatory-section">
           <div class="qr-box">
             <img src="${qrCodeDataUrl}" alt="QR Verification" class="qr-img" />
@@ -624,25 +632,25 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   left: "6%",
                   display: "flex",
                   alignItems: "center",
-                  gap: "14px",
+                  gap: "12px",
                   zIndex: 10,
                 }}
               >
                 <div
                   style={{
-                    width: "52px",
-                    height: "52px",
-                    borderRadius: "16px",
+                    width: "48px",
+                    height: "48px",
+                    borderRadius: "14px",
                     background: "linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)",
-                    border: "2px solid #BAE6FD",
+                    border: "1.8px solid #BAE6FD",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     position: "relative",
-                    boxShadow: "0 4px 12px rgba(2, 132, 199, 0.18)",
+                    boxShadow: "0 2px 8px rgba(2, 132, 199, 0.15)",
                   }}
                 >
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
                     <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
                   </svg>
@@ -651,11 +659,11 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                       position: "absolute",
                       top: "-3px",
                       right: "-3px",
-                      width: "13px",
-                      height: "13px",
+                      width: "12px",
+                      height: "12px",
                       borderRadius: "50%",
                       backgroundColor: "#F59E0B",
-                      border: "2.5px solid #FFFFFF",
+                      border: "2.2px solid #FFFFFF",
                       boxShadow: "0 1px 3px rgba(0, 0, 0, 0.15)",
                     }}
                   />
@@ -664,7 +672,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   <div
                     style={{
                       fontFamily: "'Fredoka', sans-serif",
-                      fontSize: "24px",
+                      fontSize: "22px",
                       fontWeight: 800,
                       color: "#0F172A",
                       lineHeight: 1.1,
@@ -675,7 +683,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   </div>
                   <div
                     style={{
-                      fontSize: "10px",
+                      fontSize: "9.5px",
                       fontWeight: 800,
                       textTransform: "uppercase",
                       letterSpacing: "1.5px",
@@ -683,19 +691,19 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                       marginTop: "1.5px",
                     }}
                   >
-                    Papua Edition · Read English, Discover Culture
+                    READ ENGLISH · DISCOVER CULTURE
                   </div>
                 </div>
               </div>
 
-              {/* Perfectly mapped content container */}
+              {/* Main Certificate Content - Full page layout */}
               <div
                 style={{
                   position: "absolute",
-                  top: "29.5%",
-                  bottom: "9.5%",
-                  left: "28%",
-                  right: "17.5%",
+                  top: "23.5%",
+                  bottom: "7%",
+                  left: "26%",
+                  right: "14%",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
@@ -703,14 +711,14 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 }}
               >
                 {/* 1. Header & Recipient */}
-                <div>
+                <div style={{ marginBottom: "2px" }}>
                   <h1
                     style={{
                       fontFamily: "'Fredoka', sans-serif",
-                      fontSize: "26.5px",
+                      fontSize: "32px",
                       fontWeight: 800,
                       textTransform: "uppercase",
-                      letterSpacing: "1.5px",
+                      letterSpacing: "2px",
                       color: "#0F172A",
                       lineHeight: 1.1,
                       margin: 0,
@@ -720,12 +728,12 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   </h1>
                   <span
                     style={{
-                      fontSize: "10px",
+                      fontSize: "11px",
                       fontWeight: 800,
                       textTransform: "uppercase",
-                      letterSpacing: "2px",
+                      letterSpacing: "2.5px",
                       color: "#B45309",
-                      marginTop: "1px",
+                      marginTop: "2px",
                       display: "block",
                     }}
                   >
@@ -733,11 +741,11 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   </span>
                   <p
                     style={{
-                      fontSize: "12px",
+                      fontSize: "13.5px",
                       fontStyle: "italic",
                       fontWeight: 600,
                       color: "#64748B",
-                      marginTop: "1px",
+                      marginTop: "2px",
                     }}
                   >
                     This certificate is proudly awarded to
@@ -746,13 +754,13 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   <div
                     style={{
                       fontFamily: "'Fredoka', sans-serif",
-                      fontSize: "38px",
+                      fontSize: "46px",
                       fontWeight: 800,
                       color: "#D97706",
                       lineHeight: 1.1,
                       letterSpacing: "-0.5px",
-                      marginTop: "2px",
-                      textShadow: "0 1px 4px rgba(217, 119, 6, 0.2)",
+                      marginTop: "3px",
+                      textShadow: "0 2px 6px rgba(217, 119, 6, 0.2)",
                     }}
                   >
                     {studentName}
@@ -763,24 +771,24 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      gap: "8px",
-                      margin: "2px auto 0 auto",
-                      maxWidth: "300px",
+                      gap: "10px",
+                      margin: "4px auto 0 auto",
+                      maxWidth: "420px",
                     }}
                   >
-                    <div style={{ flex: 1, height: "2px", background: "linear-gradient(to right, transparent, #F59E0B)", borderRadius: "9999px" }} />
-                    <div style={{ width: "9px", height: "9px", transform: "rotate(45deg)", background: "#D97706", border: "1.5px solid #FEF3C7" }} />
-                    <div style={{ flex: 1, height: "2px", background: "linear-gradient(to left, transparent, #F59E0B)", borderRadius: "9999px" }} />
+                    <div style={{ flex: 1, height: "2.5px", background: "linear-gradient(to right, transparent, #F59E0B)", borderRadius: "9999px" }} />
+                    <div style={{ width: "11px", height: "11px", transform: "rotate(45deg)", background: "#D97706", border: "2px solid #FEF3C7" }} />
+                    <div style={{ flex: 1, height: "2.5px", background: "linear-gradient(to left, transparent, #F59E0B)", borderRadius: "9999px" }} />
                   </div>
                 </div>
 
-                {/* 2. Citation Text */}
+                {/* 2. Full-width Citation Text */}
                 <p
                   style={{
-                    maxWidth: "580px",
-                    margin: "3px auto 0 auto",
-                    fontSize: "11.2px",
-                    lineHeight: 1.45,
+                    width: "100%",
+                    margin: "6px auto 0 auto",
+                    fontSize: "12.8px",
+                    lineHeight: 1.55,
                     color: "#334155",
                     fontWeight: 500,
                   }}
@@ -795,31 +803,31 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(3, 1fr)",
-                    gap: "10px",
-                    maxWidth: "590px",
-                    margin: "4px auto 0 auto",
+                    gap: "14px",
+                    width: "100%",
+                    margin: "8px auto 0 auto",
                     textAlign: "left",
                   }}
                 >
                   <div
                     style={{
                       background: "rgba(255, 255, 255, 0.96)",
-                      border: "1px solid #FCD34D",
-                      borderLeft: "3.5px solid #F59E0B",
-                      borderRadius: "8px",
-                      padding: "5px 8px",
+                      border: "1.5px solid #FCD34D",
+                      borderLeft: "4px solid #F59E0B",
+                      borderRadius: "10px",
+                      padding: "8px 12px",
                       display: "flex",
                       alignItems: "flex-start",
-                      gap: "7px",
-                      boxShadow: "0 1.5px 5px rgba(0, 0, 0, 0.05)",
+                      gap: "9px",
+                      boxShadow: "0 2px 6px rgba(0, 0, 0, 0.06)",
                     }}
                   >
-                    <div style={{ fontSize: "16px", lineHeight: 1, paddingTop: "2px" }}>🎧</div>
+                    <div style={{ fontSize: "19px", lineHeight: 1, paddingTop: "2px" }}>🎧</div>
                     <div>
-                      <div style={{ fontSize: "10px", fontWeight: 800, color: "#92400E", lineHeight: 1.2 }}>
+                      <div style={{ fontSize: "11.5px", fontWeight: 800, color: "#92400E", lineHeight: 1.25 }}>
                         Pronunciation & Diction
                       </div>
-                      <div style={{ fontSize: "7.8px", color: "#475569", lineHeight: 1.25, marginTop: "1px" }}>
+                      <div style={{ fontSize: "9px", color: "#475569", lineHeight: 1.35, marginTop: "2px" }}>
                         Mastered clear phonetic articulation & stress.
                       </div>
                     </div>
@@ -828,22 +836,22 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   <div
                     style={{
                       background: "rgba(255, 255, 255, 0.96)",
-                      border: "1px solid #FCD34D",
-                      borderLeft: "3.5px solid #F59E0B",
-                      borderRadius: "8px",
-                      padding: "5px 8px",
+                      border: "1.5px solid #FCD34D",
+                      borderLeft: "4px solid #F59E0B",
+                      borderRadius: "10px",
+                      padding: "8px 12px",
                       display: "flex",
                       alignItems: "flex-start",
-                      gap: "7px",
-                      boxShadow: "0 1.5px 5px rgba(0, 0, 0, 0.05)",
+                      gap: "9px",
+                      boxShadow: "0 2px 6px rgba(0, 0, 0, 0.06)",
                     }}
                   >
-                    <div style={{ fontSize: "16px", lineHeight: 1, paddingTop: "2px" }}>📖</div>
+                    <div style={{ fontSize: "19px", lineHeight: 1, paddingTop: "2px" }}>📖</div>
                     <div>
-                      <div style={{ fontSize: "10px", fontWeight: 800, color: "#92400E", lineHeight: 1.2 }}>
+                      <div style={{ fontSize: "11.5px", fontWeight: 800, color: "#92400E", lineHeight: 1.25 }}>
                         Oral Reading Fluency
                       </div>
-                      <div style={{ fontSize: "7.8px", color: "#475569", lineHeight: 1.25, marginTop: "1px" }}>
+                      <div style={{ fontSize: "9px", color: "#475569", lineHeight: 1.35, marginTop: "2px" }}>
                         Achieved expressive reading aloud confidence.
                       </div>
                     </div>
@@ -852,22 +860,22 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   <div
                     style={{
                       background: "rgba(255, 255, 255, 0.96)",
-                      border: "1px solid #FCD34D",
-                      borderLeft: "3.5px solid #F59E0B",
-                      borderRadius: "8px",
-                      padding: "5px 8px",
+                      border: "1.5px solid #FCD34D",
+                      borderLeft: "4px solid #F59E0B",
+                      borderRadius: "10px",
+                      padding: "8px 12px",
                       display: "flex",
                       alignItems: "flex-start",
-                      gap: "7px",
-                      boxShadow: "0 1.5px 5px rgba(0, 0, 0, 0.05)",
+                      gap: "9px",
+                      boxShadow: "0 2px 6px rgba(0, 0, 0, 0.06)",
                     }}
                   >
-                    <div style={{ fontSize: "16px", lineHeight: 1, paddingTop: "2px" }}>🏝️</div>
+                    <div style={{ fontSize: "19px", lineHeight: 1, paddingTop: "2px" }}>🏝️</div>
                     <div>
-                      <div style={{ fontSize: "10px", fontWeight: 800, color: "#92400E", lineHeight: 1.2 }}>
+                      <div style={{ fontSize: "11.5px", fontWeight: 800, color: "#92400E", lineHeight: 1.25 }}>
                         Papuan Heritage Stories
                       </div>
-                      <div style={{ fontSize: "7.8px", color: "#475569", lineHeight: 1.25, marginTop: "1px" }}>
+                      <div style={{ fontSize: "9px", color: "#475569", lineHeight: 1.35, marginTop: "2px" }}>
                         Explored 26 regional folktales & traditions.
                       </div>
                     </div>
@@ -880,8 +888,8 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    marginTop: "4px",
-                    gap: "12px",
+                    marginTop: "8px",
+                    width: "100%",
                   }}
                 >
                   {/* Left: Official ReadLocal Kids App Icon Badge (Larger, No enclosing box) */}
@@ -907,7 +915,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                         boxShadow: "0 4px 14px rgba(2, 132, 199, 0.22)",
                       }}
                     >
-                      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
                         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
                       </svg>
@@ -929,7 +937,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                       <div
                         style={{
                           fontFamily: "'Fredoka', sans-serif",
-                          fontSize: "13px",
+                          fontSize: "13.5px",
                           fontWeight: 700,
                           color: "#B45309",
                           textTransform: "uppercase",
@@ -938,10 +946,10 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                       >
                         Official ReadLocal Kids Badge
                       </div>
-                      <div style={{ fontSize: "9.2px", color: "#475569", fontWeight: 600, lineHeight: 1.25, marginTop: "1.5px" }}>
+                      <div style={{ fontSize: "9.5px", color: "#475569", fontWeight: 600, lineHeight: 1.3, marginTop: "2px" }}>
                         Verified Reading Aloud Achievement
                       </div>
-                      <div style={{ fontSize: "9.2px", color: "#D97706", fontWeight: 800, lineHeight: 1.25, marginTop: "1px" }}>
+                      <div style={{ fontSize: "9.5px", color: "#D97706", fontWeight: 800, lineHeight: 1.3, marginTop: "1.5px" }}>
                         ReadLocal Kids Certified Learner
                       </div>
                     </div>
@@ -952,7 +960,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: "12px",
+                      gap: "14px",
                       textAlign: "left",
                     }}
                   >
@@ -962,8 +970,8 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                           src={qrCodeDataUrl}
                           alt="QR Code Verification"
                           style={{
-                            width: "48px",
-                            height: "48px",
+                            width: "52px",
+                            height: "52px",
                             borderRadius: "6px",
                             border: "1.5px solid #CBD5E1",
                             background: "#FFFFFF",
@@ -972,19 +980,19 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                           }}
                         />
                       ) : (
-                        <div style={{ width: "48px", height: "48px", background: "#F1F5F9", borderRadius: "6px" }} />
+                        <div style={{ width: "52px", height: "52px", background: "#F1F5F9", borderRadius: "6px" }} />
                       )}
-                      <span style={{ fontSize: "6.5px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.5px", color: "#64748B" }}>
+                      <span style={{ fontSize: "7px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.5px", color: "#64748B" }}>
                         Scan Verifikasi
                       </span>
                     </div>
 
-                    <div style={{ borderLeft: "1.5px solid #E2E8F0", paddingLeft: "10px" }}>
+                    <div style={{ borderLeft: "1.5px solid #E2E8F0", paddingLeft: "12px" }}>
                       <div
                         style={{
                           fontFamily: "'Playfair Display', Georgia, cursive",
                           fontStyle: "italic",
-                          fontSize: "16px",
+                          fontSize: "18px",
                           fontWeight: 700,
                           color: "#1E293B",
                           lineHeight: 1,
@@ -992,14 +1000,14 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                       >
                         Dr. Yulini Rinantanti
                       </div>
-                      <div style={{ width: "130px", height: "1.5px", background: "#94A3B8", margin: "2px 0 3px 0" }} />
-                      <div style={{ fontSize: "11px", fontWeight: 800, color: "#0F172A", lineHeight: 1.1 }}>
+                      <div style={{ width: "140px", height: "2px", background: "#94A3B8", margin: "3px 0 4px 0" }} />
+                      <div style={{ fontSize: "12px", fontWeight: 800, color: "#0F172A", lineHeight: 1.1 }}>
                         Dr. Yulini Rinantanti, M. Ed.
                       </div>
-                      <div style={{ fontSize: "8.5px", fontWeight: 700, color: "#B45309", lineHeight: 1.1, marginTop: "1px" }}>
+                      <div style={{ fontSize: "9px", fontWeight: 700, color: "#B45309", lineHeight: 1.1, margin: "1.5px 0 0 0" }}>
                         Research Lead & Author · ReadLocal Kids
                       </div>
-                      <div style={{ fontSize: "7.5px", fontWeight: 600, color: "#64748B", lineHeight: 1.1 }}>
+                      <div style={{ fontSize: "8px", fontWeight: 600, color: "#64748B", lineHeight: 1.1 }}>
                         Universitas Cenderawasih · Program Literasi Papua
                       </div>
                     </div>
@@ -1013,10 +1021,11 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     alignItems: "center",
                     justifyContent: "space-between",
                     borderTop: "1.5px solid rgba(245, 158, 11, 0.35)",
-                    paddingTop: "3px",
-                    fontSize: "8.5px",
+                    paddingTop: "4px",
+                    fontSize: "9px",
                     fontWeight: 700,
                     color: "#475569",
+                    marginTop: "4px",
                   }}
                 >
                   <div>Date Issued: <span style={{ color: "#0F172A" }}>{certDate}</span></div>
@@ -1056,25 +1065,25 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 left: "6%",
                 display: "flex",
                 alignItems: "center",
-                gap: "14px",
+                gap: "12px",
                 zIndex: 10,
               }}
             >
               <div
                 style={{
-                  width: "52px",
-                  height: "52px",
-                  borderRadius: "16px",
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "14px",
                   background: "linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)",
-                  border: "2px solid #BAE6FD",
+                  border: "1.8px solid #BAE6FD",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   position: "relative",
-                  boxShadow: "0 4px 12px rgba(2, 132, 199, 0.18)",
+                  boxShadow: "0 2px 8px rgba(2, 132, 199, 0.15)",
                 }}
               >
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
                   <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
                 </svg>
@@ -1083,11 +1092,11 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     position: "absolute",
                     top: "-3px",
                     right: "-3px",
-                    width: "13px",
-                    height: "13px",
+                    width: "12px",
+                    height: "12px",
                     borderRadius: "50%",
                     backgroundColor: "#F59E0B",
-                    border: "2.5px solid #FFFFFF",
+                    border: "2.2px solid #FFFFFF",
                     boxShadow: "0 1px 3px rgba(0, 0, 0, 0.15)",
                   }}
                 />
@@ -1096,7 +1105,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 <div
                   style={{
                     fontFamily: "'Fredoka', sans-serif",
-                    fontSize: "24px",
+                    fontSize: "22px",
                     fontWeight: 800,
                     color: "#0F172A",
                     lineHeight: 1.1,
@@ -1107,7 +1116,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 </div>
                 <div
                   style={{
-                    fontSize: "10px",
+                    fontSize: "9.5px",
                     fontWeight: 800,
                     textTransform: "uppercase",
                     letterSpacing: "1.5px",
@@ -1115,19 +1124,19 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     marginTop: "1.5px",
                   }}
                 >
-                  Papua Edition · Read English, Discover Culture
+                  READ ENGLISH · DISCOVER CULTURE
                 </div>
               </div>
             </div>
 
-            {/* Main Certificate Content */}
+            {/* Main Certificate Content (Full page layout) */}
             <div
               style={{
                 position: "absolute",
-                top: "29.5%",
-                bottom: "9.5%",
-                left: "28%",
-                right: "17.5%",
+                top: "23.5%",
+                bottom: "7%",
+                left: "26%",
+                right: "14%",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
@@ -1135,14 +1144,14 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
               }}
             >
               {/* 1. Header & Recipient */}
-              <div>
+              <div style={{ marginBottom: "2px" }}>
                 <h1
                   style={{
                     fontFamily: "'Fredoka', sans-serif",
-                    fontSize: "26.5px",
+                    fontSize: "32px",
                     fontWeight: 800,
                     textTransform: "uppercase",
-                    letterSpacing: "1.5px",
+                    letterSpacing: "2px",
                     color: "#0F172A",
                     lineHeight: 1.1,
                     margin: 0,
@@ -1152,12 +1161,12 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 </h1>
                 <span
                   style={{
-                    fontSize: "10px",
+                    fontSize: "11px",
                     fontWeight: 800,
                     textTransform: "uppercase",
-                    letterSpacing: "2px",
+                    letterSpacing: "2.5px",
                     color: "#B45309",
-                    marginTop: "1px",
+                    marginTop: "2px",
                     display: "block",
                   }}
                 >
@@ -1165,11 +1174,11 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 </span>
                 <p
                   style={{
-                    fontSize: "12px",
+                    fontSize: "13.5px",
                     fontStyle: "italic",
                     fontWeight: 600,
                     color: "#64748B",
-                    marginTop: "1px",
+                    marginTop: "2px",
                   }}
                 >
                   This certificate is proudly awarded to
@@ -1178,13 +1187,13 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 <div
                   style={{
                     fontFamily: "'Fredoka', sans-serif",
-                    fontSize: "38px",
+                    fontSize: "46px",
                     fontWeight: 800,
                     color: "#D97706",
                     lineHeight: 1.1,
                     letterSpacing: "-0.5px",
-                    marginTop: "2px",
-                    textShadow: "0 1px 4px rgba(217, 119, 6, 0.2)",
+                    marginTop: "3px",
+                    textShadow: "0 2px 6px rgba(217, 119, 6, 0.2)",
                   }}
                 >
                   {studentName}
@@ -1195,24 +1204,24 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap: "8px",
-                    margin: "2px auto 0 auto",
-                    maxWidth: "300px",
+                    gap: "10px",
+                    margin: "4px auto 0 auto",
+                    maxWidth: "420px",
                   }}
                 >
-                  <div style={{ flex: 1, height: "2px", background: "linear-gradient(to right, transparent, #F59E0B)", borderRadius: "9999px" }} />
-                  <div style={{ width: "9px", height: "9px", transform: "rotate(45deg)", background: "#D97706", border: "1.5px solid #FEF3C7" }} />
-                  <div style={{ flex: 1, height: "2px", background: "linear-gradient(to left, transparent, #F59E0B)", borderRadius: "9999px" }} />
+                  <div style={{ flex: 1, height: "2.5px", background: "linear-gradient(to right, transparent, #F59E0B)", borderRadius: "9999px" }} />
+                  <div style={{ width: "11px", height: "11px", transform: "rotate(45deg)", background: "#D97706", border: "2px solid #FEF3C7" }} />
+                  <div style={{ flex: 1, height: "2.5px", background: "linear-gradient(to left, transparent, #F59E0B)", borderRadius: "9999px" }} />
                 </div>
               </div>
 
-              {/* 2. Citation Text */}
+              {/* 2. Full-width Citation Text */}
               <p
                 style={{
-                  maxWidth: "580px",
-                  margin: "3px auto 0 auto",
-                  fontSize: "11.2px",
-                  lineHeight: 1.45,
+                  width: "100%",
+                  margin: "6px auto 0 auto",
+                  fontSize: "12.8px",
+                  lineHeight: 1.55,
                   color: "#334155",
                   fontWeight: 500,
                 }}
@@ -1227,31 +1236,31 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 style={{
                   display: "grid",
                   gridTemplateColumns: "repeat(3, 1fr)",
-                  gap: "10px",
-                  maxWidth: "590px",
-                  margin: "4px auto 0 auto",
+                  gap: "14px",
+                  width: "100%",
+                  margin: "8px auto 0 auto",
                   textAlign: "left",
                 }}
               >
                 <div
                   style={{
                     background: "rgba(255, 255, 255, 0.96)",
-                    border: "1px solid #FCD34D",
-                    borderLeft: "3.5px solid #F59E0B",
-                    borderRadius: "8px",
-                    padding: "5px 8px",
+                    border: "1.5px solid #FCD34D",
+                    borderLeft: "4px solid #F59E0B",
+                    borderRadius: "10px",
+                    padding: "8px 12px",
                     display: "flex",
                     alignItems: "flex-start",
-                    gap: "7px",
-                    boxShadow: "0 1.5px 5px rgba(0, 0, 0, 0.05)",
+                    gap: "9px",
+                    boxShadow: "0 2px 6px rgba(0, 0, 0, 0.06)",
                   }}
                 >
-                  <div style={{ fontSize: "16px", lineHeight: 1, paddingTop: "2px" }}>🎧</div>
+                  <div style={{ fontSize: "19px", lineHeight: 1, paddingTop: "2px" }}>🎧</div>
                   <div>
-                    <div style={{ fontSize: "10px", fontWeight: 800, color: "#92400E", lineHeight: 1.2 }}>
+                    <div style={{ fontSize: "11.5px", fontWeight: 800, color: "#92400E", lineHeight: 1.25 }}>
                       Pronunciation & Diction
                     </div>
-                    <div style={{ fontSize: "7.8px", color: "#475569", lineHeight: 1.25, marginTop: "1px" }}>
+                    <div style={{ fontSize: "9px", color: "#475569", lineHeight: 1.35, marginTop: "2px" }}>
                       Mastered clear phonetic articulation & stress.
                     </div>
                   </div>
@@ -1260,22 +1269,22 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 <div
                   style={{
                     background: "rgba(255, 255, 255, 0.96)",
-                    border: "1px solid #FCD34D",
-                    borderLeft: "3.5px solid #F59E0B",
-                    borderRadius: "8px",
-                    padding: "5px 8px",
+                    border: "1.5px solid #FCD34D",
+                    borderLeft: "4px solid #F59E0B",
+                    borderRadius: "10px",
+                    padding: "8px 12px",
                     display: "flex",
                     alignItems: "flex-start",
-                    gap: "7px",
-                    boxShadow: "0 1.5px 5px rgba(0, 0, 0, 0.05)",
+                    gap: "9px",
+                    boxShadow: "0 2px 6px rgba(0, 0, 0, 0.06)",
                   }}
                 >
-                  <div style={{ fontSize: "16px", lineHeight: 1, paddingTop: "2px" }}>📖</div>
+                  <div style={{ fontSize: "19px", lineHeight: 1, paddingTop: "2px" }}>📖</div>
                   <div>
-                    <div style={{ fontSize: "10px", fontWeight: 800, color: "#92400E", lineHeight: 1.2 }}>
+                    <div style={{ fontSize: "11.5px", fontWeight: 800, color: "#92400E", lineHeight: 1.25 }}>
                       Oral Reading Fluency
                     </div>
-                    <div style={{ fontSize: "7.8px", color: "#475569", lineHeight: 1.25, marginTop: "1px" }}>
+                    <div style={{ fontSize: "9px", color: "#475569", lineHeight: 1.35, marginTop: "2px" }}>
                       Achieved expressive reading aloud confidence.
                     </div>
                   </div>
@@ -1284,22 +1293,22 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 <div
                   style={{
                     background: "rgba(255, 255, 255, 0.96)",
-                    border: "1px solid #FCD34D",
-                    borderLeft: "3.5px solid #F59E0B",
-                    borderRadius: "8px",
-                    padding: "5px 8px",
+                    border: "1.5px solid #FCD34D",
+                    borderLeft: "4px solid #F59E0B",
+                    borderRadius: "10px",
+                    padding: "8px 12px",
                     display: "flex",
                     alignItems: "flex-start",
-                    gap: "7px",
-                    boxShadow: "0 1.5px 5px rgba(0, 0, 0, 0.05)",
+                    gap: "9px",
+                    boxShadow: "0 2px 6px rgba(0, 0, 0, 0.06)",
                   }}
                 >
-                  <div style={{ fontSize: "16px", lineHeight: 1, paddingTop: "2px" }}>🏝️</div>
+                  <div style={{ fontSize: "19px", lineHeight: 1, paddingTop: "2px" }}>🏝️</div>
                   <div>
-                    <div style={{ fontSize: "10px", fontWeight: 800, color: "#92400E", lineHeight: 1.2 }}>
+                    <div style={{ fontSize: "11.5px", fontWeight: 800, color: "#92400E", lineHeight: 1.25 }}>
                       Papuan Heritage Stories
                     </div>
-                    <div style={{ fontSize: "7.8px", color: "#475569", lineHeight: 1.25, marginTop: "1px" }}>
+                    <div style={{ fontSize: "9px", color: "#475569", lineHeight: 1.35, marginTop: "2px" }}>
                       Explored 26 regional folktales & traditions.
                     </div>
                   </div>
@@ -1312,8 +1321,8 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  marginTop: "4px",
-                  gap: "12px",
+                  marginTop: "8px",
+                  width: "100%",
                 }}
               >
                 {/* Left: Official ReadLocal Kids App Icon Badge (Larger, No enclosing box) */}
@@ -1339,7 +1348,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                       boxShadow: "0 4px 14px rgba(2, 132, 199, 0.22)",
                     }}
                   >
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
                       <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
                     </svg>
@@ -1361,7 +1370,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     <div
                       style={{
                         fontFamily: "'Fredoka', sans-serif",
-                        fontSize: "13px",
+                        fontSize: "13.5px",
                         fontWeight: 700,
                         color: "#B45309",
                         textTransform: "uppercase",
@@ -1370,10 +1379,10 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     >
                       Official ReadLocal Kids Badge
                     </div>
-                    <div style={{ fontSize: "9.2px", color: "#475569", fontWeight: 600, lineHeight: 1.25, marginTop: "1.5px" }}>
+                    <div style={{ fontSize: "9.5px", color: "#475569", fontWeight: 600, lineHeight: 1.3, marginTop: "2px" }}>
                       Verified Reading Aloud Achievement
                     </div>
-                    <div style={{ fontSize: "9.2px", color: "#D97706", fontWeight: 800, lineHeight: 1.25, marginTop: "1px" }}>
+                    <div style={{ fontSize: "9.5px", color: "#D97706", fontWeight: 800, lineHeight: 1.3, marginTop: "1.5px" }}>
                       ReadLocal Kids Certified Learner
                     </div>
                   </div>
@@ -1384,7 +1393,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: "12px",
+                    gap: "14px",
                     textAlign: "left",
                   }}
                 >
@@ -1394,8 +1403,8 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                         src={qrCodeDataUrl}
                         alt="QR Code Verification"
                         style={{
-                          width: "48px",
-                          height: "48px",
+                          width: "52px",
+                          height: "52px",
                           borderRadius: "6px",
                           border: "1.5px solid #CBD5E1",
                           background: "#FFFFFF",
@@ -1404,19 +1413,19 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                         }}
                       />
                     ) : (
-                      <div style={{ width: "48px", height: "48px", background: "#F1F5F9", borderRadius: "6px" }} />
+                      <div style={{ width: "52px", height: "52px", background: "#F1F5F9", borderRadius: "6px" }} />
                     )}
-                    <span style={{ fontSize: "6.5px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.5px", color: "#64748B" }}>
+                    <span style={{ fontSize: "7px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.5px", color: "#64748B" }}>
                       Scan Verifikasi
                     </span>
                   </div>
 
-                  <div style={{ borderLeft: "1.5px solid #E2E8F0", paddingLeft: "10px" }}>
+                    <div style={{ borderLeft: "1.5px solid #E2E8F0", paddingLeft: "12px" }}>
                     <div
                       style={{
                         fontFamily: "'Playfair Display', Georgia, cursive",
                         fontStyle: "italic",
-                        fontSize: "16px",
+                        fontSize: "18px",
                         fontWeight: 700,
                         color: "#1E293B",
                         lineHeight: 1,
@@ -1424,14 +1433,14 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     >
                       Dr. Yulini Rinantanti
                     </div>
-                    <div style={{ width: "130px", height: "1.5px", background: "#94A3B8", margin: "2px 0 3px 0" }} />
-                    <div style={{ fontSize: "11px", fontWeight: 800, color: "#0F172A", lineHeight: 1.1 }}>
+                    <div style={{ width: "140px", height: "2px", background: "#94A3B8", margin: "3px 0 4px 0" }} />
+                    <div style={{ fontSize: "12px", fontWeight: 800, color: "#0F172A", lineHeight: 1.1 }}>
                       Dr. Yulini Rinantanti, M. Ed.
                     </div>
-                    <div style={{ fontSize: "8.5px", fontWeight: 700, color: "#B45309", lineHeight: 1.1, marginTop: "1px" }}>
+                    <div style={{ fontSize: "9px", fontWeight: 700, color: "#B45309", lineHeight: 1.1, margin: "1.5px 0 0 0" }}>
                       Research Lead & Author · ReadLocal Kids
                     </div>
-                    <div style={{ fontSize: "7.5px", fontWeight: 600, color: "#64748B", lineHeight: 1.1 }}>
+                    <div style={{ fontSize: "8px", fontWeight: 600, color: "#64748B", lineHeight: 1.1 }}>
                       Universitas Cenderawasih · Program Literasi Papua
                     </div>
                   </div>
@@ -1445,10 +1454,11 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   alignItems: "center",
                   justifyContent: "space-between",
                   borderTop: "1.5px solid rgba(245, 158, 11, 0.35)",
-                  paddingTop: "3px",
-                  fontSize: "8.5px",
+                  paddingTop: "4px",
+                  fontSize: "9px",
                   fontWeight: 700,
                   color: "#475569",
+                  marginTop: "4px",
                 }}
               >
                 <div>Date Issued: <span style={{ color: "#0F172A" }}>{certDate}</span></div>
