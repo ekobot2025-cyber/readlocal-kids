@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import QRCode from "qrcode";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { CANVA_PANEL_BASE64, CANVA_STAMP_BASE64 } from "./canvaBadgeAssets";
+import { CANVA_PANEL_BASE64, CANVA_STAMP_BASE64, CANVA_KIDS_BASE64, CANVA_BOOKS_BASE64 } from "./canvaBadgeAssets";
 import { Printer, Award, ExternalLink, Sparkles } from "lucide-react";
 
 /**
@@ -65,11 +65,13 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
     .left-section {
       width: 64%;
       height: 100%;
-      padding: 46px 52px 36px 56px;
+      padding: 44px 50px 34px 54px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       box-sizing: border-box;
+      position: relative;
+      z-index: 2;
     }
     
     /* Top Category Badge */
@@ -77,6 +79,11 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+    .top-badge-icon {
+      width: 21px;
+      height: 23px;
+      color: #EA580C;
     }
     .top-badge-text {
       font-size: 11.5px;
@@ -89,17 +96,17 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
     /* Course / Program Title */
     .program-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: 42px;
+      font-size: 41px;
       font-weight: 800;
       color: #0F172A;
       line-height: 1.15;
       letter-spacing: -0.8px;
-      margin-top: 14px;
+      margin-top: 12px;
     }
     
     /* Recipient Name */
     .recipient-block {
-      margin-top: 38px;
+      margin-top: 26px;
     }
     .recipient-name {
       font-family: 'Montserrat', sans-serif;
@@ -116,25 +123,118 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      margin-top: 24px;
+      margin-top: 15px;
     }
     .citation-text {
-      font-size: 12px;
+      font-size: 11.8px;
       line-height: 1.55;
       color: #475569;
       font-weight: 500;
-      max-width: 395px;
+      max-width: 375px;
     }
     .citation-text strong {
       color: #0F172A;
       font-weight: 700;
     }
     .certified-stamp-img {
-      width: 116px;
-      height: 116px;
+      width: 112px;
+      height: 112px;
       object-fit: contain;
       flex-shrink: 0;
       filter: drop-shadow(0 4px 14px rgba(59, 130, 246, 0.22));
+    }
+    
+    /* Dual Papuan Cultural Achievement Banner */
+    .feature-dual-banner {
+      display: flex;
+      gap: 14px;
+      margin-top: 14px;
+      margin-bottom: 2px;
+      width: 100%;
+    }
+    .dual-card-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 12px;
+      border-radius: 11px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+    }
+    .dual-card-item.kids-bg {
+      background: linear-gradient(135deg, #FFFDF7 0%, #FEF7ED 100%);
+      border-color: #FED7AA;
+    }
+    .dual-card-item.books-bg {
+      background: linear-gradient(135deg, #F8FAFC 0%, #F0FDF4 100%);
+      border-color: #BBF7D0;
+    }
+    .card-img-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+    .card-thumb-kids {
+      width: 56px;
+      height: 64px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border: 1.5px solid #FFFFFF;
+      display: block;
+    }
+    .card-thumb-books {
+      width: 64px;
+      height: 56px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border: 1.5px solid #FFFFFF;
+      display: block;
+    }
+    .card-text-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+    .card-badge {
+      display: inline-block;
+      font-size: 7.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      width: fit-content;
+      margin-bottom: 3px;
+    }
+    .card-badge.kids-pill {
+      background-color: #FFEDD5;
+      color: #C2410C;
+    }
+    .card-badge.books-pill {
+      background-color: #DCFCE7;
+      color: #15803D;
+    }
+    .card-heading {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11.2px;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1.2;
+      letter-spacing: -0.2px;
+      margin: 0;
+    }
+    .card-caption {
+      font-size: 8.5px;
+      color: #64748B;
+      font-weight: 500;
+      line-height: 1.3;
+      margin-top: 2px;
+      margin-bottom: 0;
     }
     
     /* Horizontal Divider */
@@ -142,8 +242,8 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
       width: 100%;
       height: 1.5px;
       background-color: #E2E8F0;
-      margin-top: 22px;
-      margin-bottom: 16px;
+      margin-top: 16px;
+      margin-bottom: 14px;
     }
     
     /* Footer Metadata: 3 Columns */
@@ -324,6 +424,31 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
             The certificate holder has successfully completed the <strong>Papuan Reading Aloud &amp; Cultural Discovery Program</strong>, demonstrating exemplary dedication, oral reading fluency, and cultural appreciation.
           </p>
           <img src="${CANVA_STAMP_BASE64}" alt="ReadLocal Kids Certified" class="certified-stamp-img" />
+        </div>
+      </div>
+
+      <!-- Dual Papuan Cultural Achievement Banner -->
+      <div class="feature-dual-banner">
+        <div class="dual-card-item kids-bg">
+          <div class="card-img-wrap">
+            <img src="${CANVA_KIDS_BASE64}" class="card-thumb-kids" alt="Papuan Learners" />
+          </div>
+          <div class="card-text-col">
+            <span class="card-badge kids-pill">Oral Fluency</span>
+            <h4 class="card-heading">Confident Reading</h4>
+            <p class="card-caption">Joyful articulation &amp; expressive voice</p>
+          </div>
+        </div>
+
+        <div class="dual-card-item books-bg">
+          <div class="card-img-wrap">
+            <img src="${CANVA_BOOKS_BASE64}" class="card-thumb-books" alt="Papuan Folktale Collection" />
+          </div>
+          <div class="card-text-col">
+            <span class="card-badge books-pill">Local Heritage</span>
+            <h4 class="card-heading">26 Papuan Folktales</h4>
+            <p class="card-caption">Cultural wisdom, nature &amp; folklore</p>
+          </div>
         </div>
       </div>
 
@@ -596,9 +721,118 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   </div>
                 </div>
 
+                {/* Dual Papuan Cultural Achievement Banner */}
+                <div style={{ display: "flex", gap: "12px", marginTop: "12px", marginBottom: "2px", width: "100%" }}>
+                  <div
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                      padding: "7px 10px",
+                      borderRadius: "10px",
+                      border: "1px solid #FED7AA",
+                      background: "linear-gradient(135deg, #FFFDF7 0%, #FEF7ED 100%)",
+                      boxShadow: "0 2px 6px rgba(15, 23, 42, 0.03)",
+                    }}
+                  >
+                    <img
+                      src={CANVA_KIDS_BASE64}
+                      alt="Papuan Learners"
+                      style={{
+                        width: "50px",
+                        height: "58px",
+                        objectFit: "cover",
+                        objectPosition: "top center",
+                        borderRadius: "7px",
+                        boxShadow: "0 2px 5px rgba(0,0,0,0.08)",
+                        border: "1.5px solid #FFFFFF",
+                        flexShrink: 0,
+                      }}
+                    />
+                    <div style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
+                      <span
+                        style={{
+                          fontSize: "7px",
+                          fontWeight: 800,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.8px",
+                          padding: "1.5px 5px",
+                          borderRadius: "3px",
+                          backgroundColor: "#FFEDD5",
+                          color: "#C2410C",
+                          width: "fit-content",
+                          marginBottom: "2px",
+                        }}
+                      >
+                        Oral Fluency
+                      </span>
+                      <h4 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "10.5px", fontWeight: 800, color: "#0F172A", margin: 0, lineHeight: 1.2 }}>
+                        Confident Reading
+                      </h4>
+                      <p style={{ fontSize: "8px", color: "#64748B", margin: "2px 0 0", lineHeight: 1.3, fontWeight: 500 }}>
+                        Joyful articulation &amp; expressive voice
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                      padding: "7px 10px",
+                      borderRadius: "10px",
+                      border: "1px solid #BBF7D0",
+                      background: "linear-gradient(135deg, #F8FAFC 0%, #F0FDF4 100%)",
+                      boxShadow: "0 2px 6px rgba(15, 23, 42, 0.03)",
+                    }}
+                  >
+                    <img
+                      src={CANVA_BOOKS_BASE64}
+                      alt="Papuan Folktale Collection"
+                      style={{
+                        width: "58px",
+                        height: "50px",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        borderRadius: "7px",
+                        boxShadow: "0 2px 5px rgba(0,0,0,0.08)",
+                        border: "1.5px solid #FFFFFF",
+                        flexShrink: 0,
+                      }}
+                    />
+                    <div style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
+                      <span
+                        style={{
+                          fontSize: "7px",
+                          fontWeight: 800,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.8px",
+                          padding: "1.5px 5px",
+                          borderRadius: "3px",
+                          backgroundColor: "#DCFCE7",
+                          color: "#15803D",
+                          width: "fit-content",
+                          marginBottom: "2px",
+                        }}
+                      >
+                        Local Heritage
+                      </span>
+                      <h4 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "10.5px", fontWeight: 800, color: "#0F172A", margin: 0, lineHeight: 1.2 }}>
+                        26 Papuan Folktales
+                      </h4>
+                      <p style={{ fontSize: "8px", color: "#64748B", margin: "2px 0 0", lineHeight: 1.3, fontWeight: 500 }}>
+                        Cultural wisdom, nature &amp; folklore
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Divider & Footer Meta */}
                 <div>
-                  <div style={{ width: "100%", height: "1.5px", backgroundColor: "#E2E8F0", marginTop: "18px", marginBottom: "14px" }} />
+                  <div style={{ width: "100%", height: "1.5px", backgroundColor: "#E2E8F0", marginTop: "14px", marginBottom: "12px" }} />
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1.6fr", gap: "12px", alignItems: "center" }}>
                     {/* Issue Date */}
                     <div>
@@ -765,7 +999,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
               style={{
                 width: "64%",
                 height: "100%",
-                padding: "46px 52px 36px 56px",
+                padding: "44px 50px 34px 54px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
@@ -790,12 +1024,12 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 <h1
                   style={{
                     fontFamily: "'Montserrat', sans-serif",
-                    fontSize: "42px",
+                    fontSize: "41px",
                     fontWeight: 800,
                     color: "#0F172A",
                     lineHeight: 1.15,
                     letterSpacing: "-0.8px",
-                    marginTop: "14px",
+                    marginTop: "12px",
                     marginRight: 0,
                     marginBottom: 0,
                     marginLeft: 0,
@@ -806,7 +1040,7 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 </h1>
 
                 {/* Recipient Name */}
-                <div style={{ marginTop: "38px" }}>
+                <div style={{ marginTop: "26px" }}>
                   <div
                     style={{
                       fontFamily: "'Montserrat', sans-serif",
@@ -822,14 +1056,14 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 </div>
 
                 {/* Citation & Stamp Row */}
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "20px", marginTop: "24px" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "20px", marginTop: "15px" }}>
                   <p
                     style={{
-                      fontSize: "12px",
+                      fontSize: "11.8px",
                       lineHeight: 1.55,
                       color: "#475569",
                       fontWeight: 500,
-                      maxWidth: "395px",
+                      maxWidth: "375px",
                       margin: 0,
                     }}
                   >
@@ -839,8 +1073,8 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                     src={CANVA_STAMP_BASE64}
                     alt="ReadLocal Kids Certified"
                     style={{
-                      width: "116px",
-                      height: "116px",
+                      width: "112px",
+                      height: "112px",
                       objectFit: "contain",
                       flexShrink: 0,
                       filter: "drop-shadow(0 4px 14px rgba(59, 130, 246, 0.22))",
@@ -849,9 +1083,122 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 </div>
               </div>
 
+              {/* Dual Papuan Cultural Achievement Banner */}
+              <div style={{ display: "flex", gap: "14px", marginTop: "14px", marginBottom: "2px", width: "100%" }}>
+                <div
+                  style={{
+                    flex: 1,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    padding: "8px 12px",
+                    borderRadius: "11px",
+                    border: "1px solid #FED7AA",
+                    background: "linear-gradient(135deg, #FFFDF7 0%, #FEF7ED 100%)",
+                    boxShadow: "0 2px 6px rgba(15, 23, 42, 0.03)",
+                  }}
+                >
+                  <img
+                    src={CANVA_KIDS_BASE64}
+                    alt="Papuan Learners"
+                    style={{
+                      width: "56px",
+                      height: "64px",
+                      objectFit: "cover",
+                      objectPosition: "top center",
+                      borderRadius: "8px",
+                      boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
+                      border: "1.5px solid #FFFFFF",
+                      display: "block",
+                      flexShrink: 0,
+                    }}
+                  />
+                  <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", minWidth: 0 }}>
+                    <span
+                      style={{
+                        display: "inline-block",
+                        fontSize: "7.5px",
+                        fontWeight: 800,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.8px",
+                        padding: "2px 6px",
+                        borderRadius: "4px",
+                        backgroundColor: "#FFEDD5",
+                        color: "#C2410C",
+                        width: "fit-content",
+                        marginBottom: "3px",
+                      }}
+                    >
+                      Oral Fluency
+                    </span>
+                    <h4 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "11.2px", fontWeight: 800, color: "#0F172A", lineHeight: 1.2, letterSpacing: "-0.2px", margin: 0 }}>
+                      Confident Reading
+                    </h4>
+                    <p style={{ fontSize: "8.5px", color: "#64748B", fontWeight: 500, lineHeight: 1.3, marginTop: "2px", marginBottom: 0 }}>
+                      Joyful articulation &amp; expressive voice
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    flex: 1,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    padding: "8px 12px",
+                    borderRadius: "11px",
+                    border: "1px solid #BBF7D0",
+                    background: "linear-gradient(135deg, #F8FAFC 0%, #F0FDF4 100%)",
+                    boxShadow: "0 2px 6px rgba(15, 23, 42, 0.03)",
+                  }}
+                >
+                  <img
+                    src={CANVA_BOOKS_BASE64}
+                    alt="Papuan Folktale Collection"
+                    style={{
+                      width: "64px",
+                      height: "56px",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                      borderRadius: "8px",
+                      boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
+                      border: "1.5px solid #FFFFFF",
+                      display: "block",
+                      flexShrink: 0,
+                    }}
+                  />
+                  <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", minWidth: 0 }}>
+                    <span
+                      style={{
+                        display: "inline-block",
+                        fontSize: "7.5px",
+                        fontWeight: 800,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.8px",
+                        padding: "2px 6px",
+                        borderRadius: "4px",
+                        backgroundColor: "#DCFCE7",
+                        color: "#15803D",
+                        width: "fit-content",
+                        marginBottom: "3px",
+                      }}
+                    >
+                      Local Heritage
+                    </span>
+                    <h4 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "11.2px", fontWeight: 800, color: "#0F172A", lineHeight: 1.2, letterSpacing: "-0.2px", margin: 0 }}>
+                      26 Papuan Folktales
+                    </h4>
+                    <p style={{ fontSize: "8.5px", color: "#64748B", fontWeight: 500, lineHeight: 1.3, marginTop: "2px", marginBottom: 0 }}>
+                      Cultural wisdom, nature &amp; folklore
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Divider & Footer */}
               <div>
-                <div style={{ width: "100%", height: "1.5px", backgroundColor: "#E2E8F0", marginTop: "22px", marginBottom: "16px" }} />
+                <div style={{ width: "100%", height: "1.5px", backgroundColor: "#E2E8F0", marginTop: "16px", marginBottom: "14px" }} />
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1.6fr", gap: "16px", alignItems: "center" }}>
                   {/* Issue Date */}
                   <div>
