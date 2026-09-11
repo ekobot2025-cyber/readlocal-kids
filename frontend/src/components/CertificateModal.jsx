@@ -329,10 +329,16 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
     .badge-panel-box {
       width: 100%;
       height: 81%;
-      background-image: url('${CANVA_PANEL_BASE64}');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      overflow: hidden;
+      display: flex;
+      position: relative;
+    }
+    .badge-panel-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
     
     /* Bottom Brand Logo Bar (19% height) */
@@ -485,7 +491,9 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
     <!-- RIGHT SECTION -->
     <div class="right-section">
       <!-- 3D Medal Badge Feature Panel -->
-      <div class="badge-panel-box"></div>
+      <div class="badge-panel-box">
+        <img src="${CANVA_PANEL_BASE64}" class="badge-panel-img" alt="Certificate Badge Panel" />
+      </div>
       <!-- Brand Logo Bar -->
       <div class="brand-bar-box">
         <div class="app-logo-wrap">
@@ -890,12 +898,23 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                   style={{
                     width: "100%",
                     height: "81%",
-                    backgroundImage: `url(${CANVA_PANEL_BASE64})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
+                    overflow: "hidden",
+                    display: "flex",
+                    position: "relative",
                   }}
-                />
+                >
+                  <img
+                    src={CANVA_PANEL_BASE64}
+                    alt="Certificate Badge Panel"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                      display: "block",
+                    }}
+                  />
+                </div>
 
                 {/* Bottom Brand Logo Bar (19% height) */}
                 <div
@@ -1256,12 +1275,23 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                 style={{
                   width: "100%",
                   height: "81%",
-                  backgroundImage: `url(${CANVA_PANEL_BASE64})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
+                  overflow: "hidden",
+                  display: "flex",
+                  position: "relative",
                 }}
-              />
+              >
+                <img
+                  src={CANVA_PANEL_BASE64}
+                  alt="Certificate Badge Panel"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    display: "block",
+                  }}
+                />
+              </div>
 
               {/* Bottom Brand Logo Bar (19% height) */}
               <div
