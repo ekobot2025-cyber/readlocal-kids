@@ -480,7 +480,6 @@ function generatePrintHtml({ studentName, certDate, certId, qrCodeDataUrl }) {
               <div class="sign-titles">
                 <span class="sign-person-name">Dr. Yulini Rinantanti, M. Ed.</span>
                 <span class="sign-person-role">Research Lead &amp; Author · ReadLocal Kids</span>
-                <span class="sign-person-inst">Universitas Cenderawasih</span>
               </div>
             </div>
           </div>
@@ -872,9 +871,6 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                           <span style={{ fontSize: "8.2px", fontWeight: 700, color: "#B45309", lineHeight: 1.2, marginTop: "1px" }}>
                             Research Lead &amp; Author · ReadLocal Kids
                           </span>
-                          <span style={{ fontSize: "7.2px", fontWeight: 600, color: "#64748B", lineHeight: 1.2 }}>
-                            Universitas Cenderawasih
-                          </span>
                         </div>
                       </div>
                     </div>
@@ -1248,9 +1244,6 @@ export function CertificateModal({ open, onClose, studentName = "Maria Papuana",
                         </span>
                         <span style={{ fontSize: "8.8px", fontWeight: 700, color: "#B45309", lineHeight: 1.2, marginTop: "1.5px" }}>
                           Research Lead &amp; Author · ReadLocal Kids
-                        </span>
-                        <span style={{ fontSize: "7.8px", fontWeight: 600, color: "#64748B", lineHeight: 1.2 }}>
-                          Universitas Cenderawasih
                         </span>
                       </div>
                     </div>
